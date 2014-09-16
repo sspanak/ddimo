@@ -10,7 +10,8 @@ class HTMLControl {
 		$this->body = '';
 
 		$this->ROOT = dirname(__FILE__);
-		$this->base_url = $_SERVER['SERVER_NAME'];
+		$this->site_name = $_SERVER['SERVER_NAME'];
+		$this->base_url = 'http://localhost/ddimo';
 	}
 
 	public function задай($променлива, $стойност){
@@ -41,6 +42,7 @@ class HTMLControl {
 		$lang = $this->lang;
 		$body = $this->body;
 		$head = $this->head;
+		$site_name = $this->site_name;
 		$base_url = $this->base_url;
 
 		ob_start();
@@ -49,7 +51,7 @@ class HTMLControl {
 
 		$html = ob_get_clean();
 
-		unset($title, $lang, $body, $head, $base_url);
+		unset($title, $lang, $body, $head, $base_url, $site_name);
 
 		return $html;
 	}
