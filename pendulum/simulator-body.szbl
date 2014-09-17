@@ -1,4 +1,4 @@
-<? require_once 'menu.html' ?>
+<? require_once 'menu.szbl' ?>
 
 <canvas id="ekran" width="400" height="400" onclick="Anime.pauza();"> </canvas>
 

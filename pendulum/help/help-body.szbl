@@ -1,4 +1,4 @@
-<? require_once '../menu.html' ?>
+<? require_once '../menu.szbl' ?>
 
 <div class="container well">
 	<article>
