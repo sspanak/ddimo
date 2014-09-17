@@ -1,0 +1,121 @@
+<? require_once '../menu.html' ?>
+
+<div class="container well">
+	<article>
+		<h2> A pendulum simulator </h2>
+		<p>
+			This is a pendulum simulator which I made when I graduated university. It is in fact the thesis for my master's degree. Since it is a simple gravitational pendulum, no friction or air resistance is taken into account, which means it never loses energy and it will therefore never stop.
+		</p>
+
+		<p>
+			Have fun playing with it or if it seems too complicated, read <a href="#manual">how to use it</a> first.
+		</p>
+
+		<p>
+			I used the standard gravity pendulum equation together with the Runge-Kutta method for solving. The code is written in Javascript, and HTML5 is used for visualisation.
+			More of the geek stuff is available in the <a href="#equations">Behind the scenes</a> section.
+		</p>
+
+		<h2 id="manual"> How to use? </h2>
+		<h3> A short introduction to the model </h3>
+			<p>
+				Before starting the simulation we need to set the initial values of the differential equation, or in other words – the state of the pendulum right before starting to "play".
+				Imagine it like shooting the pendulum's motion with a camera at a certain moment. Right before starting the camera the rod will be rotated at a certain angle and will be moving at a certain velocity.
+			</p>
+			<p>
+				 The initial angle is denoted with the greek letter <em>φ</em> (phi). The velocity used here is called <em>angular velocity</em> and it is used for measuring rotational speed. It is denoted with <em>φ'</em> or <em>θ</em> (phi prime or theta).
+			</p>
+			<p>
+				Also, a few more parameters must be set.
+			</p>
+		<h3> Controls </h3>
+
+		<p> On the right hand side, you can control the "Initial values". As you can see, they are almost self-explanatory.</p>
+		<aside class="image-container">
+			<img src="help-inital-values.png" class="img-responsive img-rounded well" alt="">
+		</aside>
+		<p>
+			The <strong>initial angle</strong> sets the angle at which the pendulum will start swinging (or "fall down" if you like this expression better). Just enter a number there and press ENTER. It will automatically rotate to the selected angle, so you can adjust it visually.
+		</p>
+
+		<p>
+			The value of the angle is in radians and can be any real number (positive or negative) and
+			is measured from the "Y" axis of the coordinate system (When the rod of the pendulum points down at 6 o'clock, this is 0 radians). Increasing the angle will shift the rod counter-clockwise, and decreasing it will shift clockwise.
+		</p>
+
+		<p>
+			The <strong>initial velocity</strong> is the velocity at which the pendulum is spinning (or swinging) right before the starting moment. In other words – how hard you have "pushed" it.
+		</p>
+		<p>
+			The value is in radians per second. It is a real number, again positive or negative. As you probably guessed the greater absolute value means higher velocity. A positive value would mean the pendulum is being "pushed" counter-clockwise, and of course a negative is for clockwise.
+		</p>
+
+		<p>
+			The <strong>pendulum length</strong> obviously determines how long the pendulum is. The given length is in centimeters.
+		</p>
+
+		<p>
+			The <strong>gravity</strong> select box lets you choose the gravitational constant. Using it allows you to see how the pendulum acts on the Earth, or how it would if it was on an another planet.
+		</p>
+
+		<p>
+			<strong>Frames per second</strong> allow you to select how fast the animation runs. This is mostly usefull to make it run smoothly on different browsers, or to see the animation in slow motion.
+		</p>
+
+		<p> After setting all the variables, press "SET VALUES" to apply them. The pendulum will immediatelly reset to reflect the given values. </p>
+
+		<h3> Statistics </h3>
+		<p> On the left-hand side is situated the statistics panel. </p>
+		<aside class="image-container">
+			<img src="help-statistics.png" class="img-responsive img-rounded well" alt="">
+		</aside>
+		<p>
+			<strong>The statistics panel</strong> allows you to read how the values of each variable change as the animation runs.
+		</p>
+
+		<p>
+			On top you can see the <strong>differential equation</strong> that "powers" the pendulum. Below are the <strong>current angle</strong> and <strong>velocity</strong>.
+		</p>
+
+		<p>
+			The <strong>animation speed</strong> shows how many times per second your computer solves the equation and draw an animation frame.
+		</p>
+
+		<p>
+			<strong>Simulation time</strong> shows the elapsed time since the last resetting of the initial values.
+		</p>
+
+		<h2 id="equations"> Behind the scenes </h2>
+		<p>
+			This paragraph is still to be written...
+		</p>
+		<!--
+		<h4> The mathematics </h4>
+			<p>
+				Before creating fancy animation with realistical physics, I needed to do some maths first. Actually, my thesis was not about pendulums, but about Lagrange mechanics, and the simulator is just a simple example that it is still useful, even in today's world. Of course, this is a very, very simple example compared to what is achieved in the modern 3d and physics engines, but it illustrates that mathematics are not that scary and can be used for very cool things.
+			</p>
+
+			<p>
+				The idea in my case was that using the Lagrangian function I get one equation to solve
+			</p>
+			<p>
+				As a starting point I took the standard
+			</p>
+			<pre>
+&nbsp;d<sup>2</sup>φ&nbsp;&nbsp;&nbsp;&nbsp; g * sin(φ)
+----- = ---
+&nbsp;dt<sup>2</sup>&nbsp;&nbsp;&nbsp;&nbsp; R
+			</pre>
+
+		<h4> Solving the equations </h4>
+			<p>
+				After that I needed to solve the equation at very small time steps, which would give the coordinates of the bob in every frame. The obvious choice was the Runge-Kutta 4 method. It was intended to be used at a constant time steps, but it is great even if they vary a little.
+			</p>
+
+		<h4> The code </h4>
+	-->
+	</article>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>

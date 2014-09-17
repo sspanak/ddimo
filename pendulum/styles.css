@@ -1,0 +1,54 @@
+/* Телевизор */
+@media (max-aspect-ratio: 3/4) {
+	canvas{
+		width: 96vw;
+		height: 96vw;
+	}
+}
+
+@media (min-aspect-ratio: 3/4) {
+	canvas{
+		width: 72vh;
+		height: 72vh;
+	}
+}
+
+canvas{
+	margin: -20px auto auto auto;
+	display: block;
+	cursor: pointer;
+}
+
+/* Допълнителни нагласянки */
+legend > label.group-master-control {cursor: pointer;}
+
+@media (max-width: 768px){
+	.form-control-static{
+		padding: 0;
+	}
+}
+
+.image-container {text-align: center}
+.image-container img {display: inline-block;}
+
+/* Тъмно горно меню */
+.navbar-dark, .navbar-dark .dropdown-menu{
+	background-color: #222;
+	border-color: #383838;
+}
+
+.navbar-dark .navbar-brand, .navbar-dark .navbar-brand:hover, .navbar-dark .navbar-brand:focus,
+.navbar-dark .navbar-nav > li > a:focus, .navbar-dark .navbar-nav > li > a:hover, .navbar-dark .navbar-nav > li.open > a.dropdown-toggle
+{
+	color: #ccc;
+}
+
+
+.navbar-dark .dropdown-menu > li > a:focus, .navbar-dark .dropdown-menu > li > a:hover
+{
+	color: #eee;
+}
+.navbar-dark .dropdown-menu > li a{
+	color: #ccc;
+}
+
