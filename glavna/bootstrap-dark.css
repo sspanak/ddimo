@@ -1,3 +1,12 @@
+/* общи */
+body{
+	background-color: #121212;
+}
+
+.m10{margin:10px;}
+.bold{font-weight:bold;}
+.italic{font-style:italic;}
+
 legend > label.group-master-control {cursor: pointer;}
 
 @media (max-width: 768px){
@@ -13,12 +22,17 @@ legend > label.group-master-control {cursor: pointer;}
 }
 
 .navbar-dark .navbar-brand, .navbar-dark .navbar-brand:hover, .navbar-dark .navbar-brand:focus,
-.navbar-dark .navbar-nav > li > a:focus, .navbar-dark .navbar-nav > li > a:hover, .navbar-dark .navbar-nav > li.open > a.dropdown-toggle
-{
+.navbar-dark .navbar-brand a, .navbar-dark .navbar-brand a:hover, .navbar-dark .navbar-brand a:focus,
+.navbar-dark .navbar-nav > li > a:focus, .navbar-dark .navbar-nav > li > a:hover, .navbar-dark .navbar-nav > li.open > a.dropdown-toggle{
 	color: #ccc;
 }
 
+/* навигацията */
+.navbar-dark .navbar-brand a{
+	font-weight: bold;
+}
 
+/* падащи менюта */
 .navbar-dark .dropdown-menu > li > a:focus, .navbar-dark .dropdown-menu > li > a:hover
 {
 	color: #eee;
@@ -27,6 +41,3 @@ legend > label.group-master-control {cursor: pointer;}
 	color: #ccc;
 }
 
-.m10{margin:10px;}
-.bold{font-weight:bold;}
-.italic{font-style:italic;}
