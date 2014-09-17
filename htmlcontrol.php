@@ -1,7 +1,7 @@
 <?php
 class HTMLControl {
-	private $ROOT, $base_url;
-	protected  $lang, $title, $head, $body;
+	private $ROOT, $base_url, $site_name, $base_path;
+	protected $lang, $title, $head, $body;
 
 	public function __construct(){
 		$this->lang = 'en';
@@ -12,6 +12,10 @@ class HTMLControl {
 		$this->ROOT = dirname(__FILE__);
 		$this->site_name = $_SERVER['SERVER_NAME'];
 		$this->base_url = 'http://localhost/ddimo';
+
+		$this->base_path = $_SERVER['SCRIPT_NAME'];
+		$this->base_path = preg_replace('@\?.+@', '', $this->base_path);
+		$this->base_path = preg_replace('@/$@', '', dirname($this->base_path));
 	}
 
 	public function задай($променлива, $стойност){
@@ -44,6 +48,7 @@ class HTMLControl {
 		$head = $this->head;
 		$site_name = $this->site_name;
 		$base_url = $this->base_url;
+		$base_path = $this->base_path;
 
 		ob_start();
 
@@ -51,7 +56,7 @@ class HTMLControl {
 
 		$html = ob_get_clean();
 
-		unset($title, $lang, $body, $head, $base_url, $site_name);
+		unset($title, $lang, $body, $head, $base_url, $site_name, $base_path);
 
 		return $html;
 	}

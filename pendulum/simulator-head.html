@@ -1,2 +1,23 @@
 <link rel="stylesheet" href="<?=$base_url?>/glavna/bootstrap-dark.css" type="text/css">
-<link rel="stylesheet" href="<?=$base_url?>/pendulum/styles.css" type="text/css">
+<style>
+/* Телевизор */
+@media (max-aspect-ratio: 3/4) {
+	canvas{
+		width: 96vw;
+		height: 96vw;
+	}
+}
+
+@media (min-aspect-ratio: 3/4) {
+	canvas{
+		width: 72vh;
+		height: 72vh;
+	}
+}
+
+canvas{
+	margin: -20px auto auto auto;
+	display: block;
+	cursor: pointer;
+}
+</style>
