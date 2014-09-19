@@ -66,6 +66,10 @@
 
 <div id="modalenDjam" class="edraKartina">
 	<a href="javascript:;" onclick="EdraKartina.skrii()" title="close">
-		<img src="image" alt="close"/>
+		<img src="background.gif" alt="close"/>
 	</a>
 </div>
+
+<script src="http://code.jquery.com/jquery-2.0.0.min.js"></script>
+<script src="javascript.js"></script>
+<script>$(document).ready(function(){EdraKartina.init();});</script>
