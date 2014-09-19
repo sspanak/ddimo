@@ -11,7 +11,7 @@ class HTMLControl {
 
 		$this->ROOT = dirname(__FILE__);
 		$this->site_name = $_SERVER['SERVER_NAME'];
-		$this->base_url = 'http://localhost/ddimo';
+		$this->base_url = strpos($this->site_name, 'localhost') === 0 ? 'http://localhost/ddimo' : 'http://'.$this->site_name;
 
 		$this->base_path = $_SERVER['SCRIPT_NAME'];
 		$this->base_path = preg_replace('@\?.+@', '', $this->base_path);
