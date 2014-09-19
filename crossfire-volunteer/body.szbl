@@ -24,13 +24,13 @@
 
 		<h3> Pictures </h3>
 		<aside class="kartniki">
-			<a href="snimki/crossfire-volunteer-snimka-1.png" data-mini-kartina="1">
+			<a href="snimki/crossfire-volunteer-snimka-1.png" onclick="return EdraKartina.zaredi(this)">
 				<img src="snimki/crossfire-volunteer-snimka-1.png" alt="">
 			</a>
-			<a href="snimki/crossfire-volunteer-snimka-2.png" data-mini-kartina="1">
+			<a href="snimki/crossfire-volunteer-snimka-2.png" onclick="return EdraKartina.zaredi(this)">
 				<img src="snimki/crossfire-volunteer-snimka-2.png" alt="">
 			</a>
-			<a href="snimki/crossfire-volunteer-snimka-3.png" data-mini-kartina="1">
+			<a href="snimki/crossfire-volunteer-snimka-3.png" onclick="return EdraKartina.zaredi(this)">
 				<img src="snimki/crossfire-volunteer-snimka-3.png" alt="">
 			</a>
 		</aside>
@@ -71,5 +71,3 @@
 </div>
 
 <script src="http://code.jquery.com/jquery-2.0.0.min.js"></script>
-<script src="javascript.js"></script>
-<script>$(document).ready(function(){EdraKartina.init();});</script>
