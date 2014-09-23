@@ -89,7 +89,7 @@
 		<p>
 			This paragraph is still to be written...
 		</p>
-		<!--
+		<?/*
 		<h4> The mathematics </h4>
 			<p>
 				Before creating fancy animation with realistical physics, I needed to do some maths first. Actually, my thesis was not about pendulums, but about Lagrange mechanics, and the simulator is just a simple example that it is still useful, even in today's world. Of course, this is a very, very simple example compared to what is achieved in the modern 3d and physics engines, but it illustrates that mathematics are not that scary and can be used for very cool things.
@@ -113,7 +113,7 @@
 			</p>
 
 		<h4> The code </h4>
-	-->
+	*/?>
 	</article>
 </div>
 

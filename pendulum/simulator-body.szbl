@@ -6,7 +6,7 @@
 <div class="container-fluid well">
 	<div class="row">
 		<div class="col-sm-6">
-			<form class="form-horizontal" action="" method="post">
+			<form class="form-horizontal" action="<?=$base_url?>/pendulum" method="post">
 				<fieldset>
 					<legend>
 						<label class="group-master-control">
@@ -67,11 +67,11 @@
 		<div class="clearfix visible-xs-block"></div>
 
 		<div class="col-md-6">
-			<form class="form-horizontal" action="" method="post" onsubmit="return butoniSubmit();" role="form">
+			<form class="form-horizontal" action="<?=$base_url?>/pendulum" method="post" onsubmit="return butoniSubmit();" role="form">
 				<fieldset>
 					<legend class="clearfix">
 						<label class="pull-left">Initial values</label>
-						<div class="pull-right">[<a href="<?=$base_url?>/pendulum/help#manual" title="What are the initial values?">?</a>]</div>
+						<span class="pull-right">[<a href="<?=$base_url?>/pendulum/help#manual" title="What are the initial values?">?</a>]</span>
 					</legend>
 
 					<div class="form-group">
