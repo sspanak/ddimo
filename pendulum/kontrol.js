@@ -19,6 +19,41 @@ function cfg() {
 
 cfg = new cfg();
 
+function cookie(){
+
+	this.set = function(name, value){
+		value = escape(value);
+		var expiration = new Date();
+		expiration.setDate(expiration.getDate() + 10);
+
+		document.cookie = name + '=' + value + ';expires=' + expiration + ';path=/';
+	};
+
+	this.get = function(name){
+		var cookies = document.cookie.split(";");
+
+		for (i in cookies) {
+			var cookie_parts = cookies[i].split("=");
+
+			if ($.trim(cookie_parts[0]) === name)
+				return cookie_parts[1];
+		}
+		return null;
+	};
+
+	this.delete = function(name){
+		if (this.get(name) === null)
+			return;
+
+		var expiration = new Date();
+		expiration.setDate(expiration.getDate() - 1);
+
+		document.cookie = name + '=' + this.get(name) + ';expires=' + expiration + ';path=/';
+	};
+};
+cookie = new cookie();
+
+
 function butoniSubmit() {
 	var fps = $("select[name='fps']").val(),
 		skorost, prt, fi0, tita0, grav;
@@ -95,7 +130,20 @@ function toggleCheckbox(checkbox)
 	$input.prop("checked", !$input.is(":checked")).trigger("change");
 }
 
+function togglePause()
+{
+	if (!cookie.get("click_to_play_help"))
+		cookie.set("click_to_play_help", 1);
+
+	$("#click_to_play:visible").addClass("fadeout");
+	Anime.pauza();
+}
+
+
 $(document).ready(function(){
+	if (cookie.get("click_to_play_help"))
+		$("#click_to_play").hide();
+
 	Anime.init();
 	Anime.napasniMasztab();
 	Anime.stop();

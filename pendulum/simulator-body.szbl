@@ -1,6 +1,10 @@
 <? require_once 'menu.szbl' ?>
 
-<canvas id="ekran" width="400" height="400" onclick="Anime.pauza();"> </canvas>
+<h4 class="text-center" id="click_to_play" onclick="togglePause();">
+	<span class="bg-info">Click to play!</span>
+</h4>
+
+<canvas id="ekran" width="400" height="400" onclick="togglePause();"> </canvas>
 
 
 <div class="container-fluid well">

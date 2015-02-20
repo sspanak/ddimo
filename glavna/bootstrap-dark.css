@@ -48,8 +48,3 @@ legend > label.group-master-control {cursor: pointer;}
 .navbar-dark .dropdown-menu > li a{
 	color: #ccc;
 }
-
-/* допълнителни */
-.bg-warning{
-	background-color: rgba(255, 244, 185, 0.82);
-}

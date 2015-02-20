@@ -20,4 +20,30 @@ canvas{
 	display: block;
 	cursor: pointer;
 }
+
+#click_to_play{
+	position: absolute;
+	width: 100%;
+	cursor: pointer;
+}
+
+#click_to_play span{
+	padding: 10px;
+	margin: 10px;
+	border-radius: 3px;
+}
+
+.fadeout{
+	z-index: -1;
+	visibility: hidden;
+	opacity: 0;
+	transition: visibility 0s 1.25s, opacity 1.25s linear;
+}
+
+/* допълнителни */
+.bg-info{
+	background-color: #333;
+	color: #fff;
+	opacity: 0.7;
+}
 </style>
