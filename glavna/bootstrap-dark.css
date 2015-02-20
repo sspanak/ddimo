@@ -13,11 +13,6 @@ legend > label.group-master-control {cursor: pointer;}
 }
 
 /* Тъмно горно меню */
-.navbar-dark, .navbar-dark .dropdown-menu{
-	background-color: #222;
-	border-color: #383838;
-}
-
 .navbar-dark .navbar-brand, .navbar-dark .navbar-brand:hover, .navbar-dark .navbar-brand:focus,
 .navbar-dark .navbar-brand a, .navbar-dark .navbar-brand a:hover, .navbar-dark .navbar-brand a:focus,
 .navbar-dark .navbar-nav > li > a:focus, .navbar-dark .navbar-nav > li > a:hover, .navbar-dark .navbar-nav > li.open > a.dropdown-toggle{
@@ -29,12 +24,32 @@ legend > label.group-master-control {cursor: pointer;}
 	font-weight: bold;
 }
 
+/* бутон за падащо меню */
+.navbar-dark, .navbar-dark .dropdown-menu{
+	background-color: #222;
+	border-color: #383838;
+}
+
+.navbar-dark .navbar-toggle:hover, .navbar-dark .navbar-toggle:focus{
+	background-color: #000;
+}
+.navbar-dark .navbar-toggle{
+	border-color: #666;
+}
+
 /* падащи менюта */
-.navbar-dark .dropdown-menu > li > a:focus, .navbar-dark .dropdown-menu > li > a:hover
-{
+.navbar-dark .navbar-collapse, .navbar-dark .navbar-form{
+	border-color: #666;
+}
+
+.navbar-dark .dropdown-menu > li > a:focus, .navbar-dark .dropdown-menu > li > a:hover, .navbar-dark .navbar-nav .open .dropdown-menu > li > a:focus, .navbar-dark .navbar-nav .open .dropdown-menu > li > a:hover{
 	color: #eee;
 }
 .navbar-dark .dropdown-menu > li a{
 	color: #ccc;
 }
 
+/* допълнителни */
+.bg-warning{
+	background-color: rgba(255, 244, 185, 0.82);
+}
