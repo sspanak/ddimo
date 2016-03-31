@@ -1,0 +1,178 @@
+<link rel="stylesheet" href="<?=$base_url?>/glavna/bootstrap-dark.css" type="text/css">
+
+<script src="https://code.jquery.com/jquery.min.js"></script>
+
+<script>
+	function SmyanaAmbareva(data)
+	{
+		if (typeof data !== "object" || !(data instanceof Date))
+		{
+			return false;
+		}
+
+		var czetna = (data.getDate() % 2) ? false : true;
+		var den = data.getDay();
+
+		if (den === 1 && czetna)
+		{
+			return 2;
+		}
+		else if (den === 2)
+		{
+			return czetna ? 2 : 1;
+		}
+		else if (den === 3 && !czetna)
+		{
+			return 1;
+		}
+		else if (den === 4 && czetna)
+		{
+			return 2;
+		}
+		else if (den === 5 && czetna)
+		{
+			return 1;
+		}
+
+		return false;
+	}
+
+	function SmyanaMileva(data)
+	{
+		if (typeof data !== "object" || !(data instanceof Date))
+		{
+			return false;
+		}
+
+		var czetna = (data.getDate() % 2) ? false : true;
+		var den = data.getDay();
+
+
+		if (den === 1 && !czetna)
+		{
+			return 2;
+		}
+		else if (den === 2)
+		{
+			return czetna ? 1 : 2;
+		}
+		else if (den === 3 && czetna)
+		{
+			return 1;
+		}
+		else if (den === 4 && !czetna)
+		{
+			return 2;
+		}
+		else if (den === 5 && !czetna)
+		{
+			return 1;
+		}
+
+		return false;
+	}
+
+	function SmyanaTodorova(data)
+	{
+		if (typeof data !== "object" || !(data instanceof Date))
+		{
+			return false;
+		}
+
+		if (data.getDay() === 1 || data.getDay() === 4)
+		{
+			return 1;
+		}
+
+		if (data.getDay() === 3 || data.getDay() === 5)
+		{
+			return 2;
+		}
+
+		return false;
+	}
+
+
+	function KoyNaSmyana(smyana, data)
+	{
+		switch (parseInt(smyana))
+		{
+			case SmyanaAmbareva(data):
+				return "Амбарева";
+			case SmyanaTodorova(data):
+				return "Тодорова";
+			case SmyanaMileva(data):
+				return "Милева";
+			default:
+				return "Никой";
+		}
+
+		return "Грешка";
+	}
+
+
+	function PoplniGrafik(input, smyana1, smyana2)
+	{
+		var $input = $(input).val();
+		if (!$input.match(/^\d{4}-\d{2}-\d{2}$/))
+		{
+			return false;
+		}
+
+		var data = new Date($input);
+
+		$(smyana1).html(KoyNaSmyana(1, data));
+		$(smyana2).html(KoyNaSmyana(2, data));
+	}
+
+
+	function PoplniData(input, izbranaDataNadpis, dnesNadpis)
+	{
+		var $input = $(input).val();
+		if (!$input.match(/^\d{4}-\d{2}-\d{2}$/))
+			return false;
+
+		var izbranaData = new Date($input);
+		var dnesznaData = new Date();
+
+		izbranaData = izbranaData.getDate() + "." + (izbranaData.getMonth() + 1) + "." + izbranaData.getFullYear();
+		dnesznaData = dnesznaData.getDate() + "." + (dnesznaData.getMonth() + 1) + "." + dnesznaData.getFullYear();
+
+		$(izbranaDataNadpis).html(izbranaData);
+
+		if (izbranaData === dnesznaData)
+			$(dnesNadpis).show();
+		else
+			$(dnesNadpis).hide();
+	}
+
+
+	function submitHandler(event) {
+		if (event instanceof Event)
+			event.preventDefault();
+
+		if (!$("#kalendar").val().match(/^\d{4}-\d{2}-\d{2}$/))
+		{
+			alert("Датата трябва да бъде във формат: ГГГГ-ММ-ДД, например: 2016-03-31.");
+			return false;
+		}
+
+		PoplniGrafik("#kalendar", '#smyana1', '#smyana2');
+		PoplniData("#kalendar", '#izbranaData', '#dnes');
+		return false;
+	}
+
+
+	function izberiDnes()
+	{
+		var dnes = new Date();
+		dnes = dnes.toISOString().replace(/T.+/, "");
+
+		$("#kalendar").val(dnes).trigger("change");
+	}
+
+
+	$(document).ready(function(){
+		izberiDnes();
+	});
+</script>
