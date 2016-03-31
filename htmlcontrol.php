@@ -1,6 +1,6 @@
 <?php
 class HTMLControl {
-	private $ROOT, $base_url, $site_name, $base_path;
+	private $ROOT, $base_url, $site_name, $base_path, $last_error;
 	protected $lang, $title, $head, $body;
 
 	public function __construct(){
@@ -8,6 +8,7 @@ class HTMLControl {
 		$this->title = 'Dimo Karaivanov\'s website';
 		$this->head = '';
 		$this->body = '';
+		$this->last_error = '';
 
 		$this->ROOT = dirname(__FILE__);
 		$this->site_name = $_SERVER['SERVER_NAME'];
@@ -19,19 +20,25 @@ class HTMLControl {
 	}
 
 	public function задай($променлива, $стойност){
-		if (!property_exists($this, $променлива))
+		if (!property_exists($this, $променлива)){
+			$this->last_error = __CLASS__ . " не поддържа променлива с име '$променлива'.";
 			return false;
+		}
 
 		$this->$променлива = $стойност;
 		return true;
 	}
 
 	public function задайОтФайл($променлива, $файл){
-		if (!property_exists($this, $променлива))
+		if (!property_exists($this, $променлива)){
+			$this->last_error = __CLASS__ . " не поддържа променлива с име '$променлива'.";
 			return false;
+		}
 
-		if (!is_file($файл) || !is_readable($файл))
+		if (!is_file($файл) || !is_readable($файл)){
+			$this->last_error = "'$файл' не е файл или не може да се отвори за четене.";
 			return false;
+		}
 
 		$this->$променлива = $this->заредиФайл($файл);
 		return true;
@@ -39,6 +46,10 @@ class HTMLControl {
 
 	public function постройСтраница(){
 		return $this->заредиФайл($this->ROOT . DIRECTORY_SEPARATOR . 'skelet.html');
+	}
+
+	public function грешка(){
+		return $this->last_error;
 	}
 
 	private function заредиФайл($файл){
