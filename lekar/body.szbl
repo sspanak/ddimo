@@ -2,7 +2,7 @@
 	<div class="container">
 		<div class="navbar-header">
 			<div class="navbar-brand">
-				<a href="<?=$base_url?>"><?=$site_name?></a> / график на личните лекари
+				<a href="<?=$base_url?>"><?=$site_name?></a> / лѣкар
 			</div>
 		</div>
 	</div><!--/.container-fluid -->
