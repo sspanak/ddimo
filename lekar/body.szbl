@@ -39,7 +39,7 @@
 
 	<h4>
 		График за
-		<span id="izbranaData"></span><span id="dnes"> (днес)</span>:
+		<span id="dnes">днес, </span><span id="izbranaData"></span>:
 	</h4>
 
 	<ul>

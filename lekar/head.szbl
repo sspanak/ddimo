@@ -130,17 +130,28 @@
 
 	function PoplniData(input, izbranaDataNadpis, dnesNadpis)
 	{
+		var prevedeniDni = {
+			1: "понеделник",
+			2: "вторник",
+			3: "сряда",
+			4: "четвъртък",
+			5: "петък",
+			6: "събота",
+			7: "неделя",
+		};
+
 		var $input = $(input).val();
 		if (!$input.match(/^\d{4}-\d{2}-\d{2}$/))
 			return false;
 
 		var izbranaData = new Date($input);
 		var dnesznaData = new Date();
+		var den = typeof prevedeniDni[izbranaData.getDay()] !== "undefined" ? " (" + prevedeniDni[izbranaData.getDay()] + ")" : '';
 
 		izbranaData = izbranaData.getDate() + "." + (izbranaData.getMonth() + 1) + "." + izbranaData.getFullYear();
 		dnesznaData = dnesznaData.getDate() + "." + (dnesznaData.getMonth() + 1) + "." + dnesznaData.getFullYear();
 
-		$(izbranaDataNadpis).html(izbranaData);
+		$(izbranaDataNadpis).html(izbranaData + den);
 
 		if (izbranaData === dnesznaData)
 			$(dnesNadpis).show();
