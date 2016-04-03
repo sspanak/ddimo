@@ -1,4 +1,4 @@
-<? require_once 'menu.szbl' ?>
+<?php require_once 'menu.szbl' ?>
 
 <h4 class="text-center" id="click_to_play" onclick="togglePause();">
 	<span class="bg-info">Click to play!</span>
