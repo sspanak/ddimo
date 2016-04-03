@@ -20,7 +20,7 @@
 						<div class="form-group">
 							<label for="kalendar" class="col-md-4 control-label">Избор на дата: </label>
 							<div class="input-group col-md-8 col-lg-3">
-								<input id="kalendar" type="date" name="date" value="" onchange="submitHandler()">
+								<input id="kalendar" type="text" name="date" value="" onchange="submitHandler()">
 							</div>
 						</div>
 

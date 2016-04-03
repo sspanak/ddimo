@@ -1,7 +1,15 @@
 <link rel="stylesheet" href="<?=$base_url?>/glavna/bootstrap-dark.css" type="text/css">
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/overcast/jquery-ui.css">
 
+
+<!-- Това трябва да е тук, защото трябва да сглобим календара в началото, а няма как да стане, ако
+	jQuery и jQuery UI не са заредили, -->
 <script src="http://code.jquery.com/jquery-2.2.2.min.js"
 	integrity="sha256-36cp2Co+/62rEAAYHLmRCPIych47CvdM+uTBJwSzWjI="
+	crossorigin="anonymous"></script>
+<script
+	src="//code.jquery.com/ui/1.11.4/jquery-ui.min.js"
+	integrity="sha256-xNjb53/rY+WmG+4L6tTl9m6PpqknWZvRt0rO1SRnJzw="
 	crossorigin="anonymous"></script>
 
 <script>
@@ -181,11 +189,17 @@
 		var dnes = new Date();
 		dnes = dnes.toISOString().replace(/T.+/, "");
 
-		$("#kalendar").val(dnes).trigger("change");
+		$("#kalendar").datepicker("setDate", dnes);
+		$("#kalendar").trigger("change");
 	}
 
 
 	$(document).ready(function(){
+		$("#kalendar").datepicker({
+			 dateFormat: "yy-mm-dd",
+			 firstDay: 1
+		});
+
 		izberiDnes();
 	});
 </script>
