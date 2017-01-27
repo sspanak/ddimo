@@ -39,7 +39,7 @@
 		{
 			return 2;
 		}
-		else if (den === 5 && czetna)
+		else if (den === 5 && !czetna)
 		{
 			return 1;
 		}
@@ -74,7 +74,7 @@
 		{
 			return 2;
 		}
-		else if (den === 5 && !czetna)
+		else if (den === 5 && czetna)
 		{
 			return 1;
 		}
