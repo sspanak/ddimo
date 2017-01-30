@@ -39,9 +39,9 @@
 		{
 			return 2;
 		}
-		else if (den === 5 && !czetna)
+		else if (den === 5)
 		{
-			return 1;
+			return czetna ? 2 : 1;
 		}
 
 		return false;
@@ -74,9 +74,9 @@
 		{
 			return 2;
 		}
-		else if (den === 5 && czetna)
+		else if (den === 5)
 		{
-			return 1;
+			return czetna ? 1 : 2;
 		}
 
 		return false;
@@ -94,7 +94,7 @@
 			return 1;
 		}
 
-		if (data.getDay() === 3 || data.getDay() === 5)
+		if (data.getDay() === 3)
 		{
 			return 2;
 		}
@@ -168,7 +168,8 @@
 	}
 
 
-	function submitHandler(event) {
+	function submitHandler(event)
+	{
 		if (event instanceof Event)
 			event.preventDefault();
 
