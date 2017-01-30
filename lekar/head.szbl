@@ -196,9 +196,15 @@
 
 
 	$(document).ready(function(){
+		// засичане на Opera Mini по пример от https://dev.opera.com/articles/opera-mini-and-javascript/
+		// оставяме полето за дата отключено, защото иначе е неизползваемо.
+		if (Object.prototype.toString.call(window.operamini) !== "[object OperaMini]") {
+			$("#kalendar").prop("readonly", true);
+		}
+
 		$("#kalendar").datepicker({
-			 dateFormat: "yy-mm-dd",
-			 firstDay: 1
+			dateFormat: "yy-mm-dd",
+			firstDay: 1
 		});
 
 		izberiDnes();
