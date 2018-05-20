@@ -195,6 +195,28 @@
 	}
 
 
+	function izberiUtre()
+	{
+		var data = new Date($("#kalendar").val());
+		data.setDate(data.getDate() + 1);
+
+		$("#kalendar")
+			.datepicker("setDate", data.toISOString().replace(/T.+/, ""))
+			.trigger("change");
+	}
+
+
+	function izberiVczera()
+	{
+		var data = new Date($("#kalendar").val());
+		data.setDate(data.getDate() - 1);
+
+		$("#kalendar")
+			.datepicker("setDate", data.toISOString().replace(/T.+/, ""))
+			.trigger("change");
+	}
+
+
 	$(document).ready(function(){
 		// засичане на Opera Mini по пример от https://dev.opera.com/articles/opera-mini-and-javascript/
 		// оставяме полето за дата отключено, защото иначе е неизползваемо.
