@@ -4,8 +4,8 @@ class HTMLControl {
 	protected $lang, $title, $head, $body;
 
 	public function __construct(){
-		$this->lang = 'en';
-		$this->title = 'Dimo Karaivanov\'s website';
+		$this->lang = '';
+		$this->title = '';
 		$this->head = '';
 		$this->body = '';
 		$this->last_error = '';
