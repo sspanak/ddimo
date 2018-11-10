@@ -19,7 +19,8 @@
 			return false;
 		}
 
-		var czetna = (data.getDate() % 2) ? false : true;
+		// Амбарева няма да бъде на работа 1 година
+/*		var czetna = (data.getDate() % 2) ? false : true;
 		var den = data.getDay();
 
 		if (den === 1 && czetna)
@@ -41,7 +42,7 @@
 		else if (den === 5 && !czetna)
 		{
 			return 1;
-		}
+		}*/
 
 		return false;
 	}
