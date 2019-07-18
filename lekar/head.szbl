@@ -12,13 +12,8 @@
 	crossorigin="anonymous"></script>
 
 <script>
-	function SmyanaAmbareva(data)
+	function SmyanaAmbareva(den, czetna)
 	{
-		if (typeof data !== "object" || !(data instanceof Date))
-		{
-			return false;
-		}
-
 		// Амбарева няма да бъде на работа 1 година
 /*		var czetna = (data.getDate() % 2) ? false : true;
 		var den = data.getDay();
@@ -47,35 +42,13 @@
 		return false;
 	}
 
-	function SmyanaMileva(data)
+	function SmyanaMileva(den, czetna)
 	{
-		if (typeof data !== "object" || !(data instanceof Date))
-		{
-			return false;
-		}
-
-		var czetna = (data.getDate() % 2) ? false : true;
-		var den = data.getDay();
-
-
-		if (den === 1)
+		if (den === 1 || den === 4)
 		{
 			return 2;
 		}
-		else if (den === 2)
-		{
-			return 1;
-		}
-		else if (den === 3)
-		{
-			return 1;
-		}
-		else if (den === 4)
-		{
-			return 2;
-		}
-
-		if (den === 5 && czetna)
+		else if (den === 2 || den === 3)
 		{
 			return 1;
 		}
@@ -83,26 +56,15 @@
 		return false;
 	}
 
-	function SmyanaTodorova(data)
+	function SmyanaTodorova(den, czetna)
 	{
-		if (typeof data !== "object" || !(data instanceof Date))
-		{
-			return false;
-		}
-
-		if (data.getDay() === 1 || data.getDay() === 4 || data.getDay() === 5)
+		if (den === 1 || den === 4)
 		{
 			return 1;
 		}
-
-		if (data.getDay() === 3)
+		if (den === 3)
 		{
 			return 2;
-		}
-
-		if (den === 5 && !czetna)
-		{
-			return 1;
 		}
 
 		return false;
@@ -111,19 +73,31 @@
 
 	function KoyNaSmyana(smyana, data)
 	{
-		switch (parseInt(smyana))
+		var smyana = parseInt(smyana);
+
+		if (typeof data !== "object" || !(data instanceof Date) || isNaN(smyana))
 		{
-			case SmyanaAmbareva(data):
+			return "Грешка";
+		}
+
+		var den = data.getDay();
+		var czetna = !(data.getDate() % 2);
+
+		if (den === 5 && smyana === 1) {
+			return 'Милева / Тодорова';
+		}
+
+		switch (smyana)
+		{
+			case SmyanaAmbareva(den, czetna):
 				return "Амбарева";
-			case SmyanaTodorova(data):
+			case SmyanaTodorova(den, czetna):
 				return "Тодорова";
-			case SmyanaMileva(data):
+			case SmyanaMileva(den, czetna):
 				return "Милева";
 			default:
 				return "Никой";
 		}
-
-		return "Грешка";
 	}
 
 
