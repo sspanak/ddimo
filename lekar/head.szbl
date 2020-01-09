@@ -14,31 +14,12 @@
 <script>
 	function SmyanaAmbareva(den, czetna)
 	{
-		// Амбарева няма да бъде на работа 1 година
-/*		var czetna = (data.getDate() % 2) ? false : true;
-		var den = data.getDay();
-
-		if (den === 1 && czetna)
-		{
-			return 2;
-		}
-		else if (den === 2)
-		{
-			return czetna ? 2 : 1;
-		}
-		else if (den === 3 && !czetna)
-		{
+		if (den === 2 || den === 3 || (den === 5 && !czetna)) {
 			return 1;
 		}
-		else if (den === 4 && czetna)
-		{
+		if (den === 1 || den === 4) {
 			return 2;
 		}
-		else if (den === 5 && !czetna)
-		{
-			return 1;
-		}*/
-
 		return false;
 	}
 
@@ -62,11 +43,11 @@
 
 	function SmyanaTodorova(den, czetna)
 	{
-		if (den === 1 || den === 4 || den === 3)
+		if (den === 1 || den === 4 || (den === 5 && czetna))
 		{
 			return 1;
 		}
-		if (den === 2 || den === 5)
+		if (den === 3)
 		{
 			return 2;
 		}
