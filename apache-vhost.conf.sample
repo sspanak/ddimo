@@ -1,0 +1,8 @@
+<VirtualHost *:80>
+	ServerName ddimo.eu
+	ServerAlias *.ddimo.eu
+	DocumentRoot /var/www/ddimo.eu
+
+	ErrorLog ${APACHE_LOG_DIR}/ddimo.error.log
+	CustomLog ${APACHE_LOG_DIR}/ddimo.access.log combined
+</VirtualHost>
