@@ -5,37 +5,3 @@
 <FilesMatch "\.szbl$">
 	Deny from all
 </FilesMatch>
-
-Header unset Pragma
-
-<FilesMatch "\.(ico|jpg|jpeg|png|gif|js|css|swf)$">
-	Header unset ETag
-	FileETag None
-</FilesMatch>
-
-<ifModule mod_expires.c>
-	ExpiresActive On
-	ExpiresDefault A86400
-	ExpiresByType image/gif A2592000
-	ExpiresByType image/png A2592000
-	ExpiresByType image/jpeg A2592000
-	
-	Header append Cache-Control "public"
-
-	<FilesMatch "\.(js|css|xml|gz)$">
-		Header append Vary: Accept-Encoding
-	</FilesMatch>
-</ifModule>
-
-<IfModule mod_deflate.c>
-	#The following line is enough for .js and .css
-	AddOutputFilter DEFLATE js css
-
-	#The following line also enables compression by file content type, for the following list of Content-Type:s
-	AddOutputFilterByType DEFLATE text/html text/plain
-
-	#The following lines are to avoid bugs with some browsers
-	BrowserMatch ^Mozilla/4 gzip-only-text/html
-	BrowserMatch ^Mozilla/4\.0[678] no-gzip
-	BrowserMatch \bMSIE !no-gzip !gzip-only-text/html 
-</IfModule>
