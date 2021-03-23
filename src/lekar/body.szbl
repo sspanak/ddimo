@@ -23,9 +23,9 @@
 								<span class="input-group-btn">
 									<button class="btn btn-default" type="button" onclick="izberiVczera()">-</button>
 								</span>
-								
+
 								<input id="kalendar" type="text" name="date" class="form-control" value="" onchange="submitHandler()">
-								
+
 								<span class="input-group-btn">
 									<button class="btn btn-default" type="button" onclick="izberiUtre()">+</button>
 								</span>
@@ -51,8 +51,9 @@
 	</h4>
 
 	<ul>
-		<li> I-ва смяна (8:00 - 12:00): <span id="smyana1"></span> </li>
-		<li> II-ра смяна (14:00 - 17:30): <span id="smyana2"></span> </li>
+		<li> I-ва смяна (8:00 - 13:00): <span id="smyana1"></span> </li>
+		<li> Междинна смяна (11:00 - 14:00): <span id="smyana2"></span> </li>
+		<li> II-ра смяна (13:00 - 18:00): <span id="smyana3"></span> </li>
 	</ul>
 
 </div>

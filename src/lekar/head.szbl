@@ -14,11 +14,11 @@
 <script>
 	function SmyanaAmbareva(den, czetna)
 	{
-		if (den === 2 || den === 3 || (den === 5 && !czetna)) {
+		if (den === 2 || den === 4 || (den === 5 && !czetna)) {
 			return 1;
 		}
-		if (den === 1 || den === 4) {
-			return 2;
+		if (den === 1 || den === 3) {
+			return 3;
 		}
 		return false;
 	}
@@ -26,33 +26,19 @@
 	function SmyanaMileva(den, czetna)
 	{
 		// Милева ще отсъства за неопределено време.
-		/*if (den === 1 || den === 4)
-		{
-			return 2;
-		}
-		else if (den === 2 || den === 3)
-		{
+		if (den === 1 || den === 3 || (den === 5 && czetna)) {
 			return 1;
 		}
-		if (den === 5 && czetna) {
-			return 1;
-		}*/
+		if (den === 2 || den === 4) {
+			return 3;
+		}
 
 		return false;
 	}
 
 	function SmyanaTodorova(den, czetna)
 	{
-		if (den === 1 || den === 4 || (den === 5 && czetna))
-		{
-			return 1;
-		}
-		if (den === 3)
-		{
-			return 2;
-		}
-
-		return false;
+		return (den === 2 || den === 3 || den === 4) ? 2 : false;
 	}
 
 
@@ -82,7 +68,7 @@
 	}
 
 
-	function PoplniGrafik(input, smyana1, smyana2)
+	function PoplniGrafik(input, smyana1, smyana2, smyana3)
 	{
 		var $input = $(input).val();
 		if (!$input.match(/^\d{4}-\d{2}-\d{2}$/))
@@ -94,6 +80,7 @@
 
 		$(smyana1).html(KoyNaSmyana(1, data));
 		$(smyana2).html(KoyNaSmyana(2, data));
+		$(smyana3).html(KoyNaSmyana(3, data));
 	}
 
 
@@ -140,7 +127,7 @@
 			return false;
 		}
 
-		PoplniGrafik("#kalendar", '#smyana1', '#smyana2');
+		PoplniGrafik("#kalendar", '#smyana1', '#smyana2', '#smyana3');
 		PoplniData("#kalendar", '#izbranaData', '#dnes');
 		return false;
 	}
