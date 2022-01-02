@@ -39,6 +39,6 @@ header nav {
 }
 
 .content-crossfire-volunteer {
-	background-color: var(--crossfire-volunteer-background);
+	background: var(--crossfire-volunteer-background);
 	box-shadow: var(--crossfire-volunteer-content-shadow)
 }

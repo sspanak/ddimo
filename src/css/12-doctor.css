@@ -1,0 +1,70 @@
+.content-doctor {
+	flex-flow: column;
+}
+
+.content-doctor form {
+	display: flex;
+	flex-flow: column;
+}
+
+.content-doctor form button {
+	border: outset;
+	border-radius: 3px;
+	box-sizing: content-box;
+	text-transform: uppercase;
+}
+
+.content-doctor form button:active {
+	border: inset;
+}
+
+
+.content-doctor .datepicker label {
+	display: block;
+	margin: 5px auto;
+}
+
+.content-doctor .datepicker .date-component {
+	margin: auto;
+}
+
+.content-doctor .datepicker input, .content-doctor .datepicker button {
+	height: 2em;
+	margin: 0;
+}
+
+.content-doctor .datepicker button {
+	padding: 0px;
+	width: 28px;
+}
+
+.content-doctor .datepicker button:active{
+	padding: 2px -2px -2px 2px;
+}
+
+.content-doctor .datepicker .button-left {
+	border-right-style: none;
+	margin-right: -5px;
+}
+.content-doctor .datepicker .button-right {
+	border-left-style: none;
+	margin-left: -5px;
+}
+
+.content-doctor .datepicker input {
+	border-style: none;
+	border-top-style: inset;
+}
+
+.content-doctor .button-main {
+	border-radius: 5px;margin: 15px auto;
+	padding: 10px;
+}
+
+.content-doctor .button-main:active {
+	padding: 12px 8px 8px 12px;
+}
+
+.content-doctor ul {
+	margin: 0;
+}
