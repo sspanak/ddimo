@@ -3,10 +3,14 @@ SHELL := /bin/bash
 
 demo:
 	make css
+	make images
 	cp src/demo.html dist/index.html
 
 css:
 	cat src/css/*.css > dist/dd.css
+
+images:
+	cp -r img dist/
 
 # default:
 # 	make tar

@@ -11,6 +11,9 @@
 	--header-text-color: #ccc;
 
 	--separator-color: #888;
+
+	--crossfire-volunteer-background: #33333391;
+	--crossfire-volunteer-content-shadow: 0 2px 16px #333;
 }
 
 body {
@@ -33,4 +36,9 @@ header {
 
 header nav {
 	color: var(--header-text-color);
+}
+
+.content-crossfire-volunteer {
+	background-color: var(--crossfire-volunteer-background);
+	box-shadow: var(--crossfire-volunteer-content-shadow)
 }

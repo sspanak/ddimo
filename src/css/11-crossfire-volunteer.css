@@ -1,0 +1,16 @@
+.crossfire-volunteer-background {
+	background: url(img/crossfire-background.gif);
+}
+
+.content-crossfire-volunteer .screenshots {
+	max-width: 100%;
+	margin: auto;
+	text-align: center;
+}
+
+.content-crossfire-volunteer .screenshots img {
+	border-radius: 5px;
+	cursor: pointer;
+	margin: 5px;
+	max-width: calc(90% - 10px);
+}

@@ -31,10 +31,13 @@ header nav a {
  * Content
  **************************/
 
-.content h1 {
-	border-bottom: 1px solid;
+.content h1, .content h2, .content h3 {
 	font-family: "Orbitron", monospace;
 	line-height: 1em;
+}
+
+.content h1, .content h2 {
+	border-bottom: 1px solid;
 	padding: 0.1778em 0;
 }
 

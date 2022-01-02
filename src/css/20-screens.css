@@ -18,6 +18,12 @@ screen and (min-width: 20.01em) and (orientation: landscape) {
 	}
 }
 
+@media screen and (min-width: 35.5em) {
+	.content-crossfire-volunteer .screenshots img {
+		width: 31%;
+	}
+}
+
 
 /* M */
 @media screen and (min-width: 48em) {

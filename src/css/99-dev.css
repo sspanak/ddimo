@@ -1,0 +1,3 @@
+.content:not(.content-crossfire-volunteer) {
+	display: none;
+}
