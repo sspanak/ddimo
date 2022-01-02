@@ -2,10 +2,11 @@
  * Reset styles
  **************************/
 img {border: 0 none;}
-body {
-	font-family: "Noto Mono", monospace;
-	font-size: 16px;
-	/*letter-spacing: 0.03em;*/
+html {
+	font-family: "Exo 2", monospace;
+	font-size: 18px;
+	letter-spacing: 0.03em;
+	line-height: 1.1em;
 }
 
 hr {
@@ -31,8 +32,9 @@ header nav a {
  **************************/
 
 .content h1 {
-	font-family: "Orbitron", monospace;
 	border-bottom: 1px solid;
+	font-family: "Orbitron", monospace;
+	line-height: 1em;
 	padding: 0.1778em 0;
 }
 

@@ -1,20 +1,20 @@
 /* XXS */
 @media screen {
 	header nav {margin: auto;}
-	header, .content {padding: 0.67em;}
-	.content ul {padding-left: 0.67em;}
+	header, .content {padding: 0.5925em;}
+	.content ul {padding-left: 0.5925em;}
 }
 
 
 /* XS */
 @media screen and (min-width: 18.01em) and (orientation: portrait),
 screen and (min-width: 20.01em) and (orientation: landscape) {
-	header {padding: 0.83em;}
+	header {padding: 0.7378em;}
 
-	.content {padding: 1.33em 0.67em;}
+	.content {padding: 1.18em 0.5925em;}
 	.content ul {
-		padding-left: 1.67em;
-		padding-right: 0.3em;
+		padding-left: 1.481em;
+		padding-right: 0.2667em;
 	}
 }
 
@@ -22,7 +22,7 @@ screen and (min-width: 20.01em) and (orientation: landscape) {
 /* M */
 @media screen and (min-width: 48em) {
 	header nav {
-		width: 65em;
+		width: 57.778em;
 		max-width: 100%;
 	}
 
@@ -32,27 +32,27 @@ screen and (min-width: 20.01em) and (orientation: landscape) {
 	}
 	.content {
 		display: flex;
-		padding: 0.67em 2em;
-		width: 65em;
+		padding: 0.5925em 1.778em;
+		width: 57.778em;
 	}
 
 	.content ul {
-		padding: 0 2.5em;
+		padding: 0 2.222em;
 	}
 }
 
 
 /* L */
 @media screen and (min-width: 64em) {
-	header {padding: 1.25em;}
-	header nav {width: 68em;}
+	header {padding: 1.111em;}
+	header nav {width: 60.444em;}
 
 	header, .content {
 		font-size: 0.95em;
 	}
 
 	.content {
-		padding: 0.7em 2.1em;
-		width: 68em;
+		padding: 0.622em 1.8666em;
+		width: 60.444em;
 	}
 }
