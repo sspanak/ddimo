@@ -1,0 +1,58 @@
+/* XXS */
+@media screen {
+	header nav {margin: auto;}
+	header, .content {padding: 0.67em;}
+	.content ul {padding-left: 0.67em;}
+}
+
+
+/* XS */
+@media screen and (min-width: 18.01em) and (orientation: portrait),
+screen and (min-width: 20.01em) and (orientation: landscape) {
+	header {padding: 0.83em;}
+
+	.content {padding: 1.33em 0.67em;}
+	.content ul {
+		padding-left: 1.67em;
+		padding-right: 0.3em;
+	}
+}
+
+
+/* M */
+@media screen and (min-width: 48em) {
+	header nav {
+		width: 65em;
+		max-width: 100%;
+	}
+
+	.content-wrapper {
+		display: flex;
+		justify-content: center;
+	}
+	.content {
+		display: flex;
+		padding: 0.67em 2em;
+		width: 65em;
+	}
+
+	.content ul {
+		padding: 0 2.5em;
+	}
+}
+
+
+/* L */
+@media screen and (min-width: 64em) {
+	header {padding: 1.25em;}
+	header nav {width: 68em;}
+
+	header, .content {
+		font-size: 0.95em;
+	}
+
+	.content {
+		padding: 0.7em 2.1em;
+		width: 68em;
+	}
+}

@@ -1,0 +1,36 @@
+:root {
+	--body-background-color: #333;
+	--body-text-color: #ddd;
+
+	--link-color: #91c4ef;
+	--link-hovered-color: #77c1ff;
+	--link-visited-color: #e1b6ed;
+	--link-visited-hovered-color: #e9a0fe;
+
+	--header-background-color: #222;
+	--header-text-color: #ccc;
+
+	--separator-color: #888;
+}
+
+body {
+	background-color: var(--body-background-color);
+	color: var(--body-text-color);
+}
+
+a {color: var(--link-color);}
+a:hover {color: var(--link-hovered-color);}
+a:visited {color: var(--link-visited-color);}
+a:visited:hover {color: var(--link-visited-hovered-color);}
+
+h1, hr {
+	border-color: var(--separator-color);
+}
+
+header {
+	background-color: var(--header-background-color);
+}
+
+header nav {
+	color: var(--header-text-color);
+}
