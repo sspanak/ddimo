@@ -3,23 +3,25 @@
 }
 
 .content-crossfire-volunteer .screenshots {
-	margin: 0.8em auto;
-	max-width: 100%;
-	text-align: center;
+	align-items: center;
+	display: flex;
+	flex-flow: column;
+	justify-content: center;
+	margin: 0.8em 0;
+	width: 100%;
 }
 
 .content-crossfire-volunteer .screenshots img {
 	border-radius: 5px;
 	cursor: pointer;
+	flex: 33%;
 	margin: 5px;
-	max-width: calc(90% - 10px);
+	max-width: 95%;
 }
 
 @media screen and (min-width: 35.5em) {
-	.content-crossfire-volunteer .screenshots {margin: auto;}
-	.content-crossfire-volunteer .screenshots img {
-		width: 30%;
-	}
+	.content-crossfire-volunteer .screenshots {flex-flow: row;}
+	.content-crossfire-volunteer .screenshots img {max-width: 32%;}
 }
 
 .content-crossfire-volunteer .requirements {
