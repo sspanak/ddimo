@@ -1,0 +1,23 @@
+{
+  "name": "ddimo",
+  "version": "2.0.0",
+  "description": "Dimo Karaivanov's website",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@bitbucket.org/spanak/ddimo.git"
+  },
+  "author": "sspanak",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://bitbucket.org/spanak/ddimo/issues"
+  },
+  "homepage": "https://bitbucket.org/spanak/ddimo#readme",
+  "devDependencies": {
+    "csslint": "^1.0.5",
+    "eslint": "^8.6.0"
+  }
+}
