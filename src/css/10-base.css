@@ -20,8 +20,8 @@ hr {
  * Header
  **************************/
 header nav .nav-element {
-	font-size: 1.05em;
 	display: inline-block;
+	font-size: 1.05em;
 }
 header nav a {
 	font-weight: bold;
@@ -35,10 +35,9 @@ header nav a {
 	font-family: "Orbitron", monospace;
 	line-height: 1em;
 }
-
 .content h1, .content h2 {
 	border-bottom: 1px solid;
-	padding: 0.1778em 0;
+	padding-bottom: 0.1778em;
 }
 
 .content p {

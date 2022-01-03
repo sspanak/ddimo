@@ -3,6 +3,8 @@
 	header nav {margin: auto;}
 	header, .content {padding: 0.5925em;}
 	.content ul {padding-left: 0.5925em;}
+
+	.content h1, .content h2 {margin: 0.15em 0;}
 }
 
 
@@ -11,25 +13,24 @@
 screen and (min-width: 20.01em) and (orientation: landscape) {
 	header {padding: 0.7378em;}
 
-	.content {padding: 1.18em 0.5925em;}
+	.content h1, .content h2 {margin: 0.4em 0;}
+
 	.content ul {
 		padding-left: 1.481em;
 		padding-right: 0.2667em;
 	}
 }
 
-@media screen and (min-width: 35.5em) {
-	.content-crossfire-volunteer .screenshots img {
-		width: 31%;
-	}
+@media screen and (max-width: 48em) {
+	.content h1:first-child, .content h2:first-child {margin-top: 0.2em;}
 }
 
 
 /* M */
 @media screen and (min-width: 48em) {
 	header nav {
-		width: 57.778em;
 		max-width: 100%;
+		width: 57.778em;
 	}
 
 	.content-wrapper {
@@ -41,6 +42,8 @@ screen and (min-width: 20.01em) and (orientation: landscape) {
 		padding: 0.5925em 1.778em;
 		width: 57.778em;
 	}
+
+	.content h1, .content h2 {margin: 0.67em 0;}
 
 	.content ul {
 		padding: 0 2.222em;
