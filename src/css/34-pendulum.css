@@ -15,7 +15,6 @@
 	display: flex;
 	flex-flow: column;
 	padding: 0;
-	position: relative;
 	width: auto;
 
 	--stats-controls-height: 150px;
@@ -35,7 +34,9 @@ screen and (min-aspect-ratio: 1) and (min-width: 64em)
  * Canvas (it must always be a square)
  *********************************************/
 .content-pendulum canvas {
+	display: block;
 	height: calc(100vh - var(--stats-controls-height));
+	margin: auto;
 	width: calc(100vh - var(--stats-controls-height));
 }
 
@@ -68,6 +69,7 @@ screen and (min-aspect-ratio: 1) and (min-width: 64em)
 
 .content-pendulum .simulator-container {
 	flex: auto;
+	position: relative;
 }
 
 .content-pendulum .statisics-controls {
@@ -82,4 +84,9 @@ screen and (min-aspect-ratio: 1) and (min-width: 64em)
 	z-index: 1000;
 }
 
-
+.content-pendulum .click-to-play {
+	position: absolute;
+	top: 20%;
+	text-align: center;
+	width: 100%;
+}
