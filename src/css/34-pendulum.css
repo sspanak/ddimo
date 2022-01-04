@@ -1,0 +1,85 @@
+/*********************************************
+ * Debug
+ *********************************************/
+.content-pendulum canvas {background-color: #888;}
+.content-pendulum .simulator-container {background-color: #a88;}
+.content-pendulum .statisics-controls {background-color: #c77;}
+.content-pendulum .statisics-container {background-color: #88a;}
+.content-pendulum .controls-container {background-color: #8a8;}
+
+
+/*********************************************
+ * Entire Page
+ *********************************************/
+.content-pendulum {
+	display: flex;
+	flex-flow: column;
+	padding: 0;
+	position: relative;
+	width: auto;
+
+	--stats-controls-height: 150px;
+}
+@media
+screen and (min-aspect-ratio: 5/4) and (max-width: 48em) and (min-width: 20.01em),
+screen and (min-aspect-ratio: 4/5) and (min-width: 48em),
+screen and (min-aspect-ratio: 1) and (min-width: 64em)
+{
+	.content-pendulum {flex-flow: row;}
+	.content-pendulum .controls-container {flex: 50%;}
+}
+
+
+
+/*********************************************
+ * Canvas (it must always be a square)
+ *********************************************/
+.content-pendulum canvas {
+	height: calc(100vh - var(--stats-controls-height));
+	width: calc(100vh - var(--stats-controls-height));
+}
+
+@media screen and (max-aspect-ratio: 6/5) {
+	.content-pendulum canvas { /* Prevent small scrolls when aspect ratio is close to square */
+		height: calc(94vh - var(--stats-controls-height));
+		width: calc(94vh - var(--stats-controls-height));
+	}
+}
+
+@media screen and (min-aspect-ratio: 4/5) and (max-aspect-ratio: 1) {
+	.content-pendulum canvas {
+		height: 75vh;
+		width: 75vh;
+	}
+}
+
+@media screen and (max-aspect-ratio: 4/5) {
+	.content-pendulum canvas {
+		height: 95vw;
+		width: 95vw;
+	}
+}
+
+
+.content-pendulum form {
+	display: flex;
+	flex-flow: column;
+}
+
+.content-pendulum .simulator-container {
+	flex: auto;
+}
+
+.content-pendulum .statisics-controls {
+	max-height: var(--stats-controls-height);
+}
+
+.content-pendulum .statisics-container {
+	font-size: 0.85em;
+	left: 0;
+	position: absolute;
+	top: 0;
+	z-index: 1000;
+}
+
+
