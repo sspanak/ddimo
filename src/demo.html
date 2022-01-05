@@ -154,6 +154,20 @@
 				<div class="screen">
 					<canvas id="ekran" width="215" height="215" onclick="alert('toggle pause');"> </canvas>
 
+					<div class="statisics-hud">
+						<small class="hud-angle">Angle (φ) = <span id="status_fi">2.513</span> rad </small>
+						<small class="hud-velocity">Velocity (φ') = <span id="status_skorost">0.316</span> rad/s </small>
+						<small class="hud-equation">
+								φ'' =
+									-<span id="status_g">9.8226</span>
+									/ <span id="status_R">280</span>
+									* <span id="status_sin">0.41</span>
+						</small>
+
+						<small class="hud-fps">125 FPS</small>
+						<small class="hud-time">13.6s</small>
+					</div>
+
 					<form method="post" class="statisics-controls">
 						<label class="equation-definition">
 							<strong>Solving: φ'' = -g / R * sin(φ)</strong>
@@ -164,22 +178,9 @@
 						</label>
 					</form>
 
-					<div class="statisics-hud">
 
-							<small class="hud-angle">Angle (φ) = <span id="status_fi">2.513</span> rad </small>
-							<small class="hud-velocity">Velocity (φ') = <span id="status_skorost">0.316</span> rad/s </small>
-							<small class="hud-equation">
-									φ'' =
-										-<span id="status_g">9.8226</span>
-										/ <span id="status_R">280</span>
-										* <span id="status_sin">0.41</span>
-							</small>
 
-						<small class="hud-fps">125 FPS</small>
-						<small class="hud-time">13.6s</small>
-					</div>
-
-					<div class="click-to-play">Click to Play!</div>
+					<div class="click-to-play"><span>Click to Play!</span></div>
 
 				</div>
 

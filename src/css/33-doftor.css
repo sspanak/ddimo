@@ -1,12 +1,7 @@
 .content-doftor {flex-flow: column;}
 .content-doftor h1, .content-doftor h2 {font-family: "Exo 2", monospace;} /* Само този шрифт поддържа кирилица */
 
-.content-doftor form {
-	display: flex;
-	flex-flow: column;
-	margin: 1em 0;
-}
-
+.content-doftor form {margin: 1em 0;}
 .content-doftor form label {padding-left: 2px;}
 
 .content-doftor form .date-component {

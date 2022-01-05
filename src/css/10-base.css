@@ -40,10 +40,21 @@ header nav a {
 	padding-bottom: 0.1778em;
 }
 
+.content h4 {
+	border-bottom: 1px solid;
+	margin-top: 0;
+	padding: 0.3em;
+}
+
 .content p {
 	text-align: justify;
 }
 
 .content ul > li {
 	margin: 5px 0;
+}
+
+.content form {
+	display: flex;
+	flex-flow: column;
 }

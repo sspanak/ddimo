@@ -27,7 +27,7 @@ a:hover {color: var(--link-hovered-color);}
 a:visited {color: var(--link-visited-color);}
 a:visited:hover {color: var(--link-visited-hovered-color);}
 
-h1, hr {
+.content h1, .content h2, .content h4, hr {
 	border-color: var(--separator-color);
 }
 
