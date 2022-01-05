@@ -1,12 +1,12 @@
-/*********************************************
- * Debug
- *********************************************/
-.content-pendulum canvas {background-color: #888;}
-.content-pendulum .simulator-container {background-color: #a88;}
-.content-pendulum .statisics-controls {background-color: #c77;}
-.content-pendulum .statisics-container {background-color: #88a;}
-.content-pendulum .controls-container {background-color: #8a8;}
+:root {
+	--pendulum-border: 1px dashed;
+	--stats-controls-height: 55px;
+	--stats-controls-padding: 5px;
 
+	/* window_height - header_height - statistics_panel_height */
+	--canvas-size-S: calc(100vh - 55px - var(--stats-controls-height) - 2*var(--stats-controls-padding));
+	--canvas-size-L: calc(100vh - 70px - var(--stats-controls-height) - 2*var(--stats-controls-padding));
+}
 
 /*********************************************
  * Entire Page
@@ -16,8 +16,11 @@
 	flex-flow: column;
 	padding: 0;
 	width: auto;
+}
 
-	--stats-controls-height: 150px;
+
+.content-pendulum .control-panel {
+	border-top: var(--pendulum-border) var(--separator-color);
 }
 @media
 screen and (min-aspect-ratio: 5/4) and (max-width: 48em) and (min-width: 20.01em),
@@ -25,35 +28,63 @@ screen and (min-aspect-ratio: 4/5) and (min-width: 48em),
 screen and (min-aspect-ratio: 1) and (min-width: 64em)
 {
 	.content-pendulum {flex-flow: row;}
-	.content-pendulum .controls-container {flex: 50%;}
+	.content-pendulum .control-panel {
+		border-left: var(--pendulum-border) var(--separator-color);
+		border-top: none;
+		flex: 50%;
+	}
 }
 
+
+/*********************************************
+ * General
+ *********************************************/
+.content-pendulum form {
+	display: flex;
+	flex-flow: column;
+}
+
+.content-pendulum .screen {
+	flex: auto;
+	position: relative;
+}
+
+.content-pendulum .click-to-play {
+	position: absolute;
+	text-align: center;
+	top: 20%;
+	width: 100%;
+}
 
 
 /*********************************************
  * Canvas (it must always be a square)
  *********************************************/
+/* landscape small */
 .content-pendulum canvas {
 	display: block;
-	height: calc(100vh - var(--stats-controls-height));
+	height: var(--canvas-size-S);
 	margin: auto;
-	width: calc(100vh - var(--stats-controls-height));
+	width: var(--canvas-size-S);
 }
 
-@media screen and (max-aspect-ratio: 6/5) {
-	.content-pendulum canvas { /* Prevent small scrolls when aspect ratio is close to square */
-		height: calc(94vh - var(--stats-controls-height));
-		width: calc(94vh - var(--stats-controls-height));
-	}
-}
-
-@media screen and (min-aspect-ratio: 4/5) and (max-aspect-ratio: 1) {
+/* landscape large */
+@media screen and (min-width: 64em) {
 	.content-pendulum canvas {
-		height: 75vh;
-		width: 75vh;
+		height: var(--canvas-size-L);
+		width: var(--canvas-size-L);
 	}
 }
 
+/* Prevent small scrolls when aspect ratio is close to square */
+@media screen and (min-aspect-ratio: 4/5) and (max-aspect-ratio: 6/5) {
+	.content-pendulum canvas {
+		height: 70vh;
+		width: 70vh;
+	}
+}
+
+/* portrait orientation */
 @media screen and (max-aspect-ratio: 4/5) {
 	.content-pendulum canvas {
 		height: 95vw;
@@ -62,31 +93,53 @@ screen and (min-aspect-ratio: 1) and (min-width: 64em)
 }
 
 
-.content-pendulum form {
-	display: flex;
-	flex-flow: column;
-}
 
-.content-pendulum .simulator-container {
-	flex: auto;
-	position: relative;
-}
-
-.content-pendulum .statisics-controls {
-	max-height: var(--stats-controls-height);
-}
-
-.content-pendulum .statisics-container {
+/*********************************************
+ * Statistics - HUD
+ *********************************************/
+.content-pendulum .statisics-hud {
+	bottom: calc(var(--stats-controls-height) + 2*var(--stats-controls-padding));
 	font-size: 0.85em;
 	left: 0;
 	position: absolute;
+	overflow: hidden;
 	top: 0;
 	z-index: 1000;
 }
 
-.content-pendulum .click-to-play {
-	position: absolute;
-	top: 20%;
-	text-align: center;
-	width: 100%;
+/*********************************************
+ * Statistics - Form
+ *********************************************/
+.content-pendulum .statisics-controls {
+	border-top: var(--pendulum-border) var(--separator-color);
+	height: var(--stats-controls-height);
+	padding: var(--stats-controls-padding);
 }
+@media screen and (max-width: 21em) {
+  .content-pendulum .statisics-controls {font-size: 0.9em;}
+}
+
+.content-pendulum .statisics-controls label {text-align: center;}
+
+.content-pendulum .statisics-controls .equation-definition {
+	margin-bottom: 6px;
+}
+
+
+
+/*********************************************
+ * Control Panel
+ *********************************************/
+.content-pendulum .control-panel {padding: 0.5925em;}
+@media screen and (min-width: 48em) {
+  .content-pendulum .control-panel {padding: 0.5925em 1em;}
+}
+@media screen and (min-width: 64em) {
+	.content-pendulum .control-panel {padding: 1em;}
+}
+
+.content-pendulum .control-panel h4 {
+	margin-top: 0.15em;
+	text-align: center;
+}
+

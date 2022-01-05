@@ -151,52 +151,42 @@
 
 			<div class="content content-pendulum">
 
-				<div class="simulator-container">
+				<div class="screen">
 					<canvas id="ekran" width="215" height="215" onclick="alert('toggle pause');"> </canvas>
 
 					<form method="post" class="statisics-controls">
-						<label>Solving: φ'' = -g / R * sin(φ)</label>
-
+						<label class="equation-definition">
+							<strong>Solving: φ'' = -g / R * sin(φ)</strong>
+						</label>
 						<label>
 							<input onchange="Anime.statusZadai()" type="checkbox" name="status_control" value="1" checked />
-							Show Statistics
-						</label>
-
-						<label>
-							FPS Limit:
-							<select name="select-fps">
-								<option value="10"> 10 </option>
-								<option value="25"> 25 </option>
-								<option value="30"> 30 </option>
-								<option value="60"> 60 </option>
-								<option value="100" selected> 100 </option>
-								<option value="120"> 120 </option>
-								<option value="180"> 180 </option>
-							</select>
+							Enable Statistics
 						</label>
 					</form>
 
-					<div class="statisics-container">
-						<div>Angle (φ) = <span id="status_fi">2.513</span> rad </div>
-						<div>Velocity (φ') = <span id="status_skorost">0.316</span> rad/s </div>
-						<div>
-								φ'' =
-									-<span id="status_g">9.8226</span>
-									/ <span id="status_R">280</span>
-									* <span id="status_sin">0.41</span>
-						</div>
-						<div>125 FPS</div>
-						<div>13.6s</div>
+					<div class="statisics-hud">
+
+							<small class="hud-angle">Angle (φ) = <span id="status_fi">2.513</span> rad </small>
+							<small class="hud-velocity">Velocity (φ') = <span id="status_skorost">0.316</span> rad/s </small>
+							<small class="hud-equation">
+									φ'' =
+										-<span id="status_g">9.8226</span>
+										/ <span id="status_R">280</span>
+										* <span id="status_sin">0.41</span>
+							</small>
+
+						<small class="hud-fps">125 FPS</small>
+						<small class="hud-time">13.6s</small>
 					</div>
 
 					<div class="click-to-play">Click to Play!</div>
 
 				</div>
 
-				<div class="controls-container">
+				<div class="control-panel">
 					<h4>
-						Initial Values
-						[<a href="//pendulum/help/">What is this?</a>]
+						<span>Initial Values</span>
+						<small>[<a href="//pendulum/help/">Help?</a>]</small>
 					</h4>
 
 					<form method="post" onsubmit="return false">
@@ -239,6 +229,19 @@
 								m/s<sup>2</sup>
 							</span>
 						</label>
+
+						<label>
+								FPS Limit:
+								<select name="select-fps">
+									<option value="10"> 10 </option>
+									<option value="25"> 25 </option>
+									<option value="30"> 30 </option>
+									<option value="60"> 60 </option>
+									<option value="100" selected> 100 </option>
+									<option value="120"> 120 </option>
+									<option value="180"> 180 </option>
+								</select>
+							</label>
 
 						<button type="submit">apply</button>
 
