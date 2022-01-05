@@ -104,8 +104,8 @@ screen and (min-aspect-ratio: 1) and (min-width: 64em)
 }
 
 .content-pendulum .statisics-hud small {position: absolute;}
-.content-pendulum .hud-velocity {top: 1em;}
-.content-pendulum .hud-angle {top: 2em;}
+.content-pendulum .hud-velocity {top: 1.15em;}
+.content-pendulum .hud-angle {top: 2.3em;}
 .content-pendulum .hud-fps {right: 0;}
 .content-pendulum .hud-time {
 	bottom: 0;
