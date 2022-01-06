@@ -58,3 +58,89 @@ header nav a {
 	display: flex;
 	flex-flow: column;
 }
+
+/**************************
+ * Forms
+ **************************/
+
+/* labels above the inputs */
+.content form .form-input-component {
+	display: flex;
+	flex-flow: column;
+}
+.content form .form-input-component:not(:last-child) {
+	margin-bottom: 0.3em;
+}
+
+.content form .form-input-component .form-input-name {
+	padding-left: 2px;
+}
+
+/* any input */
+.content form .form-input-component input, .content form .form-input-component select {
+	box-sizing: border-box;
+	display: inline-block;
+	flex: auto;
+	height: 1.8em;
+	margin-top: 2px;
+	width: 100%;
+}
+
+/* input with unit */
+.content .form-input-with-unit {
+	align-items: center;
+	display: flex;
+	width: 100%;
+}
+
+.content .form-input-with-unit input, .content .form-input-with-unit select {
+	margin-right: 5px;
+}
+
+.content .form-input-component .form-input-with-unit .form-input-unit {
+	display: inline-block;
+	width: 60px;
+}
+
+
+/* main button */
+.content .button-main {
+	margin: 0.66em auto 0.33em auto;
+	min-width: 130px;
+	padding: 0.4em 0;
+	text-align: center;
+	text-transform: uppercase;
+	width: 100%;
+}
+
+
+@media screen and (min-width: 35.5em) {
+	.content .button-main {
+		width: min-content;
+		padding: 0.4em;
+	}
+}
+
+/* labels next to the inputs */
+@media screen and (min-aspect-ratio: 16/10) and (min-width: 21em) and (max-width: 48em), /* landscape - small screen */
+screen and (max-aspect-ratio: 1/1) and (min-width: 48em) /* portrait - medium or larger */
+{
+	.content form .form-input-component {
+		align-items: center;
+		flex-flow: row;
+	}
+
+	.content form .form-input-component .form-input-name {
+		flex: none;
+		width: 190px;
+	}
+
+	.content .form-input-component input, .content .form-input-component select {
+		margin-left: 5px;
+	}
+}
+
+@media screen and (min-width: 48em) {
+	.content .form-input-component {min-width: 260px;}
+	.content .button-main {margin-top: 1em;}
+}

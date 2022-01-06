@@ -2,7 +2,6 @@
 .content-doftor h1, .content-doftor h2 {font-family: "Exo 2", monospace;} /* Само този шрифт поддържа кирилица */
 
 .content-doftor form {margin: 1em 0;}
-.content-doftor form label {padding-left: 2px;}
 
 .content-doftor form .date-component {
 	display: flex;
@@ -16,28 +15,14 @@
 	margin: 0;
 }
 .content-doftor .date-component button {width: 2.25em;}
-.content-doftor .date-component input {flex: auto;}
 
-.content-doftor .button-main {
-	margin: 0.3em auto;
-	padding: 0.4em 0;
-	text-align: center;
-	text-transform: uppercase;
-	width: 100%;
-}
+.content-doftor .button-main {margin: 0.33em 0;}
 
 
 @media screen and (min-width: 35.5em) {
 	.content-doftor form .date-component {max-width: 300px;}
-
-	.content-doftor .button-main {
-		margin: 0;
-		max-width: 130px;
-	}
 }
 
 @media screen and (min-width: 48em) {
-	.content-doftor .date-component button, .content-doftor .date-component input {
-		height: 1.8em;
-	}
+	.content-doftor .date-component button, .content-doftor .date-component input {height: 1.8em;}
 }

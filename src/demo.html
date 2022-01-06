@@ -192,59 +192,67 @@
 
 					<form method="post" onsubmit="return false">
 
-						<label>
-							Initial Angle (φ<sub>0</sub>):
-							<input type="text" name="fi0" value="2.513274">
-							<span>rad</span>
-						</label>
+						<div class="form-input-component">
+							<label class="form-input-name">Angle (φ<sub>0</sub>):</label>
+							<div class="form-input-with-unit">
+								<input type="text" name="fi0" value="2.513274">
+								<label class="form-input-unit">rad</label>
+							</div>
+						</div>
 
-						<label>
-							Initial Angular Velocity (θ<sub>0</sub>):
-							<input type="text" name="tita0" value="0.6">
-							<span>rad/s</span>
-						</label>
+						<div class="form-input-component">
+							<label class="form-input-name">Angular Velocity (θ<sub>0</sub>):</label>
+							<div class="form-input-with-unit">
+								<input type="text" name="tita0" value="0.6">
+								<label class="form-input-unit">rad/s</label>
+							</div>
+						</div>
 
-						<label>
-							Pendulum Length:
-							<input type="text" name="mahalo" value="280">
-							<span>cm</span>
-						</label>
+						<div class="form-input-component">
+							<label class="form-input-name">Pendulum Length:</label>
+							<div class="form-input-with-unit">
+								<input type="text" name="mahalo" value="280">
+								<label class="form-input-unit">cm</label>
+							</div>
+						</div>
 
-						<label>
-							Gravity:
-							<select name="gravitaciq">
-								<option value="274.1">Sun (g = 274.1)</option>
-								<option value="3.703">Mercury (g = 3.703)</option>
-								<option value="8.872">Venus (g = 8.872)</option>
-								<option value="9.8226" selected="selected">Earth (g = 9.8226)</option>
-								<option value="1.625">Moon (g = 1.625)</option>
-								<option value="3.728">Mars (g = 3.728)</option>
-								<option value="25.93">Jupiter (g = 25.93)</option>
-								<option value="11.19">Saturn (g = 11.19)</option>
-								<option value="9.01">Uranus (g = 9.01)</option>
-								<option value="11.28">Neptune (g = 11.28)</option>
-								<option value="0.61">Pluto (g = 0.61)</option>
-								<option value="0">Space (g = 0)</option>
-							</select>
-							<span>
-								m/s<sup>2</sup>
-							</span>
-						</label>
-
-						<label>
-								FPS Limit:
-								<select name="select-fps">
-									<option value="10"> 10 </option>
-									<option value="25"> 25 </option>
-									<option value="30"> 30 </option>
-									<option value="60"> 60 </option>
-									<option value="100" selected> 100 </option>
-									<option value="120"> 120 </option>
-									<option value="180"> 180 </option>
+						<div class="form-input-component">
+							<label class="form-input-name">Gravity:</label>
+							<div class="form-input-with-unit">
+								<select name="gravitaciq">
+									<option value="274.1">Sun (g = 274.1)</option>
+									<option value="3.703">Mercury (g = 3.703)</option>
+									<option value="8.872">Venus (g = 8.872)</option>
+									<option value="9.8226" selected="selected">Earth (g = 9.8226)</option>
+									<option value="1.625">Moon (g = 1.625)</option>
+									<option value="3.728">Mars (g = 3.728)</option>
+									<option value="25.93">Jupiter (g = 25.93)</option>
+									<option value="11.19">Saturn (g = 11.19)</option>
+									<option value="9.01">Uranus (g = 9.01)</option>
+									<option value="11.28">Neptune (g = 11.28)</option>
+									<option value="0.61">Pluto (g = 0.61)</option>
+									<option value="0">Space (g = 0)</option>
 								</select>
-							</label>
+								<label class="form-input-unit">
+									m/s<sup>2</sup>
+								</label>
+							</div>
+						</div>
 
-						<button type="submit">apply</button>
+						<div class="form-input-component">
+							<label class="form-input-name">FPS Limit:</label>
+							<select name="select-fps">
+								<option value="10"> 10 </option>
+								<option value="25"> 25 </option>
+								<option value="30"> 30 </option>
+								<option value="60"> 60 </option>
+								<option value="100" selected> 100 </option>
+								<option value="120"> 120 </option>
+								<option value="180"> 180 </option>
+							</select>
+						</div>
+
+						<button class="button-main" type="submit">apply</button>
 
 					</form>
 
