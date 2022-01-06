@@ -3,9 +3,9 @@
 	--stats-controls-height: 55px;
 	--stats-controls-padding: 5px;
 
-	/* window_height - header_height - statistics_panel_height */
+	/* window_height - header_height and some headroom - statistics_panel_height */
 	--canvas-size-S: calc(100vh - 55px - var(--stats-controls-height) - 2*var(--stats-controls-padding));
-	--canvas-size-L: calc(100vh - 70px - var(--stats-controls-height) - 2*var(--stats-controls-padding));
+	--canvas-size-L: calc(100vh - 80px - var(--stats-controls-height) - 2*var(--stats-controls-padding));
 }
 
 /*********************************************
@@ -15,14 +15,15 @@
 	display: flex;
 	flex-flow: column;
 	padding: 0;
-	width: auto;
 }
 
+@media screen (max-aspect-ratio: 3/4) and (max-width: 48em) {
+	.content-pendulum {width: auto;}
+}
 
 @media
-screen and (min-aspect-ratio: 5/4) and (max-width: 48em) and (min-width: 20.01em),
-screen and (min-aspect-ratio: 4/5) and (min-width: 48em),
-screen and (min-aspect-ratio: 1) and (min-width: 64em)
+screen and (min-aspect-ratio: 6/5) and (max-width: 48em) and (min-width: 20.01em),
+screen and (min-aspect-ratio: 1/1) and (min-width: 48em)
 {
 	.content-pendulum {flex-flow: row;}
 	.content-pendulum .control-panel {
