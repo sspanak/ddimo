@@ -27,7 +27,7 @@
 
 		<p> <strong><i>"Initial values"</i></strong> is the section where you can control the starting parameters of the simulation. They directly correlate to the initial values of the differential equation. The units are indicated next to each input field and can be any real number (positive or negative). As you can see, they are almost self-explanatory:</p>
 		<aside class="screenshot">
-			<img src="<?=$base_path?>/img/pendulum-help-inital-values.png" alt="Initial Values Screenshot">
+			<img src="pendulum-help-inital-values.png" alt="Initial Values Screenshot">
 		</aside>
 		<p>
 			<i>"Angle"</i> is the initial angle at which the pendulum will start swinging (or falling down, depending on how you set it). It is measured from the "Y" axis of the coordinate system (0 radians is at 6 o'clock). Increasing the angle will turn the rod counter-clockwise, and decreasing it will turn it clockwise.
@@ -63,7 +63,7 @@
 		<p> Right below the pendulum is the statistics panel. First, you can see the differential equation that "powers" the pendulum. And below it you can turn on/off the displaying of the variable values as the pendulum swings.
 		</p>
 		<aside class="screenshot">
-			<img src="<?=$base_path?>/img/pendulum-help-statistics.png" alt="Statistics Screenshot">
+			<img src="pendulum-help-statistics.png" alt="Statistics Screenshot">
 		</aside>
 
 

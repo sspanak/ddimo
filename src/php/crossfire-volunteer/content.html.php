@@ -14,14 +14,14 @@
 
 		<h2> Screenshots </h2>
 		<aside class="screenshots">
-			<img src="/img/crossfire-volunteer-1.png" alt="Game Screenshot 1" onclick="alert('голяма снимка')">
-			<img src="/img/crossfire-volunteer-2.png" alt="Game Screenshot 2" onclick="alert('голяма снимка')">
-			<img src="/img/crossfire-volunteer-3.png" alt="Game Screenshot 3" onclick="alert('голяма снимка')">
+			<img src="crossfire-volunteer-1.png" alt="Game Screenshot 1" onclick="alert('голяма снимка')">
+			<img src="crossfire-volunteer-2.png" alt="Game Screenshot 2" onclick="alert('голяма снимка')">
+			<img src="crossfire-volunteer-3.png" alt="Game Screenshot 3" onclick="alert('голяма снимка')">
 		</aside>
 
 		<h2> Download and Play </h2>
 		<p class="requirements">
-			<a href="/download/igra-alpha.zip"><b>igra 713a</b></a>
+			<a href="igra-alpha.zip"><b>igra 713a</b></a>
 			<i class="italic">(.zip, 123 kb; windows version)</i>
 		</p>
 
