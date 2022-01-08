@@ -4,7 +4,7 @@ class HTMLControl {
 	protected $lang, $title, $head, $content;
 
 	public function __construct(){
-		$this->lang = 'en';
+		$this->lang = '';
 		$this->title = '';
 		$this->include_files = [];
 		$this->content = '';
@@ -19,8 +19,9 @@ class HTMLControl {
 		$this->base_path = preg_replace('@/$@', '', dirname($this->base_path));
 	}
 
-	public static function load_standard_page($title='', $include_files=[]) {
+	public static function load_standard_page($title='', $include_files=[], $lang='en') {
 		$html = new HTMLControl;
+		$html->set('lang', $lang);
 		$html->set('title', $title);
 		$html->set('include_files', $include_files);
 		$html->set_from_file('content', 'content.html.php');
