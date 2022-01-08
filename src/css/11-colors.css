@@ -30,14 +30,14 @@ body {
 }
 
 button {
-	border-color: var(--separator-color);
 	background-color: var(--button-background-color);
+	border-color: var(--separator-color);
 	color: var(--button-text-color);
 }
 
 input, select {
-	border-color: var(--input-border-color);
 	background-color: var(--input-background-color);
+	border-color: var(--input-border-color);
 	color: var(--input-text-color);
 }
 

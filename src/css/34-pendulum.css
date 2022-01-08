@@ -17,10 +17,6 @@
 	padding: 0;
 }
 
-@media screen (max-aspect-ratio: 3/4) and (max-width: 48em) {
-	.content-pendulum {width: auto;}
-}
-
 @media
 screen and (min-aspect-ratio: 6/5) and (max-width: 48em) and (min-width: 21em),
 screen and (min-aspect-ratio: 1/1) and (min-width: 48em) {
@@ -87,8 +83,8 @@ screen and (min-aspect-ratio: 1/1) and (min-width: 48em) {
 
 .content-pendulum .click-to-play span {
 	border: var(--pendulum-border) var(--separator-color);
-	padding: 1em;
 	border-radius: 5px;
+	padding: 1em;
 }
 
 
