@@ -21,10 +21,10 @@ class HTMLControl {
 
 	public static function load_standard_page($title='', $include_files=[]) {
 		$html = new HTMLControl;
-		$html->задай('title', $title);
-		$html->задай('include_files', $include_files);
-		$html->задайОтФайл('content', 'content.html.php');
-		echo $html->постройСтраница();
+		$html->set('title', $title);
+		$html->set('include_files', $include_files);
+		$html->set_from_file('content', 'content.html.php');
+		echo $html->build_page();
 	}
 
 	public function build_breadcrumbs() {
@@ -36,40 +36,40 @@ class HTMLControl {
 		return $breadcrumbs;
 	}
 
-	public function задай($променлива, $стойност){
-		if (!property_exists($this, $променлива)){
-			$this->last_error = __CLASS__ . " не поддържа променлива с име '$променлива'.";
+	public function set($var, $value){
+		if (!property_exists($this, $var)){
+			$this->last_error = __CLASS__ . " не поддържа променлива с име '$var'.";
 			return false;
 		}
 
-		$this->$променлива = $стойност;
+		$this->$var = $value;
 		return true;
 	}
 
-	public function задайОтФайл($променлива, $файл){
-		if (!property_exists($this, $променлива)){
-			$this->last_error = __CLASS__ . " не поддържа променлива с име '$променлива'.";
+	public function set_from_file($var, $file){
+		if (!property_exists($this, $var)){
+			$this->last_error = __CLASS__ . " не поддържа променлива с име '$var'.";
 			return false;
 		}
 
-		if (!is_file($файл) || !is_readable($файл)){
-			$this->last_error = "'$файл' не е файл или не може да се отвори за четене.";
+		if (!is_file($file) || !is_readable($file)){
+			$this->last_error = "'$file' не е файл или не може да се отвори за четене.";
 			return false;
 		}
 
-		$this->$променлива = $this->заредиФайл($файл);
+		$this->$var = $this->load_file($file);
 		return true;
 	}
 
-	public function постройСтраница(){
-		return $this->заредиФайл($this->ROOT . DIRECTORY_SEPARATOR . '__skelet__.html.php');
+	public function build_page(){
+		return $this->load_file($this->ROOT . DIRECTORY_SEPARATOR . '__standard__.html.php');
 	}
 
-	public function грешка(){
+	public function error(){
 		return $this->last_error;
 	}
 
-	private function заредиФайл($файл){
+	private function load_file($file){
 		$title = $this->title;
 		$lang = $this->lang;
 		$include_files = $this->include_files;
@@ -81,7 +81,7 @@ class HTMLControl {
 
 		ob_start();
 
-		include $файл;
+		include $file;
 
 		$html = ob_get_clean();
 
