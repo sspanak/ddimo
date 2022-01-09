@@ -92,7 +92,9 @@ screen and (min-aspect-ratio: 1/1) and (min-width: 48em) {
  * Statistics - HUD
  *********************************************/
 .content-pendulum .statisics-hud {
+	font-family: "Exo 2", sans-serif;
 	left: 0.5925em;
+	letter-spacing: 0.03em;
 	overflow: hidden;
 	position: absolute;
 	right: 0.5925em;
@@ -114,6 +116,7 @@ screen and (min-aspect-ratio: 1/1) and (min-width: 48em) {
 .content-pendulum .statisics-controls {
 	border-top: var(--pendulum-border) var(--separator-color);
 	height: var(--stats-controls-height);
+	line-height: 1.1em;
 	padding: var(--stats-controls-padding);
 }
 @media screen and (max-width: 21em) {
@@ -121,7 +124,10 @@ screen and (min-aspect-ratio: 1/1) and (min-width: 48em) {
 }
 
 .content-pendulum .statisics-controls label {text-align: center;}
-.content-pendulum .statisics-controls .equation-definition {margin-bottom: 6px;}
+.content-pendulum .statisics-controls .equation-definition {
+	font-family: "Exo 2";
+	margin-bottom: 6px;
+}
 
 
 

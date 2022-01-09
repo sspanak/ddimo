@@ -1,4 +1,4 @@
-.content:not(.content-crossfire-volunteer) {
+.content:not(.content-home) {
 	display: none;
 }
 

@@ -3,10 +3,8 @@
  **************************/
 img {border: 0 none;}
 body {
-	font-family: "Exo 2", monospace;
+	font-family: "Play", sans-serif;
 	font-size: 18px;
-	letter-spacing: 0.03em;
-	line-height: 1.1em;
 }
 
 hr {
@@ -32,7 +30,7 @@ header nav a {
  **************************/
 
 .content h1, .content h2, .content h3 {
-	font-family: "Orbitron", "Exo 2", monospace;
+	font-family: "Orbitron", monospace;
 	line-height: 1em;
 }
 .content h1, .content h2 {

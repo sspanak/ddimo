@@ -2,13 +2,13 @@
 	display: block;
 	margin: 0.5925em auto;
 	max-width: 450px;
+	padding: 5px;
 	width: 95%;
 }
 
 .content-pendulum-help .screenshot img {
 	border: 1px dashed var(--separator-color);
 	border-radius: 5px;
-	margin: 5px;
 	width: 100%;
 }
 
