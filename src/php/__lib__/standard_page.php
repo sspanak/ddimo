@@ -44,11 +44,15 @@ class StandardPage {
 
 	private function set_scripts_inline(array $scripts): void {
 		$this->scripts_inline = [];
+
 		foreach ($scripts as $script) {
-			$script_contents = file_get_contents($script);
-			if ($script_contents === false) {
-				error_log("'$script' не може да бъде прочетен като файл с javascript.");
+			if (!is_file($script) || !is_readable($script)) {
+				trigger_error("'$script' can not be opened and attached as inline javascript.", E_USER_WARNING);
+				$script_contents = '';
+			} else {
+				$script_contents = file_get_contents($script);
 			}
+
 			array_push($this->scripts_inline, $script_contents);
 		}
 	}
@@ -80,7 +84,7 @@ class StandardPage {
 
 	public function set(string $var, $value): StandardPage {
 		if (!property_exists($this, $var)) {
-			error_log(__CLASS__ . " не поддържа променлива с име '$var'.");
+			trigger_error(__CLASS__ . " does not support '$var' variable.", E_USER_WARNING);
 		} else if ($var === 'scripts_inline')  {
 			$this->$var = $this->set_scripts_inline($value);
 		} else if ($var === 'scripts_remote') {
@@ -95,14 +99,14 @@ class StandardPage {
 
 	public function set_from_file(string $var, string $file): StandardPage {
 		if (!is_file($file) || !is_readable($file)) {
-			error_log("'$file' не е файл или не може да се отвори за четене.");
+			trigger_error("'$file' is not a file or it cannot be opened for reading.", E_USER_WARNING);
 			return $this;
 		}
 
 		if (!property_exists($this, $var)) {
-			error_log(__CLASS__ . " не поддържа променлива с име '$var'.");
+			trigger_error(__CLASS__ . " does not support '$var' variable.", E_USER_WARNING);
 		} else if ($var === 'scripts_inline' || $var === 'scripts_remote') {
-			error_log("'$var' не може да се задава със 'set_from_file()'.");
+			trigger_error("'$var' cannot be set using 'set_from_file()'.", E_USER_WARNING);
 		} else {
 			$this->$var = $this->load_template($file);
 		}
