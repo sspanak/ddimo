@@ -1,4 +1,6 @@
 <?php
+require_once 'server.php';
+
 class RemoteScript {
 	public bool $async = false;
 	public bool $defer = false;
@@ -24,6 +26,10 @@ class StandardPage {
 	public array $scripts_inline = []; // string[]
 	public array $scripts_remote = []; // RemoteScript[]
 	public string $site_name = '';
+
+	public function __construct() {
+		$this->from_array((new Server)->to_array());
+	}
 
 	private function load_template(string $file): string {
 		$base_path = $this->base_path;
@@ -62,6 +68,15 @@ class StandardPage {
 		foreach ($scripts as $script) {
 			array_push($this->scripts_remote, new RemoteScript($script));
 		}
+	}
+
+	private function generate_breadcrumbs(): array {
+		$breadcrumbs = [];
+		foreach (explode('/', "$this->site_name$this->base_path") as $segment) {
+			$breadcrumbs[$segment] = implode('/', array_keys($breadcrumbs)) . "/$segment/";
+		}
+
+		return $breadcrumbs;
 	}
 
 	public function from_array(array $array): StandardPage {
@@ -114,7 +129,18 @@ class StandardPage {
 		return $this;
 	}
 
-	public function generate(): string {
-		return $this->load_template(dirname(__FILE__) . DIRECTORY_SEPARATOR . 'standard_html.php');
+	public function to_string(): string {
+		return $this->load_template(dirname(__FILE__) . DIRECTORY_SEPARATOR . 'root.html.php');
+	}
+
+	public static function display(string $title, array $page_vars=[]) {
+		$page = new StandardPage;
+
+		echo $page
+			->set('title', $title)
+			->set('breadcrumbs', $page->generate_breadcrumbs())
+			->from_array($page_vars)
+			->set_from_file('content', 'content.html.php')
+			->to_string();
 	}
 }

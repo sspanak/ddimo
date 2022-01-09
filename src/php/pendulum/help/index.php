@@ -1,3 +1,3 @@
 <?php
-require_once '../../__lib__/htmlcontrol.php';
-HTMLControl::load_standard_page('Pendulum Simulator Manual');
+require_once '../../__lib__/standard-page.php';
+StandardPage::display('Pendulum Simulator Manual');
