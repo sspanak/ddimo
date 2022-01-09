@@ -14,11 +14,15 @@
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;700&family=Orbitron:wght@700&family=Play:wght@400;700&display=swap">
 
-		<link rel="stylesheet" href="//<?=$base_url?>/v2/dd.css">
+		<link rel="stylesheet" href="<?=$base_url?>/v2/dd.css">
 
-		<?php foreach ($include_files as $filepath): ?>
-			<?=$filepath;?>
-		<?php endforeach; ?>
+		<?php foreach ($scripts_remote as $script): ?>
+			<script src="<?=$script->url?>" <?=$script->async ? 'async' : ''?> <?=$script->defer ? 'defer' : ''?>></script>
+		<?php endforeach;?>
+
+		<?php foreach ($scripts_inline as $script): ?>
+			<script><?=$script?></script>
+		<?php endforeach;?>
 	</head>
 	<body>
 		
@@ -37,6 +41,8 @@
 
 		<hr>
 
-		<div class="content-wrapper"><?=$content?></div>
+		<div class="content-wrapper <?=$content_classes?>">
+			<?=$content?>
+		</div>
 	</body>
 </html>

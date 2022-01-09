@@ -1,3 +1,8 @@
 <?php
-require_once '../__htmlcontrol__.php';
-HTMLControl::load_standard_page('Pendulum Simulator', ['<script src="pendulum.js"></script>']);
+require_once '../__lib__/htmlcontrol.php';
+HTMLControl::load_standard_page(
+	'Pendulum Simulator',
+	[
+		'scripts_remote' => [['url' => 'pendulum.js', 'async' => true]]
+	]
+);
