@@ -1,12 +1,10 @@
 MAKEFLAGS += --no-print-directory
 SHELL := /bin/bash
 
-default:
-	make tar
-
 demo:
-	make css-demo
-	make images-demo
+	make css
+	cat src/css/debug.css >> dist/dd.css
+	make images
 	cp src/demo.html dist/index.html
 
 website:
@@ -16,20 +14,11 @@ website:
 	make downloads
 	make php
 
-css-demo:
-	make css
-	cat src/css/dev.css >> dist/dd.css
-
 css:
-	cat src/css/[0-8]*.css > dist/dd.css
+	cat src/css/[0-9]*.css > dist/dd.css
 
 js:
 	bash -c build-tools/build-js.sh
-
-images-demo:
-	mkdir -p dist/img
-	cp img/crossfire-volunteer/* dist/img/
-	cp img/pendulum/help/* dist/img/
 
 images:
 	cp -r img/* dist/

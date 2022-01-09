@@ -1,9 +1,9 @@
-.content:not(.content-pendulum-help) {
+.content:not(.content-crossfire-volunteer) {
 	display: none;
 }
 
 /*********************************************
- * Debug
+ * Debug - Pendulum
  *********************************************/
 /*.content-pendulum canvas {background-color: #888;}*/
 /*.content-pendulum .screen {background-color: #a88;}*/
