@@ -3,7 +3,7 @@ SHELL := /bin/bash
 
 demo:
 	make css
-	cat src/css/debug.css >> dist/dd.css
+	cat src/css/debug.css >> dist/ddimo.css
 	make images
 	cp src/demo.html dist/index.html
 
@@ -15,7 +15,7 @@ website:
 	make php
 
 css:
-	cat src/css/[0-9]*.css > dist/dd.css
+	cat src/css/[0-9]*.css > dist/ddimo.css
 
 js:
 	bash -c build-tools/build-js.sh
