@@ -3,6 +3,7 @@ SHELL := /bin/bash
 
 demo:
 	make css
+	make js
 	cat src/css/debug.css >> dist/ddimo.css
 	make images
 	cp src/demo.html dist/index.html

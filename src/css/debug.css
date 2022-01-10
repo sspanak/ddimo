@@ -1,4 +1,4 @@
-.content:not(.content-home) {
+.content:not(.content-doftor) {
 	display: none;
 }
 
