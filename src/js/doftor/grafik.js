@@ -46,9 +46,10 @@ const Grafik = new class {
 		if (Number.isNaN(izbranaData.getTime())) {
 			this.$element.$izbranaData.innerHTML = '... (избери дата)';
 		} else {
-			this.$element.$izbranaData.innerHTML = `${izbranaData.getDate()}.${izbranaData.getMonth() + 1}.${izbranaData.getFullYear()}`;
+			const data = izbranaData.toLocaleDateString('bg');
+			const den = izbranaData.toLocaleDateString('bg', { weekday: 'long' });
+			this.$element.$izbranaData.innerHTML = `${data} (${den})`;
 		}
-
 
 		const smeni = DoftorskaSmyana.koy(izbranaData);
 		for (const smyana in smeni) {
