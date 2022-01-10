@@ -1,6 +1,11 @@
 const Grafik = new class {
 	constructor() {
 		this.dnes = new Date();
+		window.addEventListener('load', () => this._init());
+	}
+
+
+	_init() {
 		this.$element = {
 			$dnes: document.querySelector('#dnes'),
 			$input: document.querySelector('#data_za_grafik'),
@@ -9,6 +14,8 @@ const Grafik = new class {
 			$smyana2: document.querySelector('#smyana2'),
 			$smyana3: document.querySelector('#smyana3')
 		};
+
+		this.izberiDnes().poplni();
 	}
 
 
@@ -86,5 +93,3 @@ const Grafik = new class {
 		return this;
 	}
 };
-
-window.addEventListener('load', () => Grafik.izberiDnes().poplni());

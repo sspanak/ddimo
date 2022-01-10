@@ -1,23 +1,23 @@
 <div class="content content-doftor">
 	<div>
-		<h1> Лекари </h1>
+		<h1> Кой работи? </h1>
 
 		<form onsubmit="return false;">
 			<div class="datepicker">
 				<label>Избор на дата:</label>
 				<div class="date-component">
-					<button type="button" class="button-left">&larr;</button>
-					<input type="date" />
-					<button type="button" class="button-right">&rarr;</button>
+						<button type="button" class="button-left" onclick="Grafik.izberiVczera().poplni();">&larr;</button>
+						<input id="data_za_grafik" type="date" onchange="Grafik.poplni();" />
+						<button type="button" class="button-right" onclick="Grafik.izberiUtre().poplni();">&rarr;</button>
 				</div>
 			</div>
 
-			<button type="button" class="button-main">покажи</button>
+			<button type="button" class="button-main" onclick="Grafik.izberiDnes().poplni();">днес</button>
 		</form>
 
 		<h2>
 			График за
-			<span id="dnes">днес, </span><span id="izbranaData">2.1.2022</span>:
+			<span id="dnes">днес, </span><span id="izbranaData"></span>:
 		</h2>
 
 		<ul>

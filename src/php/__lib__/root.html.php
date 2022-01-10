@@ -8,13 +8,13 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-		<link rel="shortcut icon" href="favicon.ico">
+		<link rel="shortcut icon" href="<?=$base_url?>/favicon.ico">
 
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;700&family=Orbitron:wght@700&family=Play:wght@400;700&display=swap">
 
-		<link rel="stylesheet" href="<?=$base_url?>/v2/ddimo.css">
+		<link rel="stylesheet" href="<?=$base_url?>/ddimo.css">
 
 		<?php foreach ($scripts_remote as $script): ?>
 			<script src="<?=$script->url?>" <?=$script->async ? 'async' : ''?> <?=$script->defer ? 'defer' : ''?>></script>
