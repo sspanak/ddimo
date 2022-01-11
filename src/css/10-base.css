@@ -59,6 +59,10 @@ header nav a {
 	flex-flow: column;
 }
 
+.content .screenshots img, .content .screenshot img {
+	border-radius: 5px;
+}
+
 /**************************
  * Forms
  **************************/

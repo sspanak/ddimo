@@ -6,11 +6,7 @@
 	width: 95%;
 }
 
-.content-pendulum-help .screenshot img {
-	border: 1px dashed var(--separator-color);
-	border-radius: 5px;
-	width: 100%;
-}
+.content-pendulum-help .screenshot img {width: 100%;}
 
 @media screen and (min-width: 48em) {
 	.content-pendulum-help .screenshot {

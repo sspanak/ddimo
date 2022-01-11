@@ -20,7 +20,7 @@ function previewCrossfireScreenshot($img) {
 	}
 
 	$previewImg.src = $img.src;
-	$previewContainer.className = previewContainerSelector.replace('.', '');
+	$previewContainer.className = $previewContainer.className.replace('hidden', '');
 }
 
 
@@ -38,5 +38,5 @@ function closeCrossfireScreenshot() {
 	}
 
 	$previewImg.src = '';
-	$previewContainer.className = `${previewContainerSelector.replace('.', '')} hidden`;
+	$previewContainer.className = `${$previewContainer.className} hidden`;
 }

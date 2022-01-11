@@ -12,7 +12,6 @@
 }
 
 .content-crossfire-volunteer .screenshots img {
-	border-radius: 5px;
 	cursor: pointer;
 	flex: 33%;
 	margin: 5px;
@@ -44,8 +43,6 @@
 }
 
 .content-crossfire-volunteer .crossfire-volunteer-screenshot-preview img {
-	border: none;
-	border-radius: 10px;
 	height: min-content;
 	max-height: 90%;
 }

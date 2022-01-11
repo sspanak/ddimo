@@ -48,7 +48,7 @@
 
 	</article>
 
-	<div class="crossfire-volunteer-screenshot-preview hidden" onclick="closeCrossfireScreenshot()">
+	<div class="screenshot crossfire-volunteer-screenshot-preview hidden" onclick="closeCrossfireScreenshot()">
 		<img src="" alt="Crossfire Volunteer large screenshot preview" />
 	</div>
 </div>

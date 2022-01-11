@@ -15,13 +15,15 @@
 	--link-visited-hovered-color: #e9a0fe;
 
 	--header-background-color: #222;
+	--header-shadow: 0px 5px 5px #000;
 	--header-text-color: #ccc;
+
+	--screenshot-shadow: 0px 1px 6px #111;
 
 	--separator-color: #888;
 
-	--crossfire-volunteer-background: #33333391;
+	--crossfire-volunteer-background-color: #33333391;
 	--crossfire-volunteer-content-shadow: 0 2px 16px #333;
-	--crossfire-volunteer-screenshot-shadow: 0px 1px 5px #000;
 }
 
 body {
@@ -52,21 +54,23 @@ a:visited:hover {color: var(--link-visited-hovered-color);}
 
 header {
 	background-color: var(--header-background-color);
+	box-shadow: var(--header-shadow);
 }
 
 header nav {
 	color: var(--header-text-color);
 }
 
+.screenshots img, .screenshot img {
+	box-shadow: var(--screenshot-shadow);
+	border: 1px dashed var(--separator-color);
+}
+
 .content-crossfire-volunteer {
-	background: var(--crossfire-volunteer-background);
+	background: var(--crossfire-volunteer-background-color);
 	box-shadow: var(--crossfire-volunteer-content-shadow)
 }
 
-.content-crossfire-volunteer .screenshots img, .content-crossfire-volunteer .crossfire-volunteer-screenshot-preview img {
-	box-shadow: var(--crossfire-volunteer-screenshot-shadow);
-}
-
 .content-crossfire-volunteer .crossfire-volunteer-screenshot-preview {
-	background-color: var(--crossfire-volunteer-background);
+	background-color: var(--crossfire-volunteer-background-color);
 }
