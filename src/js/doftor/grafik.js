@@ -52,7 +52,7 @@ const Grafik = new class {
 		}
 
 		const smeni = DoftorskaSmyana.koy(izbranaData);
-		for (const smyana in smeni) {
+		for (let smyana in smeni) {
 			const $element = this.$element[`$smyana${smyana}`];
 
 			if (!$element) {

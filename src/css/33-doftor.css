@@ -14,13 +14,16 @@
 	height: 2em;
 }
 .content-doftor .date-component button {width: 2.25em;}
-.content-doftor .date-component input {flex: auto;}
+.content-doftor .date-component input {
+	flex: auto;
+	max-width: calc(100% - 4.5em);
+}
 
 .content-doftor .button-main {margin: 0.33em 0;}
 
 
 @media screen and (min-width: 35.5em) {
-	.content-doftor form .date-component {max-width: 260px;}
+	.content-doftor form .date-component, .content-doftor .button-main {max-width: 260px;}
 }
 
 @media screen and (min-width: 48em) {

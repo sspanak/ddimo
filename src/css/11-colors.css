@@ -22,7 +22,7 @@
 
 	--separator-color: #888;
 
-	--crossfire-volunteer-background-color: #33333391;
+	--crossfire-volunteer-background-color: rgba(51, 51, 51, 0.57);
 	--crossfire-volunteer-content-shadow: 0 2px 16px #333;
 }
 
@@ -67,7 +67,7 @@ header nav {
 }
 
 .content-crossfire-volunteer {
-	background: var(--crossfire-volunteer-background-color);
+	background-color: var(--crossfire-volunteer-background-color);
 	box-shadow: var(--crossfire-volunteer-content-shadow)
 }
 
