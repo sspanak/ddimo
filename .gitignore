@@ -1,5 +1,8 @@
 sftp-config.json
 dist
 node_modules
+# No node_modules are used in production, so the exact dependencies do not need to be preserved. Hence we don't need package-lock.json
+package-lock.json
+
 *.sublime-project
 *.sublime-workspace

@@ -3,7 +3,7 @@ SHELL := /bin/bash
 
 demo:
 	make css
-	make js
+	make js-debug
 	cat src/css/debug.css >> dist/ddimo.css
 	make images
 	cp src/demo.html dist/index.html
@@ -20,6 +20,9 @@ css:
 
 js:
 	bash -c build-tools/build-js.sh
+
+js-debug:
+	bash -c "build-tools/build-js.sh --debug"
 
 images:
 	cp -r img/* dist/
