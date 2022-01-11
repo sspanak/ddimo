@@ -14,9 +14,9 @@
 
 		<h2> Screenshots </h2>
 		<aside class="screenshots">
-			<img src="crossfire-volunteer-1.png" alt="Game Screenshot 1" onclick="alert('голяма снимка')">
-			<img src="crossfire-volunteer-2.png" alt="Game Screenshot 2" onclick="alert('голяма снимка')">
-			<img src="crossfire-volunteer-3.png" alt="Game Screenshot 3" onclick="alert('голяма снимка')">
+			<img src="crossfire-volunteer-1.png" alt="Crossfire Volunteer Screenshot 1" onclick="previewCrossfireScreenshot(this)">
+			<img src="crossfire-volunteer-2.png" alt="Crossfire Volunteer Screenshot 2" onclick="previewCrossfireScreenshot(this)">
+			<img src="crossfire-volunteer-3.png" alt="Crossfire Volunteer Screenshot 3" onclick="previewCrossfireScreenshot(this)">
 		</aside>
 
 		<h2> Download and Play </h2>
@@ -47,4 +47,8 @@
 		</aside>
 
 	</article>
+
+	<div class="crossfire-volunteer-screenshot-preview hidden" onclick="closeCrossfireScreenshot()">
+		<img src="" alt="Crossfire Volunteer large screenshot preview" />
+	</div>
 </div>

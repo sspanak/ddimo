@@ -16,7 +16,7 @@
 
 		<link rel="stylesheet" href="ddimo.css">
 
-		<script src="doftor/doftor.js" async></script>
+		<script src="crossfire-volunteer/crossfire-volunteer.js" async></script>
 
 	</head>
 	<body>
@@ -37,7 +37,7 @@
 
 		<hr>
 
-		<div class="content-wrapper">
+		<div class="content-wrapper crossfire-volunteer-background">
 
 			<div class="content content-home">
 				<article>
@@ -92,9 +92,9 @@
 
 					<h2> Screenshots </h2>
 					<aside class="screenshots">
-						<img src="crossfire-volunteer/crossfire-volunteer-1.png" alt="" onclick="alert('голяма снимка')">
-						<img src="crossfire-volunteer/crossfire-volunteer-2.png" alt="" onclick="alert('голяма снимка')">
-						<img src="crossfire-volunteer/crossfire-volunteer-3.png" alt="" onclick="alert('голяма снимка')">
+						<img src="crossfire-volunteer/crossfire-volunteer-1.png" alt="Crossfire Volunteer Screenshot 1" onclick="previewCrossfireScreenshot(this)">
+						<img src="crossfire-volunteer/crossfire-volunteer-2.png" alt="Crossfire Volunteer Screenshot 2" onclick="previewCrossfireScreenshot(this)">
+						<img src="crossfire-volunteer/crossfire-volunteer-3.png" alt="Crossfire Volunteer Screenshot 3" onclick="previewCrossfireScreenshot(this)">
 					</aside>
 
 					<h2> Download and Play </h2>
@@ -125,6 +125,10 @@
 					</aside>
 
 				</article>
+
+				<div class="crossfire-volunteer-screenshot-preview hidden" onclick="closeCrossfireScreenshot()">
+					<img src="" alt="Crossfire Volunteer large screenshot preview" />
+				</div>
 			</div>
 
 			<div class="content content-doftor">

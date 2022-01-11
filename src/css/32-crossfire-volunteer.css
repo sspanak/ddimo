@@ -27,3 +27,33 @@
 .content-crossfire-volunteer .requirements {
 	text-align: left;
 }
+
+.content-crossfire-volunteer .crossfire-volunteer-screenshot-preview {
+	align-items: center;
+	bottom: 0;
+	cursor: pointer;
+	display: flex;
+	flex-flow: column;
+	justify-content: center;
+	left: 0;
+	padding: 10px;
+	position: fixed;
+	right: 0;
+	top: 0;
+	width: 100%;
+}
+
+.content-crossfire-volunteer .crossfire-volunteer-screenshot-preview img {
+	border: none;
+	border-radius: 10px;
+	height: min-content;
+	max-height: 90%;
+}
+@media screen and (max-aspect-ratio: 4/3) {
+	.content-crossfire-volunteer .crossfire-volunteer-screenshot-preview img {
+		height: initial;
+		max-height: initial;
+		max-width: 90%;
+		width: min-content;
+	}
+}

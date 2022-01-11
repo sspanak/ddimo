@@ -63,6 +63,10 @@ header nav {
 	box-shadow: var(--crossfire-volunteer-content-shadow)
 }
 
-.content-crossfire-volunteer .screenshots img {
+.content-crossfire-volunteer .screenshots img, .content-crossfire-volunteer .crossfire-volunteer-screenshot-preview img {
 	box-shadow: var(--crossfire-volunteer-screenshot-shadow);
+}
+
+.content-crossfire-volunteer .crossfire-volunteer-screenshot-preview {
+	background-color: var(--crossfire-volunteer-background);
 }
