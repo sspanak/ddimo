@@ -25,8 +25,7 @@ do
 	if $DEBUG ; then
 		mv dist/$PAGE_NAME/compiled.js dist/$PAGE_NAME/$PAGE_NAME.js
 	else
-		# npx babel dist/$PAGE_NAME/compiled.js | npx terser -c passes=2 > dist/$PAGE_NAME/$PAGE_NAME.js
-		cat dist/$PAGE_NAME/compiled.js | npx terser -c passes=2 > dist/$PAGE_NAME/$PAGE_NAME.js
+		npx babel dist/$PAGE_NAME/compiled.js | npx terser -c passes=2 > dist/$PAGE_NAME/$PAGE_NAME.js
 	fi
 
 	rm -f dist/$PAGE_NAME/compiled.js
