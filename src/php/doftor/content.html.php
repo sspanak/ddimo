@@ -1,5 +1,13 @@
 <div class="content content-doftor">
-	<div>
+	<noscript>
+		<h1> Въй! </h1>
+		<p> Тази страница не може да работи без Javascript. Няма нищо друго за гледане тук. </p>
+		<p> Край на полезния текст. </p>
+	</noscript>
+
+<?php if ($browser_is_text) {echo '</div>'; return;} ?>
+
+	<div class="schedule-container">
 		<h1> Кой работи? </h1>
 
 		<form onsubmit="return false;">

@@ -16,12 +16,18 @@
 
 		<link rel="stylesheet" href="ddimo.css">
 
+		<script>
+			function yesScript() {
+				var $noscipt = document.querySelector('.no-script');
+				$noscipt.className = $noscipt.className.replace('no-script', '');
+			}
+		</script>
 		<script src="crossfire-volunteer/crossfire-volunteer.js" async></script>
 		<script src="doftor/doftor.js" async></script>
 
 	</head>
-	<body>
-		
+	<body class="no-script" onload="yesScript();">
+
 		<header>
 			<nav>
 				<span class="nav-element">
@@ -133,7 +139,13 @@
 			</div>
 
 			<div class="content content-doftor">
-				<div>
+				<noscript>
+					<h1> Въй! </h1>
+					<p> Тази страница не може да работи без Javascript. Няма нищо друго за гледане тук. </p>
+					<p> Край на полезния текст. </p>
+				</noscript>
+
+				<div class="schedule-container">
 					<h1> Кой работи? </h1>
 
 					<form onsubmit="return false;">
@@ -163,6 +175,13 @@
 			</div>
 
 			<div class="content content-pendulum">
+				<noscript>
+					<h1> Argh! </h1>
+					<p>
+						This page cannot work when Javascript is disabled. There is nothing else to see here, however, it is still possible to read <a href="/pendulum/help">the manual</a>.
+					</p>
+					<p> End of meaningful content. </p>
+				</noscript>
 
 				<div class="screen">
 					<canvas id="ekran" width="215" height="215" onclick="alert('toggle pause');"> </canvas>

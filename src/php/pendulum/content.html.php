@@ -1,4 +1,13 @@
 <div class="content content-pendulum">
+	<noscript>
+		<h1> Argh! </h1>
+		<p>
+			This page cannot work when Javascript is disabled. There is nothing else to see here, however, it is still possible to read <a href="/pendulum/help/">the manual</a>.
+		</p>
+		<p> End of meaningful content. </p>
+	</noscript>
+
+<?php if ($browser_is_text) {echo '</div>'; return;} ?>
 
 	<div class="screen">
 		<canvas id="ekran" width="215" height="215" onclick="alert('toggle pause');"> </canvas>

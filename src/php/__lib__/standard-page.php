@@ -1,5 +1,6 @@
 <?php
 require_once 'server.php';
+require_once 'browser.php';
 
 class RemoteScript {
 	public bool $async = false;
@@ -19,6 +20,7 @@ class StandardPage {
 	public string $base_path = '';
 	public string $base_url = '';
 	public array $breadcrumbs = []; // string[]
+	public bool $browser_is_text = false;
 	public string $content = '';
 	public string $content_classes = '';
 	public string $lang = 'en';
@@ -28,12 +30,14 @@ class StandardPage {
 	public string $site_name = '';
 
 	public function __construct() {
+		$this->browser_is_text = is_text_browser();
 		$this->from_array((new Server)->to_array());
 	}
 
 	private function load_template(string $file): string {
 		$base_path = $this->base_path;
 		$base_url = $this->base_url;
+		$browser_is_text = $this->browser_is_text;
 		$breadcrumbs = $this->breadcrumbs;
 		$content = $this->content;
 		$content_classes = $this->content_classes;

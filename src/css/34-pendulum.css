@@ -11,6 +11,9 @@
 /*********************************************
  * General
  *********************************************/
+.no-script .content-pendulum .screen,
+.no-script .content-pendulum .control-panel {display: none !important;}
+
 .content-pendulum {
 	display: flex;
 	flex-flow: column;
@@ -27,7 +30,6 @@ screen and (min-aspect-ratio: 1/1) and (min-width: 48em) {
 		flex: 50%;
 	}
 }
-
 
 /*********************************************
  * Canvas (it must always be a square)
