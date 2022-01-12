@@ -43,13 +43,23 @@ const Grafik = new class {
 		const izbranaData = new Date(this.$element.$input.value);
 
 		this.$element.$dnes.style.display = dnes.getTime() === izbranaData.getTime() ? 'inline' : 'none';
-		if (Number.isNaN(izbranaData.getTime())) {
-			this.$element.$izbranaData.innerHTML = '... (избери дата)';
+
+		let data = '';
+		let den = '';
+		if (isNaN(izbranaData.getTime())) {
+			data = '...';
+			den = 'избери дата';
+		}  else if (Object.prototype.toString.call(window.operamini) === '[object OperaMini]') {
+			// засичане на Opera Mini по пример от https://dev.opera.com/articles/opera-mini-and-javascript/
+			data = izbranaData.toISOString().replace(/T.+$/, '');
+			den = izbranaData.toGMTString().replace(/(\w+),.+$/, '$1');
 		} else {
-			const data = izbranaData.toLocaleDateString('bg');
-			const den = izbranaData.toLocaleDateString('bg', { weekday: 'long' });
-			this.$element.$izbranaData.innerHTML = `${data} (${den})`;
+			data = izbranaData.toLocaleDateString('bg');
+			den = izbranaData.toLocaleDateString('bg', { weekday: 'long' });
 		}
+
+		this.$element.$izbranaData.innerHTML = `${data} (${den})`;
+
 
 		const smeni = DoftorskaSmyana.koy(izbranaData);
 		for (let smyana in smeni) {
