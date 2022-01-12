@@ -27,9 +27,6 @@ header nav .nav-element {
 	display: inline-block;
 	font-size: 1.05em;
 }
-header nav a {
-	font-weight: bold;
-}
 
 /**************************
  * Content
