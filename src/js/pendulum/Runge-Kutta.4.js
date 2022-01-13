@@ -1,3 +1,6 @@
+/* eslint-disable */
+// This is the original code from 2011. It's no use linting it.
+
 function array_copy(arr1) {
 	var arr2 = [];
 	

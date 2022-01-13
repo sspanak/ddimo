@@ -1,3 +1,4 @@
+/* eslint-disable */
 var Mahalo = {
 	prt: 290,
 	centr: {
