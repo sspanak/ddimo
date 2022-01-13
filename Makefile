@@ -16,7 +16,10 @@ website:
 	make php
 
 css:
-	cat src/css/[0-9]*.css > dist/ddimo.css
+	# hardcode colors for legacy browsers
+	node build-tools/css-convert-legacy.js src/css/11-colors.css | build-tools/css-minify.sh  > dist/ddimo.css
+	# compile standard css
+	cat src/css/[0-9]*.css | build-tools/css-minify.sh >> dist/ddimo.css
 
 js:
 	bash -c build-tools/build-js.sh
