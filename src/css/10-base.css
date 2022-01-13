@@ -149,3 +149,36 @@ screen and (max-aspect-ratio: 1/1) and (min-width: 48em) /* portrait - medium or
 	.content .form-input-component {min-width: 260px;}
 	.content .button-main {margin-top: 1em;}
 }
+
+
+/**************************
+ * Picture Preview
+ **************************/
+
+.content .picture-preview-container {
+	align-items: center;
+	bottom: 0;
+	cursor: pointer;
+	display: flex;
+	flex-flow: column;
+	justify-content: center;
+	left: 0;
+	padding: 0;
+	position: fixed;
+	right: 0;
+	top: 0;
+	width: 100%;
+}
+
+.content .picture-preview-container img {
+	height: min-content;
+	max-height: 90%;
+}
+@media screen and (max-aspect-ratio: 4/3) {
+	.content .picture-preview-container img {
+		height: initial;
+		max-height: initial;
+		max-width: 90%;
+		width: min-content;
+	}
+}

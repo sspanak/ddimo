@@ -1,4 +1,4 @@
-const previewContainerSelector = '.crossfire-volunteer-screenshot-preview';
+const previewContainerSelector = '.picture-preview-container';
 const previewImgSelector = `${previewContainerSelector} img`;
 
 function previewCrossfireScreenshot($img) {
