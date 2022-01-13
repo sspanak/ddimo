@@ -15,12 +15,13 @@ fi
 
 for d in src/js/*;
 do
+	ls $d/*.js 2> /dev/null 1> /dev/null || continue
+
 	PAGE_NAME=`basename $d`
 
-	ls $d/*.js > /dev/null \
-		&& mkdir -p dist/$PAGE_NAME \
-		&& echo '"use strict";' > dist/$PAGE_NAME/compiled.js \
-		&& cat $d/*.js >> dist/$PAGE_NAME/compiled.js
+	mkdir -p dist/$PAGE_NAME
+	echo '"use strict";' > dist/$PAGE_NAME/compiled.js
+	cat $d/*.js >> dist/$PAGE_NAME/compiled.js
 
 	if $DEBUG ; then
 		mv dist/$PAGE_NAME/compiled.js dist/$PAGE_NAME/$PAGE_NAME.js
