@@ -22,9 +22,10 @@
 				$noscipt.className = $noscipt.className.replace('no-script', '');
 			}
 		</script>
-		<script src="crossfire-volunteer/crossfire-volunteer.js" async></script>
-		<script src="doftor/doftor.js" async></script>
-
+		<script src="crossfire-volunteer/crossfire-volunteer.js" async type="module"></script>
+		<script src="crossfire-volunteer/crossfire-volunteer.legacy.js" async nomodule></script>
+		<script src="doftor/doftor.js" async type="module"></script>
+		<script src="doftor/doftor.legacy.js" async nomodule></script>
 	</head>
 	<body class="no-script" onload="yesScript();">
 

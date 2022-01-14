@@ -4,6 +4,9 @@ StandardPage::display(
 	'График на личните лекари',
 	[
 		'lang' => 'bg',
-		'scripts_inline' => ['doftor.js']
+		'scripts_inline' => [
+			[ 'module' => true, 'script' => 'doftor.js' ],
+			[ 'module' => false, 'script' => 'doftor.legacy.js' ]
+		]
 	]
 );

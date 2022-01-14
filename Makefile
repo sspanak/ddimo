@@ -57,6 +57,9 @@ clean:
 	rm -rf dist/*
 	rm -f ddimo.tar ddimo.tar.bz2
 
+serve:
+	cd dist/ && python3 -m http.server 3000
+
 # generic:
 # 	make clean-generic
 

@@ -1,20 +1,8 @@
 <?php
 require_once 'server.php';
 require_once 'browser.php';
+require_once 'script.php';
 
-class RemoteScript {
-	public bool $async = false;
-	public bool $defer = false;
-	public string $url = '';
-
-	public function __construct(array $array) {
-		if (array_key_exists('url', $array) && is_string($array['url'])) {
-			$this->url = $array['url'];
-		}
-		$this->defer = array_key_exists('defer', $array) ? !!$array['defer'] : $this->defer;
-		$this->async = array_key_exists('async', $array) ? !!$array['async'] : $this->async;
-	}
-}
 
 class StandardPage {
 	public string $base_path = '';
@@ -25,7 +13,7 @@ class StandardPage {
 	public string $content_classes = '';
 	public string $lang = 'en';
 	public string $title = '';
-	public array $scripts_inline = []; // string[]
+	public array $scripts_inline = []; // InlineScript[]
 	public array $scripts_remote = []; // RemoteScript[]
 	public string $site_name = '';
 
@@ -54,16 +42,8 @@ class StandardPage {
 
 	private function set_scripts_inline(array $scripts): void {
 		$this->scripts_inline = [];
-
 		foreach ($scripts as $script) {
-			if (!is_file($script) || !is_readable($script)) {
-				trigger_error("'$script' can not be opened and attached as inline javascript.", E_USER_WARNING);
-				$script_contents = '';
-			} else {
-				$script_contents = file_get_contents($script);
-			}
-
-			array_push($this->scripts_inline, $script_contents);
+			array_push($this->scripts_inline, new InlineScript($script));
 		}
 	}
 

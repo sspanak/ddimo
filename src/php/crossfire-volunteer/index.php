@@ -4,6 +4,9 @@ StandardPage::display(
 	'Crossfire Volunteer',
 	[
 		'content_classes' => 'crossfire-volunteer-background',
-		'scripts_inline' => ['crossfire-volunteer.js']
+		'scripts_inline' => [
+			[ 'module' => true, 'script' => 'crossfire-volunteer.js' ],
+			[ 'module' => false, 'script' => 'crossfire-volunteer.legacy.js' ]
+		]
 	]
 );

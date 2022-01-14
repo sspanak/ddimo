@@ -24,11 +24,17 @@
 		</script>
 
 		<?php foreach ($scripts_remote as $script): ?>
-			<script src="<?=$script->url?>" <?=$script->async ? 'async' : ''?> <?=$script->defer ? 'defer' : ''?>></script>
+			<script
+				src="<?=$script->url?>"
+				<?=$script->async ? 'async' : ''?>
+				<?=$script->defer ? 'defer' : ''?>
+				<?=$script->module === true ? 'type="module"' : ''?>
+				<?=$script->module === false ? 'nomodule' : ''?>
+			></script>
 		<?php endforeach;?>
 
 		<?php foreach ($scripts_inline as $script): ?>
-			<script><?=$script?></script>
+			<script <?=$script->module === true ? 'type="module"' : ''?> <?=$script->module === false ? 'nomodule' : ''?>><?=$script->script?></script>
 		<?php endforeach;?>
 	</head>
 	<body class="no-script" onload="yesScript();">

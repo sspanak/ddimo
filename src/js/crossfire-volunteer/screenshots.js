@@ -1,7 +1,7 @@
 const previewContainerSelector = '.picture-preview-container';
 const previewImgSelector = `${previewContainerSelector} img`;
 
-function previewCrossfireScreenshot($img) {
+window.previewCrossfireScreenshot = ($img) => {
 	if (!($img instanceof HTMLElement)) {
 		console.error('Не може да се покаже голяма снимка. Невалиден входен <img> елемент.');
 		return;
@@ -21,10 +21,10 @@ function previewCrossfireScreenshot($img) {
 
 	$previewImg.src = $img.src;
 	$previewContainer.className = $previewContainer.className.replace('hidden', '');
-}
+};
 
 
-function closeCrossfireScreenshot() {
+window.closeCrossfireScreenshot = () => {
 	const $previewContainer = document.querySelector(previewContainerSelector);
 	if (!$previewContainer) {
 		console.error('Не може да се покаже голяма снимка. Няма контейнер за показване.');
@@ -39,4 +39,4 @@ function closeCrossfireScreenshot() {
 
 	$previewImg.src = '';
 	$previewContainer.className = `${$previewContainer.className} hidden`;
-}
+};

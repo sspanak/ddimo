@@ -1,4 +1,4 @@
-const Grafik = new class {
+window.Grafik = new class {
 	constructor() {
 		this.dnes = new Date();
 		window.addEventListener('load', () => this._init());

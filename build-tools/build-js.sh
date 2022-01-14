@@ -18,17 +18,23 @@ do
 	ls $d/*.js 2> /dev/null 1> /dev/null || continue
 
 	PAGE_NAME=`basename $d`
-
 	mkdir -p dist/$PAGE_NAME
-	echo '"use strict";' > dist/$PAGE_NAME/compiled.js
-	cat $d/*.js >> dist/$PAGE_NAME/compiled.js
+
+	printf "Compiling JS for '$PAGE_NAME'... " \
+		&& echo '"use strict";' > dist/$PAGE_NAME/compiled.js \
+		&& cat $d/*.js >> dist/$PAGE_NAME/compiled.js \
+		&& npx babel dist/$PAGE_NAME/compiled.js > dist/$PAGE_NAME/legacy.js \
+		&& echo 'OK'
 
 	if $DEBUG ; then
 		mv dist/$PAGE_NAME/compiled.js dist/$PAGE_NAME/$PAGE_NAME.js
+		mv dist/$PAGE_NAME/legacy.js dist/$PAGE_NAME/$PAGE_NAME.legacy.js
 	else
-		npx babel dist/$PAGE_NAME/compiled.js | npx terser -c passes=2 > dist/$PAGE_NAME/$PAGE_NAME.js
+		printf "Minifying JS in 'dist/$PAGE_NAME'... " \
+			&& cat dist/$PAGE_NAME/compiled.js | npx terser -c passes=2,ecma=2018 > dist/$PAGE_NAME/$PAGE_NAME.js \
+			&& cat dist/$PAGE_NAME/legacy.js | npx terser -c passes=2 > dist/$PAGE_NAME/$PAGE_NAME.legacy.js \
+			&& echo 'OK'
+
+		rm -f dist/$PAGE_NAME/compiled.js dist/$PAGE_NAME/legacy.js
 	fi
-
-	rm -f dist/$PAGE_NAME/compiled.js
 done
-
