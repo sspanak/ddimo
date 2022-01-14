@@ -56,8 +56,13 @@ class StandardPage {
 
 	private function generate_breadcrumbs(): array {
 		$breadcrumbs = [];
+
 		foreach (explode('/', "$this->site_name$this->base_path") as $segment) {
-			$breadcrumbs[$segment] = implode('/', array_keys($breadcrumbs)) . "/$segment/";
+			if (empty($breadcrumbs)) {
+				$breadcrumbs[$segment] = "$segment/";
+			} else {
+				$breadcrumbs[$segment] = implode('/', array_keys($breadcrumbs)) . "/$segment/";
+			}
 		}
 
 		return $breadcrumbs;
