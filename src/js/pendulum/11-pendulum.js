@@ -1,10 +1,13 @@
-window.Pendulum = new class {
+class Pendulum {
 	constructor() {
+		this._configure()._useCanvas();
+	}
+
+	_configure() {
 		this.angle = 0.5;
 		this.paused = true;
 
-		this._selector = {	canvas: '.content-pendulum canvas' };
-		this._property = {
+		this._cfg = {
 			// all units are pixels
 			ballRadius: 15,
 			center: {
@@ -17,7 +20,7 @@ window.Pendulum = new class {
 			scale: 1,
 			style: {
 				Oxy: {
-					fontFamily: 'monospace',
+					fontFamily: '"Play", sans-serif',
 					fontWeight: 'bold',
 					lineColor: '#ccc',
 					textColor: '#ccc'
@@ -31,23 +34,22 @@ window.Pendulum = new class {
 			width: 215 // canvas width
 		};
 
-		window.addEventListener('load', _ => this._init());
+		return this;
 	}
 
 
-	_init() {
-		this.$canvas = new UiElement().select(this._selector.canvas);
-		if (!this.$canvas.$element) {
-			this.$canvas = null;
-			console.error('The pendulum will not work without a <canvas>.');
-			return;
+	_useCanvas() {
+		const $canvas = document.querySelector('.content-pendulum canvas');
+		if (!$canvas || !($canvas instanceof HTMLCanvasElement)) {
+			throw new Error('Cannot initialize a new Pendulum without a <canvas>.');
 		}
 
+		this.$canvas = new UiElement().select($canvas);
 		this._context = this.$canvas.$element.getContext('2d');
 
-		this._adjustScale().draw();
-
 		window.addEventListener('resize', _ => this._adjustScale().draw());
+
+		return this._adjustScale().draw();
 	}
 
 
@@ -61,16 +63,11 @@ window.Pendulum = new class {
 	 * @return this
 	 */
 	_adjustScale() {
-		if (!this.$canvas) {
-			console.warn('No <canvas> element to scale.');
-			return this;
-		}
-
 		const size = parseInt(this.$canvas.getStyle().width);
 
 		this.$canvas.$element.setAttribute('width', size);
 		this.$canvas.$element.setAttribute('height', size);
-		this._property.scale = size / 600;
+		this._cfg.scale = size / 600;
 
 		return this;
 	}
@@ -78,11 +75,11 @@ window.Pendulum = new class {
 
 	_drawCoordinateSystem() {
 		const
-			x = this._property.center.x * this._property.scale,
-			y = this._property.center.y * this._property.scale,
+			x = this._cfg.center.x * this._cfg.scale,
+			y = this._cfg.center.y * this._cfg.scale,
 			axisWidth = this.$canvas.$element.height * 0.48,
 			style = {
-				...this._property.style.Oxy,
+				...this._cfg.style.Oxy,
 				fontSize: this.$canvas.$element.height * 0.04
 			};
 
@@ -114,7 +111,7 @@ window.Pendulum = new class {
 
 		// labels
 		this._context.beginPath();
-		this._context.fillStyle = this._property.style.Oxy.textColor;
+		this._context.fillStyle = this._cfg.style.Oxy.textColor;
 		this._context.font = `${style.fontWeight} ${style.fontSize}px ${style.fontFamily}`;
 		this._context.fillText('X', x + axisWidth * 0.95, y * 0.96);
 		this._context.fillText('Y', x * 1.04, y + axisWidth * 0.98);
@@ -127,8 +124,8 @@ window.Pendulum = new class {
 	_drawPauseButton() {
 		const
 			squareSide = 0.2 * this.$canvas.$element.width,
-			squareX = this._property.center.x * this._property.scale - squareSide * 0.5,
-			squareY = this._property.center.y * this._property.scale - squareSide * 0.5;
+			squareX = this._cfg.center.x * this._cfg.scale - squareSide * 0.5,
+			squareY = this._cfg.center.y * this._cfg.scale - squareSide * 0.5;
 		const
 			x_a = squareX + squareSide * 0.15,
 			y_a = squareY + squareSide * 0.85,
@@ -137,7 +134,7 @@ window.Pendulum = new class {
 			x_c = x_a,
 			y_c = squareY + squareSide * 0.15;
 
-		this._context.fillStyle = this._property.style.pause.squareColor;
+		this._context.fillStyle = this._cfg.style.pause.squareColor;
 		this._context.lineWidth = 1;
 
 		// square
@@ -148,7 +145,7 @@ window.Pendulum = new class {
 
 		// triangle
 		this._context.beginPath();
-		this._context.fillStyle = this._property.style.pause.triangleColor;
+		this._context.fillStyle = this._cfg.style.pause.triangleColor;
 		this._context.moveTo(x_a, y_a);
 		this._context.lineTo(x_b, y_b);
 		this._context.lineTo(x_c, y_c);
@@ -161,10 +158,10 @@ window.Pendulum = new class {
 
 	_drawPendulum(angle) {
 		const
-			ballX = (this._property.center.x + this._property.rodLength * Math.sin(angle)) * this._property.scale,
-			ballY = (this._property.center.y + this._property.rodLength * Math.cos(angle)) * this._property.scale,
-			centerX = this._property.center.x * this._property.scale,
-			centerY = this._property.center.y * this._property.scale;
+			ballX = (this._cfg.center.x + this._cfg.rodLength * Math.sin(angle)) * this._cfg.scale,
+			ballY = (this._cfg.center.y + this._cfg.rodLength * Math.cos(angle)) * this._cfg.scale,
+			centerX = this._cfg.center.x * this._cfg.scale,
+			centerY = this._cfg.center.y * this._cfg.scale;
 
 
 		// rod
@@ -172,19 +169,19 @@ window.Pendulum = new class {
 		this._context.moveTo(centerX, centerY);
 		this._context.lineTo(ballX, ballY);
 		this._context.lineWidth = 1;
-		this._context.strokeStyle = this._property.style.pendulum.color;
+		this._context.strokeStyle = this._cfg.style.pendulum.color;
 		this._context.closePath();
 		this._context.stroke();
 
 
 		this._context.beginPath();
-		this._context.fillStyle=this._property.style.pendulum.color;
+		this._context.fillStyle=this._cfg.style.pendulum.color;
 
 		// central nail
 		this._context.arc(
 			centerX,
 			centerY,
-			this._property.nailRadius * this._property.scale,
+			this._cfg.nailRadius * this._cfg.scale,
 			0,
 			Math.PI * 2,
 			true
@@ -194,7 +191,7 @@ window.Pendulum = new class {
 		this._context.arc(
 			ballX,
 			ballY,
-			this._property.ballRadius * this._property.scale,
+			this._cfg.ballRadius * this._cfg.scale,
 			0,
 			Math.PI * 2,
 			true
@@ -208,21 +205,46 @@ window.Pendulum = new class {
 
 
 	/**
+	 * setAngle
+	 * Adjusts the angle of the rod.
+	 *
+	 * @param {number} angle
+	 * @return {this}
+	 */
+	setAngle(angle) {
+		this.angle = parseFloat(angle);
+		if (isNaN(this.angle)) {
+			console.warn(`Rod angle must be a number, but received: ${typeof angle}.`);
+		}
+
+		return this;
+	}
+
+
+	/**
+	 * setPause
+	 * Enables or disables the "paused" overlay button
+	 *
+	 * @param {bool} yes
+	 * @return {this}
+	 */
+	setPause(yes) {
+		this.paused = !!yes;
+		return this;
+	}
+
+
+	/**
 	 * draw
 	 * Draws the pendulum and the coordinate system and the pause button.
 	 *
-	 * this.angle is used to determine the angle of the rod.
-	 * this.pause determines whether to draw the pause button or not.
+	 * this.setAngle() is used to adjust the angle of the rod before drawing.
+	 * Use this.setPause() to draw the pause button or not.
 	 *
 	 * @param  {void}
-	 * @return {void}
+	 * @return {this}
 	 */
 	draw() {
-		if (!this.$canvas) {
-			console.warn('Cannot draw a pendulum without <canvas> element.');
-			return this;
-		}
-
 		this._context.clearRect(0, 0, this.$canvas.$element.width, this.$canvas.$element.height);
 		this
 			._drawCoordinateSystem()
@@ -234,4 +256,4 @@ window.Pendulum = new class {
 
 		return this;
 	}
-};
+}

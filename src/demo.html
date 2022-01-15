@@ -212,20 +212,21 @@
 				</noscript>
 
 				<div class="screen">
-					<canvas width="215" height="215" onclick="alert('toggle pause');"> </canvas>
+					<canvas width="215" height="215" onclick="PendulumEngine.togglePlayback();"></canvas>
 
 					<div class="statisics-hud">
-						<small class="hud-angle">Angle (φ) = <span id="status_fi">2.513</span> rad </small>
-						<small class="hud-velocity">Velocity (φ') = <span id="status_skorost">0.316</span> rad/s </small>
+						<small class="hud-angle">Angle (φ): <span id="hud-fi">2.513</span> rad </small>
+						<small class="hud-velocity">Velocity (φ'): <span id="hud-velocity">0.316</span> rad/s </small>
 						<small class="hud-equation">
 								φ'' =
-									-<span id="status_g">9.8226</span>
-									/ <span id="status_R">280</span>
-									* <span id="status_sin">0.41</span>
+									-<span id="hud-g">9.8226</span>
+									/ <span id="hud-R">280</span>
+									* <span id="hud-sin">0.41</span>
 						</small>
 
-						<small class="hud-fps">125 FPS</small>
-						<small class="hud-time">13.6s</small>
+						<small class="hud-fps"><span id="hud-fps">125</span> FPS</small>
+						<small class="hud-frame-time"><span id="hud-frame-time">16.66</span> ms (Δt)</small>
+						<small class="hud-time"><span id="hud-time">13.6</span>s</small>
 					</div>
 
 					<form method="post" class="statisics-controls">
@@ -233,7 +234,7 @@
 							<strong>Solving: φ'' = -g / R * sin(φ)</strong>
 						</label>
 						<label>
-							<input onchange="Anime.statusZadai()" type="checkbox" name="status_control" value="1" checked />
+							<input type="checkbox" name="hud-enabled" value="1" checked onchange="PendulumEngine.toggleHUD()" />
 							Enable Statistics
 						</label>
 					</form>
@@ -247,12 +248,12 @@
 						<small>[ <a href="//pendulum/help/">Help?</a> ]</small>
 					</h4>
 
-					<form method="post" onsubmit="return false">
+					<form method="post" onsubmit="return PendulumControlPanel.setInitialValues(this.elements);">
 
 						<div class="form-input-component">
 							<label class="form-input-name">Angle (φ<sub>0</sub>):</label>
 							<div class="form-input-with-unit">
-								<input type="text" name="fi0" value="2.513274">
+								<input type="text" name="angle" value="2.513274">
 								<label class="form-input-unit">rad</label>
 							</div>
 						</div>
@@ -260,7 +261,7 @@
 						<div class="form-input-component">
 							<label class="form-input-name">Angular Velocity (θ<sub>0</sub>):</label>
 							<div class="form-input-with-unit">
-								<input type="text" name="tita0" value="0.6">
+								<input type="text" name="velocity" value="0.6">
 								<label class="form-input-unit">rad/s</label>
 							</div>
 						</div>
@@ -268,7 +269,7 @@
 						<div class="form-input-component">
 							<label class="form-input-name">Pendulum Length:</label>
 							<div class="form-input-with-unit">
-								<input type="text" name="mahalo" value="280">
+								<input type="text" name="radius" value="280">
 								<label class="form-input-unit">cm</label>
 							</div>
 						</div>
@@ -276,11 +277,11 @@
 						<div class="form-input-component">
 							<label class="form-input-name">Gravity:</label>
 							<div class="form-input-with-unit">
-								<select name="gravitaciq">
+								<select name="g">
 									<option value="274.1">Sun (g = 274.1)</option>
 									<option value="3.703">Mercury (g = 3.703)</option>
 									<option value="8.872">Venus (g = 8.872)</option>
-									<option value="9.8226" selected="selected">Earth (g = 9.8226)</option>
+									<option value="9.8226" selected>Earth (g = 9.8226)</option>
 									<option value="1.625">Moon (g = 1.625)</option>
 									<option value="3.728">Mars (g = 3.728)</option>
 									<option value="25.93">Jupiter (g = 25.93)</option>
@@ -298,14 +299,26 @@
 
 						<div class="form-input-component">
 							<label class="form-input-name">FPS Limit:</label>
-							<select name="select-fps">
+							<select name="max-fps">
+								<option value="1"> 1 </option>
+								<option value="2"> 2 </option>
+								<option value="5"> 5 </option>
+								<option value="8"> 8 </option>
 								<option value="10"> 10 </option>
+								<option value="12"> 12 </option>
+								<option value="15"> 15 </option>
+								<option value="18"> 18 </option>
 								<option value="25"> 25 </option>
-								<option value="30"> 30 </option>
-								<option value="60"> 60 (real-time) </option>
-								<option value="100" selected> 100 </option>
+								<option value="30"> 30</option>
+								<option value="60" selected> 60, real-time) </option>
+								<option value="100"> 100 </option>
 								<option value="120"> 120 </option>
-								<option value="180"> 180 </option>
+								<option value="120"> 150 </option>
+								<option value="200"> 200 </option>
+								<option value="250"> 250 </option>
+								<option value="333"> 333 </option>
+								<option value="500"> 500 </option>
+								<option value="1000"> 1000 (Δt = 1) </option>
 							</select>
 						</div>
 
@@ -369,11 +382,11 @@
 						</p>
 
 						<p>
-							<i>"FPS Limit"</i> controls the maximum animation frames per second. 60 FPS should result in real-time motion. Use it to benchmark your browser or to see the simulation in slow motion.
+							<i>"FPS Limit"</i> controls time step for solving the equations. This is the same as setting the maximum animation frames per second. 60 FPS or more should result in real-time motion. Use it to benchmark your browser or to see the simulation in slow motion.
 						</p>
 
 						<p>
-							Note that this is the <i>maximum</i> allowed animation rate, but depending on your browser and operating system, it may actually run slower. Also, choosing 30 or 10 does not necessarily mean it will run at exactly 1/2 or 1/6 speed.
+							Note that this is the <i>maximum</i> allowed animation rate, but depending on your browser and operating system, it may actually run slower. Also, each browser has a Javascript loop limit that prevents excessive CPU usage. For this reason, values below 4 ms / 250 FPS are hardly achievable.
 						</p>
 
 						<p> Use the <i>"APPLY"</i> button to set your preferences. The pendulum will immediately reset to reflect the given values. </p>
