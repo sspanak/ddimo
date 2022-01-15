@@ -67,11 +67,11 @@ header nav {
 	border: 1px dashed var(--separator-color);
 }
 
+.content .picture-preview-container {
+	background-color: var(--screenshot-full-screen-background-color);
+}
+
 .content-crossfire-volunteer {
 	background-color: var(--crossfire-volunteer-background-color);
 	box-shadow: var(--crossfire-volunteer-content-shadow)
-}
-
-.content .picture-preview-container {
-	background-color: var(--screenshot-full-screen-background-color);
 }

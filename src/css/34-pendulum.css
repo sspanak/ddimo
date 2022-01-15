@@ -127,7 +127,7 @@ screen and (min-aspect-ratio: 1/1) and (min-width: 48em) {
 
 .content-pendulum .statisics-controls label {text-align: center;}
 .content-pendulum .statisics-controls .equation-definition {
-	font-family: "Exo 2";
+	font-family: "Exo 2", sans-serif;
 	margin-bottom: 6px;
 }
 

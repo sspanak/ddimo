@@ -17,9 +17,9 @@ window.Pendulum = new class {
 			scale: 1,
 			style: {
 				Oxy: {
-					fontFamily: 'sans-serif',
+					fontFamily: 'monospace',
 					fontWeight: 'bold',
-					lineColor: '#888',
+					lineColor: '#ccc',
 					textColor: '#ccc'
 				},
 				pause: {
@@ -46,6 +46,7 @@ window.Pendulum = new class {
 		this._context = this.$canvas.$element.getContext('2d');
 
 		this._adjustScale().draw();
+
 		window.addEventListener('resize', _ => this._adjustScale().draw());
 	}
 
@@ -115,8 +116,8 @@ window.Pendulum = new class {
 		this._context.beginPath();
 		this._context.fillStyle = this._property.style.Oxy.textColor;
 		this._context.font = `${style.fontWeight} ${style.fontSize}px ${style.fontFamily}`;
-		this._context.fillText('x', x + axisWidth * 0.95, y * 0.96);
-		this._context.fillText('y', x * 1.04, y + axisWidth * 0.98);
+		this._context.fillText('X', x + axisWidth * 0.95, y * 0.96);
+		this._context.fillText('Y', x * 1.04, y + axisWidth * 0.98);
 		this._context.closePath();
 
 		return this;
