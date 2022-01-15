@@ -10,7 +10,7 @@
 <?php if ($browser_is_text) {echo '</div>'; return;} ?>
 
 	<div class="screen">
-		<canvas id="ekran" width="215" height="215" onclick="alert('toggle pause');"> </canvas>
+		<canvas width="215" height="215" onclick="alert('toggle pause');"> </canvas>
 
 		<div class="statisics-hud">
 			<small class="hud-angle">Angle (φ) = <span id="status_fi">2.513</span> rad </small>

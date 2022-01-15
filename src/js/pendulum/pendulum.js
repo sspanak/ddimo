@@ -66,7 +66,7 @@ window.Pendulum = new class {
 			return this;
 		}
 
-		const size = Number.parseInt(this.$canvas.getStyle().width);
+		const size = parseInt(this.$canvas.getStyle().width);
 
 		this.$canvas.$element.setAttribute('width', size);
 		this.$canvas.$element.setAttribute('height', size);
