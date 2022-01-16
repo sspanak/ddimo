@@ -17,9 +17,34 @@
 		<link rel="stylesheet" href="ddimo.css">
 
 		<script>
+			"use strict";
+
 			function yesScript() {
 				var $noscipt = document.querySelector('.no-script');
 				$noscipt.className = $noscipt.className.replace('no-script', '');
+			}
+
+			function isOldBrowser() {
+				try {
+					if (!('userAgent' in navigator)) return false;
+					if (navigator.userAgent.indexOf('Edge') !== -1 && navigator.userAgent.match(/Edge\/(\d+)/)[1] < 16)
+						throw new Error;
+					if (typeof Symbol === 'undefined') throw new Error;
+					eval('class C {}');
+					eval('var a = (x) => x+1');
+					eval('for (const _ in []){}'); // Firefox < 52 / KaiOS 2.x cannot interpret "const" inside "for..in"
+				} catch (e) {
+					return true;
+				}
+
+				return false;
+			}
+
+			if (isOldBrowser()) {
+				var css = document.createElement('link');
+				css.rel = 'stylesheet';
+				css.href = 'ddimo.legacy.css';
+				document.head.appendChild(css);
 			}
 		</script>
 		<script src="crossfire-volunteer/crossfire-volunteer.js" async type="module"></script>

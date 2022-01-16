@@ -4,8 +4,8 @@
 	--stats-controls-padding: 5px;
 
 	/* window_height - header_height and some headroom - statistics_panel_height */
-	--canvas-size-S: calc(100vh - 55px - var(--stats-controls-height) - 2*var(--stats-controls-padding));
-	--canvas-size-L: calc(100vh - 80px - var(--stats-controls-height) - 2*var(--stats-controls-padding));
+	--canvas-size-S: calc(100vh - 55px - var(--stats-controls-height) - 2 * var(--stats-controls-padding));
+	--canvas-size-L: calc(100vh - 80px - var(--stats-controls-height) - 2 * var(--stats-controls-padding));
 }
 
 /*********************************************
@@ -35,13 +35,13 @@ screen and (min-aspect-ratio: 1/1) and (min-width: 48em) {
  * Canvas (it must always be a square)
  *********************************************/
 .content-pendulum .screen {
-	cursor: pointer;
 	flex: auto;
 	position: relative;
 }
 
 /* landscape small */
 .content-pendulum canvas {
+	cursor: pointer;
 	display: block;
 	height: var(--canvas-size-S);
 	margin: auto;
@@ -104,9 +104,17 @@ screen and (min-aspect-ratio: 1/1) and (min-width: 48em) {
 }
 
 .content-pendulum .statisics-hud small {position: absolute;}
-.content-pendulum .hud-velocity {top: 1.15em;}
-.content-pendulum .hud-angle {top: 2.3em;}
-.content-pendulum .hud-fps {right: 0;}
+.content-pendulum .hud-equation {top: 0;}
+.content-pendulum .hud-velocity {top: 1.2em;}
+.content-pendulum .hud-angle {top: 2.4em;}
+.content-pendulum .hud-frame-time {
+	right: 0;
+	top:  0;
+}
+.content-pendulum .hud-fps {
+	right: 0;
+	top: 1.2em;
+}
 .content-pendulum .hud-time {
 	bottom: 0;
 	right: 0;

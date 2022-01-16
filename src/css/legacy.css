@@ -1,0 +1,4 @@
+.content-pendulum canvas, .content-pendulum .statisics-hud {
+	min-height: 215px;
+	min-width: 215px;
+}

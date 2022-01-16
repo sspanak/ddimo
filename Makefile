@@ -16,9 +16,8 @@ website:
 	make php
 
 css:
-	# hardcode colors for legacy browsers
-	node build-tools/css-convert-legacy.js src/css/11-colors.css > dist/ddimo.css
-	# compile standard css
+	cp src/css/legacy.css dist/ddimo.css
+	node build-tools/css-convert-legacy.js src/css/11-colors.css >> dist/ddimo.css
 	cat src/css/[0-9]*.css >> dist/ddimo.css
 
 js:
