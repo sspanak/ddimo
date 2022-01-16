@@ -6,7 +6,7 @@ window.Grafik = new class {
 
 
 	_init() {
-		this.$element = {
+		this.element = {
 			$dnes: document.querySelector('#dnes'),
 			$input: document.querySelector('#data_za_grafik'),
 			$izbranaData: document.querySelector('#izbranaData'),
@@ -20,7 +20,7 @@ window.Grafik = new class {
 
 
 	_koyaData() {
-		return new Date(this.$element.$input.value);
+		return new Date(this.element.$input.value);
 	}
 
 
@@ -30,7 +30,7 @@ window.Grafik = new class {
 			return this;
 		}
 
-		this.$element.$input.value = data.toISOString().replace(/T.+/, '');
+		this.element.$input.value = data.toISOString().replace(/T.+/, '');
 
 		return this;
 	}
@@ -40,9 +40,9 @@ window.Grafik = new class {
 		const dnes = new Date();
 		dnes.setUTCHours(0,0,0,0);
 
-		const izbranaData = new Date(this.$element.$input.value);
+		const izbranaData = new Date(this.element.$input.value);
 
-		this.$element.$dnes.style.display = dnes.getTime() === izbranaData.getTime() ? 'inline' : 'none';
+		this.element.$dnes.style.display = dnes.getTime() === izbranaData.getTime() ? 'inline' : 'none';
 
 		let data = '';
 		let den = '';
@@ -58,12 +58,12 @@ window.Grafik = new class {
 			den = izbranaData.toLocaleDateString('bg', { weekday: 'long' });
 		}
 
-		this.$element.$izbranaData.innerHTML = `${data} (${den})`;
+		this.element.$izbranaData.innerHTML = `${data} (${den})`;
 
 
 		const smeni = DoftorskaSmyana.koy(izbranaData);
 		for (let smyana in smeni) {
-			const $element = this.$element[`$smyana${smyana}`];
+			const $element = this.element[`$smyana${smyana}`];
 
 			if (!$element) {
 				console.warn(`"${smyana}" не е валидна смяна`);
