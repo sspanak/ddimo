@@ -5,6 +5,7 @@ class Pendulum {
 
 	_configure() {
 		this.angle = 0.5;
+		this.rodLength = 290;
 		this.paused = true;
 
 		this._cfg = {
@@ -16,7 +17,6 @@ class Pendulum {
 			},
 			height: 215, // canvas height
 			nailRadius: 5,
-			rodLength: 290,
 			scale: 1,
 			style: {
 				Oxy: {
@@ -158,8 +158,8 @@ class Pendulum {
 
 	_drawPendulum(angle) {
 		const
-			ballX = (this._cfg.center.x + this._cfg.rodLength * Math.sin(angle)) * this._cfg.scale,
-			ballY = (this._cfg.center.y + this._cfg.rodLength * Math.cos(angle)) * this._cfg.scale,
+			ballX = (this._cfg.center.x + this.rodLength * Math.sin(angle)) * this._cfg.scale,
+			ballY = (this._cfg.center.y + this.rodLength * Math.cos(angle)) * this._cfg.scale,
 			centerX = this._cfg.center.x * this._cfg.scale,
 			centerY = this._cfg.center.y * this._cfg.scale;
 
@@ -215,6 +215,23 @@ class Pendulum {
 		this.angle = parseFloat(angle);
 		if (isNaN(this.angle)) {
 			console.warn(`Rod angle must be a number, but received: ${typeof angle}.`);
+		}
+
+		return this;
+	}
+
+
+	/**
+	 * setRodLength
+	 * Adjusts the length of the rod.
+	 *
+	 * @param {number} length
+	 * @return {this}
+	 */
+	setRodLength(length) {
+		this.rodLength = parseFloat(length);
+		if (isNaN(this.rodLength)) {
+			console.warn(`Rod length must be a number, but received: ${typeof rodLength}.`);
 		}
 
 		return this;

@@ -1,16 +1,18 @@
 class PendulumControlPanel {
 	constructor() {
 		this.selector = {
-			isHudEnabled: '.content-pendulum input[name=hud-enabled]',
 			angle: '.content-pendulum input[name=angle]',
-			velocity: '.content-pendulum input[name=velocity]',
-			radius: '.content-pendulum input[name=radius]',
 			g: '.content-pendulum select[name=g]',
-			maxFPS: '.content-pendulum select[name=max-fps]'
+			isHudEnabled: '.content-pendulum input[name=hud-enabled]',
+			maxFPS: '.content-pendulum select[name=maxFPS]',
+			radius: '.content-pendulum input[name=radius]',
+			velocity: '.content-pendulum input[name=velocity]'
 		};
 
 		// this.element = {};
 	}
+
+
 
 	_getControls() {
 		return Object.values(this.selector).map(selector => (
@@ -19,24 +21,55 @@ class PendulumControlPanel {
 	}
 
 
-	// init() {
-	// 	this.selector.map((selector, elementName) => {
-	// 		$element = document.querySelector('')
-	// 	});
-	// }
+	/**
+	 * _getMinInitialValues
+	 *
+	 * @param {void}
+	 * @return {JSON}
+	 */
+	_getMinInitialValues() {
+		const values = {
+			g: 0,
+			maxFPS: 1,
+			radius: 0.0001
+		};
+
+		return { ...values };
+	}
 
 
-	// setInitialValues(elements) {
-	// 	console.log(elements);
-	// 	// this.isHudEnabled = false;
-	// 	// this.angle = 0.5;
-	// 	// this.velocity = 0;
-	// 	// this.radius = 280;
-	// 	// this.g = 9.81;
-	// 	// this.maxFPS = 60;
-	// 	//
-	// 	return false;
-	// }
+	/**
+	 * _getMaxInitialValues
+	 *
+	 * @param {void}
+	 * @return {JSON}
+	 */
+	_getMaxInitialValues() {
+		const values = {
+			maxFPS: 1000,
+			radius: 290
+		};
+
+		return { ...values };
+	}
+
+
+	/**
+	 * _getDefaultInitialValues
+	 *
+	 * @param {void}
+	 * @return {JSON}
+	 */
+	_getDefaultInitialValues() {
+		const values = {
+			angle: 0.5,
+			g: 9.8226,
+			maxFPS: 60,
+			radius: 280,
+			velocity: 0.6
+		};
+		return { ...values };
+	}
 
 
 	/**
@@ -79,4 +112,39 @@ class PendulumControlPanel {
 
 		return $checkbox.checked;
 	}
-};
+
+
+	/**
+	 * getInitialValues
+	 * Returns validated initial values, filling in defaults in case some input is missing.
+	 *
+	 * @param {void}
+	 * @return {JSON<input-name: input-value>}
+	 */
+	getInitialValues() {
+		const defaults = this._getDefaultInitialValues();
+		const minimums = this._getMinInitialValues();
+		const maximums = this._getMaxInitialValues();
+
+		const validatedValues = { ...defaults };
+
+		this._getControls().forEach($input => {
+			let value = parseFloat($input.value);
+
+			if (isNaN(value)) {
+				value = 0;
+			}
+			if (minimums[$input.name]) {
+				value = Math.max(minimums[$input.name], value);
+			}
+			if (maximums[$input.name]) {
+				value = Math.min(maximums[$input.name], value);
+			}
+
+			$input.value = value;
+			validatedValues[$input.name] = value;
+		});
+
+		return validatedValues;
+	}
+}

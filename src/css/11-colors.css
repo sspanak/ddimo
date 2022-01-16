@@ -8,7 +8,8 @@
 	--input-background-color: #1c1c1c;
 	--input-border-color: #444;
 	--input-text-color: #ccc;
-	--input-disabled-text: #aaa;
+	--input-disabled-background-color: #222;
+	--input-disabled-text-color: #888;
 
 	--link-color: #91c4ef;
 	--link-hovered-color: #77c1ff;
@@ -45,7 +46,8 @@ input, select {
 	color: var(--input-text-color);
 }
 input:disabled, select:disabled {
-	color: var(--input-disabled-text);
+	background-color: var(--input-disabled-background-color);
+	color: var(--input-disabled-text-color);
 	cursor: not-allowed;
 }
 
