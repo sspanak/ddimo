@@ -64,7 +64,12 @@ class HUD {
 			this.element.$radius.innerHTML = radius;
 		}
 
-		['angle', 'g', 'sinPhi', 'velocity'].forEach(statName => {
+		const sinPhi = Math.sin(stats.angle);
+		if (!isNaN(sinPhi)) {
+			this.element.$sinPhi.innerHTML = sinPhi.toFixed(3);
+		}
+
+		['angle', 'g', 'velocity'].forEach(statName => {
 			const value = parseFloat(stats[statName]);
 			if (!isNaN(value)) {
 				this.element[`$${statName}`].innerHTML = value.toFixed(3);
