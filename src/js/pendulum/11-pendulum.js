@@ -8,7 +8,7 @@ class Pendulum {
 		this.rodLength = 290;
 		this.paused = true;
 
-		this._cfg = {
+		this._definiion = {
 			// all units are pixels
 			ballRadius: 15,
 			center: {
@@ -67,7 +67,7 @@ class Pendulum {
 
 		this.$canvas.$element.setAttribute('width', size);
 		this.$canvas.$element.setAttribute('height', size);
-		this._cfg.scale = size / 600;
+		this._definiion.scale = size / 600;
 
 		return this;
 	}
@@ -75,11 +75,11 @@ class Pendulum {
 
 	_drawCoordinateSystem() {
 		const
-			x = this._cfg.center.x * this._cfg.scale,
-			y = this._cfg.center.y * this._cfg.scale,
+			x = this._definiion.center.x * this._definiion.scale,
+			y = this._definiion.center.y * this._definiion.scale,
 			axisWidth = this.$canvas.$element.height * 0.48,
 			style = {
-				...this._cfg.style.Oxy,
+				...this._definiion.style.Oxy,
 				fontSize: this.$canvas.$element.height * 0.04
 			};
 
@@ -111,7 +111,7 @@ class Pendulum {
 
 		// labels
 		this._context.beginPath();
-		this._context.fillStyle = this._cfg.style.Oxy.textColor;
+		this._context.fillStyle = this._definiion.style.Oxy.textColor;
 		this._context.font = `${style.fontWeight} ${style.fontSize}px ${style.fontFamily}`;
 		this._context.fillText('X', x + axisWidth * 0.95, y * 0.96);
 		this._context.fillText('Y', x * 1.04, y + axisWidth * 0.98);
@@ -124,8 +124,8 @@ class Pendulum {
 	_drawPauseButton() {
 		const
 			squareSide = 0.2 * this.$canvas.$element.width,
-			squareX = this._cfg.center.x * this._cfg.scale - squareSide * 0.5,
-			squareY = this._cfg.center.y * this._cfg.scale - squareSide * 0.5;
+			squareX = this._definiion.center.x * this._definiion.scale - squareSide * 0.5,
+			squareY = this._definiion.center.y * this._definiion.scale - squareSide * 0.5;
 		const
 			x_a = squareX + squareSide * 0.15,
 			y_a = squareY + squareSide * 0.85,
@@ -134,7 +134,7 @@ class Pendulum {
 			x_c = x_a,
 			y_c = squareY + squareSide * 0.15;
 
-		this._context.fillStyle = this._cfg.style.pause.squareColor;
+		this._context.fillStyle = this._definiion.style.pause.squareColor;
 		this._context.lineWidth = 1;
 
 		// square
@@ -145,7 +145,7 @@ class Pendulum {
 
 		// triangle
 		this._context.beginPath();
-		this._context.fillStyle = this._cfg.style.pause.triangleColor;
+		this._context.fillStyle = this._definiion.style.pause.triangleColor;
 		this._context.moveTo(x_a, y_a);
 		this._context.lineTo(x_b, y_b);
 		this._context.lineTo(x_c, y_c);
@@ -158,10 +158,10 @@ class Pendulum {
 
 	_drawPendulum(angle) {
 		const
-			ballX = (this._cfg.center.x + this.rodLength * Math.sin(angle)) * this._cfg.scale,
-			ballY = (this._cfg.center.y + this.rodLength * Math.cos(angle)) * this._cfg.scale,
-			centerX = this._cfg.center.x * this._cfg.scale,
-			centerY = this._cfg.center.y * this._cfg.scale;
+			ballX = (this._definiion.center.x + this.rodLength * Math.sin(angle)) * this._definiion.scale,
+			ballY = (this._definiion.center.y + this.rodLength * Math.cos(angle)) * this._definiion.scale,
+			centerX = this._definiion.center.x * this._definiion.scale,
+			centerY = this._definiion.center.y * this._definiion.scale;
 
 
 		// rod
@@ -169,19 +169,19 @@ class Pendulum {
 		this._context.moveTo(centerX, centerY);
 		this._context.lineTo(ballX, ballY);
 		this._context.lineWidth = 1;
-		this._context.strokeStyle = this._cfg.style.pendulum.color;
+		this._context.strokeStyle = this._definiion.style.pendulum.color;
 		this._context.closePath();
 		this._context.stroke();
 
 
 		this._context.beginPath();
-		this._context.fillStyle=this._cfg.style.pendulum.color;
+		this._context.fillStyle=this._definiion.style.pendulum.color;
 
 		// central nail
 		this._context.arc(
 			centerX,
 			centerY,
-			this._cfg.nailRadius * this._cfg.scale,
+			this._definiion.nailRadius * this._definiion.scale,
 			0,
 			Math.PI * 2,
 			true
@@ -191,7 +191,7 @@ class Pendulum {
 		this._context.arc(
 			ballX,
 			ballY,
-			this._cfg.ballRadius * this._cfg.scale,
+			this._definiion.ballRadius * this._definiion.scale,
 			0,
 			Math.PI * 2,
 			true
