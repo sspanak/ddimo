@@ -77,11 +77,11 @@ class HUD {
 		});
 
 		// top right
-		const frameTime = parseFloat(stats.frameTime);
+		const frameTime = parseInt(stats.frameTime);
 		if (!isNaN(frameTime)) {
-			this.element.$frameTime.innerHTML = Math.round(stats.frameTime);
+			this.element.$frameTime.innerHTML = frameTime;
 
-			const fps = frameTime > 0 ? Math.round(1000 / frameTime) : '--';
+			const fps = frameTime > 0 ? Math.floor(1000 / frameTime) : '--';
 			this.element.$fps.innerHTML = fps;
 		}
 
