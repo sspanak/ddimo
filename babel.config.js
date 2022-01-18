@@ -4,10 +4,10 @@ module.exports = function(api) {
 
 	const presets = [[
 		'@babel/preset-env', {
-			'targets': {
-				'android': '4.4',
-				'ie': '10',
-				'ios': '7'
+			targets: {
+				firefox: '48',
+				ie: '10',
+				opera: '12'
 			}
 		}
 	]];

@@ -21,11 +21,9 @@ do
 	mkdir -p dist/$PAGE_NAME
 
 	printf "Compiling JS for '$PAGE_NAME'... " \
-		&& cat $d/*.js >> dist/tmp.js \
-		&& cat {src/js/polyfills.js,dist/tmp.js} > dist/$PAGE_NAME/legacy.js \
-		&& npx babel dist/$PAGE_NAME/legacy.js --out-file dist/$PAGE_NAME/legacy.js \
-		&& echo '"use strict";' | cat - dist/tmp.js > dist/$PAGE_NAME/compiled.js \
-		&& rm dist/tmp.js \
+		&& echo '"use strict";' > dist/$PAGE_NAME/compiled.js \
+		&& cat $d/*.js >> dist/$PAGE_NAME/compiled.js \
+		&& npx babel dist/$PAGE_NAME/compiled.js > dist/$PAGE_NAME/legacy.js \
 		&& echo 'OK'
 
 	if $DEBUG ; then
