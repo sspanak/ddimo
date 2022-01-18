@@ -46,7 +46,7 @@ window.Grafik = new class {
 
 		let data = '';
 		let den = '';
-		if (isNaN(izbranaData.getTime())) {
+		if (Number.isNaN(izbranaData.getTime())) {
 			data = '...';
 			den = 'избери дата';
 		}  else if (Object.prototype.toString.call(window.operamini) === '[object OperaMini]') {

@@ -59,26 +59,26 @@ class HUD {
 		}
 
 		// top left
-		const radius = parseInt(stats.radius);
-		if (!isNaN(radius)) {
+		const radius = Number.parseInt(stats.radius);
+		if (!Number.isNaN(radius)) {
 			this.element.$radius.innerHTML = radius;
 		}
 
 		const sinPhi = Math.sin(stats.angle);
-		if (!isNaN(sinPhi)) {
+		if (!Number.isNaN(sinPhi)) {
 			this.element.$sinPhi.innerHTML = sinPhi.toFixed(3);
 		}
 
 		['angle', 'g', 'velocity'].forEach(statName => {
-			const value = parseFloat(stats[statName]);
-			if (!isNaN(value)) {
+			const value = Number.parseFloat(stats[statName]);
+			if (!Number.isNaN(value)) {
 				this.element[`$${statName}`].innerHTML = value.toFixed(3);
 			}
 		});
 
 		// top right
-		const frameTime = parseInt(stats.frameTime);
-		if (!isNaN(frameTime)) {
+		const frameTime = Number.parseInt(stats.frameTime);
+		if (!Number.isNaN(frameTime)) {
 			this.element.$frameTime.innerHTML = frameTime;
 
 			const fps = frameTime > 0 ? Math.floor(1000 / frameTime) : '--';
@@ -86,8 +86,8 @@ class HUD {
 		}
 
 		// bottom right
-		const playbackTime = parseFloat(stats.playbackTime);
-		if (!isNaN(playbackTime)) {
+		const playbackTime = Number.parseFloat(stats.playbackTime);
+		if (!Number.isNaN(playbackTime)) {
 			this.element.$playbackTime.innerHTML = (playbackTime / 1000).toFixed(1);
 		}
 	}

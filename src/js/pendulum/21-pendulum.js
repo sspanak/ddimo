@@ -63,7 +63,7 @@ class Pendulum {
 	 * @return this
 	 */
 	_adjustScale() {
-		const size = parseInt(this.$canvas.getStyle().width);
+		const size = Number.parseInt(this.$canvas.getStyle().width);
 
 		this.$canvas.$element.setAttribute('width', size);
 		this.$canvas.$element.setAttribute('height', size);
@@ -212,8 +212,8 @@ class Pendulum {
 	 * @return {this}
 	 */
 	setAngle(angle) {
-		this.angle = parseFloat(angle);
-		if (isNaN(this.angle)) {
+		this.angle = Number.parseFloat(angle);
+		if (Number.isNaN(this.angle)) {
 			console.warn(`Rod angle must be a number, but received: ${typeof angle}.`);
 		}
 
@@ -229,8 +229,8 @@ class Pendulum {
 	 * @return {this}
 	 */
 	setRodLength(length) {
-		this.rodLength = parseFloat(length);
-		if (isNaN(this.rodLength)) {
+		this.rodLength = Number.parseFloat(length);
+		if (Number.isNaN(this.rodLength)) {
 			console.warn(`Rod length must be a number, but received: ${typeof rodLength}.`);
 		}
 

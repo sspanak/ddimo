@@ -129,9 +129,9 @@ class PendulumControlPanel {
 		const validatedValues = { ...defaults };
 
 		this._getControls().forEach($input => {
-			let value = parseFloat($input.value);
+			let value = Number.parseFloat($input.value);
 
-			if (isNaN(value)) {
+			if (Number.isNaN(value)) {
 				value = 0;
 			}
 			if (minimums[$input.name]) {
