@@ -10,7 +10,7 @@ window.PendulumEngine = new class {
 		};
 
 
-		window.addEventListener('load', _ => {
+		window.addEventListener('load', () => {
 			this.ControlPanel = new PendulumControlPanel();
 			this.Pendulum = new Pendulum();
 			this.HUD = new HUD();
@@ -63,20 +63,17 @@ window.PendulumEngine = new class {
 	}
 
 
-	_hudStepAhead() {
-		this.HUD.draw(this._getStatistics());
-	}
-
-
 	_play() {
 		this.ControlPanel.disable();
 
 		this.Pendulum.setPause(false);
 		this.step.lastTime = Date.now();
 
-		this.toggleHUD(this.HUD.enabled);
+		this.toggleHUD();
+
+		clearInterval(this.pendulumInterval);
 		this.pendulumInterval = setInterval(
-			_ => this._pendulumStepAhead(), Math.ceil(1000 / this.maxFPS.pendulum)
+			() => this._pendulumStepAhead(), Math.ceil(1000 / this.maxFPS.pendulum)
 		);
 	}
 
@@ -101,7 +98,9 @@ window.PendulumEngine = new class {
 
 		clearInterval(this.hudInterval);
 		if (this.HUD.enabled) {
-			this.hudInterval = setInterval(_ => this._hudStepAhead(), Math.ceil(1000 / this.maxFPS.hud));
+			this.hudInterval = setInterval(
+				() => this.HUD.draw(this._getStatistics()), Math.ceil(1000 / this.maxFPS.hud)
+			);
 		}
 	}
 
@@ -116,7 +115,13 @@ window.PendulumEngine = new class {
 
 
 	reset() {
-		const { angle, g, maxFPS, radius, velocity } = this.ControlPanel.getInitialValues();
+		const {
+			angle,
+			g,
+			maxFPS,
+			radius,
+			velocity
+		} = this.ControlPanel.getInitialValues();
 
 		this.maxFPS.pendulum = maxFPS;
 		this._resetTime();

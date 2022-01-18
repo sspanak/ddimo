@@ -8,10 +8,7 @@ class PendulumControlPanel {
 			radius: '.content-pendulum input[name=radius]',
 			velocity: '.content-pendulum input[name=velocity]'
 		};
-
-		// this.element = {};
 	}
-
 
 
 	_getControls() {
@@ -21,45 +18,25 @@ class PendulumControlPanel {
 	}
 
 
-	/**
-	 * _getMinInitialValues
-	 *
-	 * @param {void}
-	 * @return {JSON}
-	 */
 	_getMinInitialValues() {
 		const values = {
 			g: 0,
 			maxFPS: 1,
 			radius: 0.0001
 		};
-
 		return { ...values };
 	}
 
 
-	/**
-	 * _getMaxInitialValues
-	 *
-	 * @param {void}
-	 * @return {JSON}
-	 */
 	_getMaxInitialValues() {
 		const values = {
 			maxFPS: 1000,
 			radius: 290
 		};
-
 		return { ...values };
 	}
 
 
-	/**
-	 * _getDefaultInitialValues
-	 *
-	 * @param {void}
-	 * @return {JSON}
-	 */
 	_getDefaultInitialValues() {
 		const values = {
 			angle: 0.5,
@@ -83,6 +60,7 @@ class PendulumControlPanel {
 		return this;
 	}
 
+
 	/**
 	 * disable
 	 * Disables all control panel inputs in the DOM.
@@ -93,6 +71,7 @@ class PendulumControlPanel {
 		this._getControls().forEach(e => e.setAttribute('disabled', true));
 		return this;
 	}
+
 
 	/**
 	 * isHudEnabled
@@ -126,7 +105,7 @@ class PendulumControlPanel {
 		const minimums = this._getMinInitialValues();
 		const maximums = this._getMaxInitialValues();
 
-		const validatedValues = { ...defaults };
+		const validValues = { ...defaults };
 
 		this._getControls().forEach($input => {
 			let value = Number.parseFloat($input.value);
@@ -142,9 +121,9 @@ class PendulumControlPanel {
 			}
 
 			$input.value = value;
-			validatedValues[$input.name] = value;
+			validValues[$input.name] = value;
 		});
 
-		return validatedValues;
+		return validValues;
 	}
 }
