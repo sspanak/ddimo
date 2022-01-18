@@ -35,8 +35,6 @@
 				Enable Statistics
 			</label>
 		</form>
-
-		<div class="click-to-play"><span>Click to Play!</span></div>
 	</div>
 
 	<div class="control-panel">
