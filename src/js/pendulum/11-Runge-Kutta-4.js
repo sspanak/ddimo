@@ -56,6 +56,11 @@ function RungeKutta4() {
 			this.y0	= array_copy(y0);
 		else
 			this.y0	= parseFloat(y0);
+
+		// Винаги имаме нужда от стойности от предишната стъпка, но на нулевата няма такива,
+		// затова просто преизползваме началните стойности.
+		this.y = y0;
+		this.t = t0;
 	};
 	
 	
@@ -83,9 +88,9 @@ function RungeKutta4() {
 	};
 	
 	
-	this.priloji = function(funkciq) {
+	this.priloji = function() {
 		// Проверка дали не работим с масиви
-		if (typeof(this.y0) === "object" && typeof(__izraz) === "object") return prilojiZaMasiv(funkciq);
+		if (typeof(this.y0) === "object" && typeof(__izraz) === "object") return prilojiZaMasiv();
 
 		// Проверки за началните условия
 		this.stpka	= parseFloat(this.stpka);
@@ -132,18 +137,13 @@ function RungeKutta4() {
 		k4 *= this.stpka;
 	
 		this.y += (k1 + 2*k2 + 2*k3 + k4) / 6;
-		
-		if (typeof(funkciq) === "function") {
-			funkciq(this.y);
-			
-			if (isNaN(this.y)) return false;
-		}
-		
-		return true;
+		this.t += this.stpka;
+
+		return !isNaN(this.y);
 	};	
 	
 	
-	var prilojiZaMasiv = function(funkciq) {
+	var prilojiZaMasiv = function() {
 		// Проверки за началните условия
 		self.stpka	= parseFloat(self.stpka);
 		self.t0		= parseFloat(self.t0);
@@ -210,13 +210,9 @@ function RungeKutta4() {
 			self.y[i] += self.stpka * 0.166666667 * (k1[i] + k4[i] + 2*(k2[i] + k3[i]));
 		}
 
-		if (typeof(funkciq) === "function") {
-			funkciq(self.y);
-			
-			if (isNaN(self.y)) return false;
-		}
+		self.t += self.stpka;
 		
-		return true;
+		return !isNaN(self.y);
 	};
 }
 

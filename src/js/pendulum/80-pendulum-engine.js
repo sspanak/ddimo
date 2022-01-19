@@ -47,10 +47,7 @@ window.PendulumEngine = new class {
 		const algorithmDeltaT = Math.min(0.2, Math.max(0.0001, this.step.deltaT / 1000));
 
 		RungeKutta4.init(RungeKutta4.izraz(), algorithmDeltaT, RungeKutta4.t, RungeKutta4.y);
-		RungeKutta4.priloji(y => {
-			RungeKutta4.y = y;
-			RungeKutta4.t += algorithmDeltaT;
-		});
+		RungeKutta4.priloji();
 
 		// use the calculated angle to draw the pendulum
 		this.Pendulum.setAngle(RungeKutta4.y[0]).draw();
@@ -128,10 +125,6 @@ window.PendulumEngine = new class {
 
 		const equation = new Equation(angle, velocity, radius, g);
 		RungeKutta4.init(equation.expression, this.step.deltaT, this.playbackTime, equation.y0);
-		// We always need the values from the previous step, but at step 0 there are none,
-		// so we just reuse the initial ones.
-		RungeKutta4.y = equation.y0;
-		RungeKutta4.t = this.step.deltaT;
 
 		this.Pendulum
 			.setRodLength(radius)
