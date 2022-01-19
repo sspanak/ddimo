@@ -2,23 +2,27 @@ MAKEFLAGS += --no-print-directory
 SHELL := /bin/bash
 
 demo:
-	make css
 	make js-debug
+	make css-debug
 	cat src/css/debug.css >> dist/ddimo.css
 	make images
 	cp src/demo.html dist/index.html
 
 website:
-	make css
 	make js
+	make css
 	make images
 	make downloads
 	make php
 
-css:
+css-debug:
 	cp src/css/legacy.css dist/ddimo.css
 	node build-tools/css-convert-legacy.js src/css/11-colors.css >> dist/ddimo.css
 	cat src/css/[0-9]*.css >> dist/ddimo.css
+
+css:
+	make css-debug
+	npx csso dist/ddimo.css > dist/mini.css && mv dist/mini.css dist/ddimo.css
 
 js:
 	bash -c build-tools/build-js.sh
