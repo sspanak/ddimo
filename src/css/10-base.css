@@ -114,7 +114,6 @@ header nav .nav-element {
 	padding: 0.4em 0;
 	text-align: center;
 	text-transform: uppercase;
-	width: 100%;
 }
 
 /* main button */
@@ -122,6 +121,7 @@ header nav .nav-element {
 	margin-left: auto;
 	margin-right: auto;
 	min-width: 130px;
+	width: 100%;
 }
 
 

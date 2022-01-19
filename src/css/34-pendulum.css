@@ -92,8 +92,10 @@ screen and (min-aspect-ratio: 1/1) and (min-width: 48em) {
 
 .content-pendulum .statisics-hud small {position: absolute;}
 .content-pendulum .hud-equation {top: 0;}
-.content-pendulum .hud-velocity {top: 1.2em;}
-.content-pendulum .hud-angle {top: 2.4em;}
+.content-pendulum .hud-velocity {top: 1.5em;}
+.content-pendulum .hud-max-velocity {top: 2.7em;}
+.content-pendulum .hud-angle {top: 4.2em;}
+.content-pendulum .hud-max-angle {top: 5.4em;}
 .content-pendulum .hud-frame-time {
 	right: 0;
 	top:  0;

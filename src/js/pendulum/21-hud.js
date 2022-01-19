@@ -8,6 +8,8 @@ class HUD {
 			$fps: '#hud-fps',
 			$frameTime: '#hud-frame-time',
 			$g: '#hud-g',
+			$maxAngle: '#max-angle',
+			$maxVelocity: '#max-velocity',
 			$playbackTime: '#hud-time',
 			$radius: '#hud-R',
 			$sinPhi: '#hud-sin',
@@ -23,7 +25,10 @@ class HUD {
 
 			this.element[elementName] = $element;
 		}
+
+		this.resetMaximums();
 	}
+
 
 	/**
 	 * toggle
@@ -42,6 +47,20 @@ class HUD {
 			$selfElement.removeClass('hidden');
 		}
 
+		return this;
+	}
+
+
+	/**
+	 * resetMaximums
+	 * Resets the maximum indicators, so they can be measured again.
+	 *
+	 * @param  {void}
+	 * @return {this}
+	 */
+	resetMaximums() {
+		this.element.$maxAngle.innerHTML = 0;
+		this.element.$maxVelocity.innerHTML = 0;
 		return this;
 	}
 
@@ -71,8 +90,19 @@ class HUD {
 
 		['angle', 'g', 'velocity'].forEach(statName => {
 			const value = Number.parseFloat(stats[statName]);
-			if (!Number.isNaN(value)) {
-				this.element[`$${statName}`].innerHTML = value.toFixed(3);
+			if (Number.isNaN(value)) {
+				return;
+			}
+
+			this.element[`$${statName}`].innerHTML = value.toFixed(3);
+
+			if (statName === 'angle') {
+				const max = Math.max(this.element.$maxAngle.innerHTML, Math.abs(value)).toFixed(3);
+				this.element.$maxAngle.innerHTML = max;
+			}
+			if (statName === 'velocity') {
+				const max = Math.max(this.element.$maxVelocity.innerHTML, Math.abs(value)).toFixed(3);
+				this.element.$maxVelocity.innerHTML = max;
 			}
 		});
 

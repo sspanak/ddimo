@@ -192,14 +192,16 @@
 					<canvas width="215" height="215" onclick="PendulumEngine.togglePlayback();"></canvas>
 
 					<div class="statisics-hud">
-						<small class="hud-angle">Angle (φ): <span id="hud-fi">2.513</span> rad </small>
-						<small class="hud-velocity">Velocity (φ'): <span id="hud-velocity">0.316</span> rad/s </small>
 						<small class="hud-equation">
 								φ'' =
 									-<span id="hud-g">9.8226</span>
 									/ <span id="hud-R">280</span>
 									* <span id="hud-sin">0.41</span>
 						</small>
+						<small class="hud-velocity">Velocity (φ'): <span id="hud-velocity">0.316</span> rad/s</small>
+						<small class="hud-max-velocity">Max |φ'|: <span id="max-velocity">1.444</span> rad/s</small>
+						<small class="hud-angle">Angle (φ): <span id="hud-fi">2.513</span> rad </small>
+						<small class="hud-max-angle">Max |φ|: <span id="max-angle">0.986</span> rad</small>
 
 						<small class="hud-fps"><span id="hud-fps">125</span> FPS</small>
 						<small class="hud-frame-time"><span id="hud-frame-time">16.66</span> ms (Δt)</small>

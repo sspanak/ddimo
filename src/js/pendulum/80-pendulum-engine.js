@@ -135,7 +135,9 @@ window.PendulumEngine = new class {
 			.setAngle(angle)
 			.draw();
 
-		this.HUD.draw({ ...this._getStatistics(), g, radius });
+		this.HUD
+			.resetMaximums()
+			.draw({ ...this._getStatistics(), g, radius });
 
 		return this;
 	}
