@@ -94,7 +94,7 @@ class HUD {
 				return;
 			}
 
-			this.element[`$${statName}`].innerHTML = value.toFixed(3);
+			this.element[`$${statName}`].innerHTML = value.toFixed(statName === 'g' ? 2 : 3);
 
 			if (statName === 'angle') {
 				const max = Math.max(this.element.$maxAngle.innerHTML, Math.abs(value)).toFixed(3);
