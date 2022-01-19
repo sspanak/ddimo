@@ -163,7 +163,7 @@
 							</div>
 						</div>
 
-						<button type="button" class="button-main" onclick="Grafik.izberiDnes().poplni();">днес</button>
+						<button type="button" class="button button-main" onclick="Grafik.izberiDnes().poplni();">днес</button>
 					</form>
 
 					<h2>
@@ -223,7 +223,7 @@
 						<small>[ <a href="//pendulum/help/">Help?</a> ]</small>
 					</h4>
 
-					<form method="post" onsubmit="return PendulumEngine.reset();">
+					<form method="post" onsubmit="return false;">
 
 						<div class="form-input-component">
 							<label class="form-input-name">Angle (φ<sub>0</sub>):</label>
@@ -295,8 +295,11 @@
 							</select>
 						</div>
 
-						<button class="button-main" type="submit">apply</button>
-
+						<div class="button-container">
+							<button id="pendulum-play" class="button button-main" type="button" onclick="PendulumEngine.play();">&#9658; play</button>
+							<button id="pendulum-pause" class="button hidden" type="button" onclick="PendulumEngine.pause()"><b>||</b> pause</button>
+							<button id="pendulum-stop" class="button hidden" type="button" onclick="PendulumEngine.pause().reset()">&#9632; stop</button>
+						</div>
 					</form>
 
 				</div>

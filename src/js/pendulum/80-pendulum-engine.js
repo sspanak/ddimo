@@ -60,28 +60,41 @@ window.PendulumEngine = new class {
 	}
 
 
-	_play() {
-		this.ControlPanel.disable();
+	play() {
+		this.ControlPanel.showStopButton().disable();
+
+		this.toggleHUD();
 
 		this.Pendulum.setPause(false);
 		this.step.lastTime = Date.now();
-
-		this.toggleHUD();
 
 		clearInterval(this.pendulumInterval);
 		this.pendulumInterval = setInterval(
 			() => this._pendulumStepAhead(), Math.ceil(1000 / this.maxFPS.pendulum)
 		);
+
+		return this;
 	}
 
 
-	_pause() {
+	pause() {
 		clearInterval(this.pendulumInterval);
 		clearInterval(this.hudInterval);
 
 		this.Pendulum.setPause(true).draw();
 		this.HUD.draw(this._getStatistics());
-		this.ControlPanel.enable();
+		this.ControlPanel.enable().showPlayButton();
+
+		return this;
+	}
+
+
+	togglePlayback() {
+		if (this.Pendulum.paused) {
+			this.play();
+		} else {
+			this.pause();
+		}
 	}
 
 
@@ -98,15 +111,6 @@ window.PendulumEngine = new class {
 			this.hudInterval = setInterval(
 				() => this.HUD.draw(this._getStatistics()), Math.ceil(1000 / this.maxFPS.hud)
 			);
-		}
-	}
-
-
-	togglePlayback() {
-		if (this.Pendulum.paused) {
-			this._play();
-		} else {
-			this._pause();
 		}
 	}
 
@@ -133,6 +137,6 @@ window.PendulumEngine = new class {
 
 		this.HUD.draw({ ...this._getStatistics(), g, radius });
 
-		return false;
+		return this;
 	}
 };

@@ -140,6 +140,9 @@ screen and (min-aspect-ratio: 1/1) and (min-width: 48em) {
 .content-pendulum .control-panel h4 span {float: left}
 .content-pendulum .control-panel h4 small {float: right;}
 
+.content-pendulum .control-panel .button-container { margin: auto; }
+.content-pendulum .control-panel .button-main {min-width: 140px;}
+
 /* any orientation - medium or larger screen */
 @media screen and (min-width: 48em) {
 	.content-pendulum .control-panel {

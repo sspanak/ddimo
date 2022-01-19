@@ -1,6 +1,6 @@
 class PendulumControlPanel {
 	constructor() {
-		this.selector = {
+		this.inputSelector = {
 			angle: '.content-pendulum input[name=angle]',
 			g: '.content-pendulum select[name=g]',
 			isHudEnabled: '.content-pendulum input[name=hud-enabled]',
@@ -8,12 +8,18 @@ class PendulumControlPanel {
 			radius: '.content-pendulum input[name=radius]',
 			velocity: '.content-pendulum input[name=velocity]'
 		};
+
+		this.buttonSelector = {
+			pause: '#pendulum-pause',
+			play: '#pendulum-play',
+			stop: '#pendulum-stop'
+		};
 	}
 
 
 	_getControls() {
-		return Object.values(this.selector).map(selector => (
-			selector !== this.selector.isHudEnabled ? document.querySelector(selector) : null
+		return Object.values(this.inputSelector).map(selector => (
+			selector !== this.inputSelector.isHudEnabled ? document.querySelector(selector) : null
 		)).filter(e => !!e);
 	}
 
@@ -50,6 +56,34 @@ class PendulumControlPanel {
 
 
 	/**
+	 * showPlayButton
+	 * Shows the "play" button and hides "stop".
+	 *
+	 * @return {this}
+	 */
+	showPlayButton() {
+		new UiElement().select(this.buttonSelector.play).removeClass('hidden');
+		new UiElement().select(this.buttonSelector.pause).addClass('hidden');
+		new UiElement().select(this.buttonSelector.stop).addClass('hidden');
+		return this;
+	}
+
+
+	/**
+	 * showStopButton
+	 * Shows "stop" button and hides "play".
+	 *
+	 * @return {this}
+	 */
+	showStopButton() {
+		new UiElement().select(this.buttonSelector.play).addClass('hidden');
+		new UiElement().select(this.buttonSelector.pause).removeClass('hidden');
+		new UiElement().select(this.buttonSelector.stop).removeClass('hidden');
+		return this;
+	}
+
+
+	/**
 	 * enable
 	 * Enables all control panel inputs in the DOM.
 	 *
@@ -81,10 +115,10 @@ class PendulumControlPanel {
 	 * @return {bool | undefined}
 	 */
 	isHudEnabled() {
-		const $checkbox = document.querySelector(this.selector.isHudEnabled);
+		const $checkbox = document.querySelector(this.inputSelector.isHudEnabled);
 		if (!$checkbox || !($checkbox instanceof HTMLInputElement)) {
 			console.error(
-				`Unable to read HUD display state. "${this.selector.isHudEnabled}" element not found.`
+				`Unable to read HUD display state. "${this.inputSelector.isHudEnabled}" element not found.`
 			);
 			return undefined;
 		}
