@@ -78,9 +78,9 @@ class HUD {
 		}
 
 		// top left
-		const radius = Number.parseInt(stats.radius);
+		const radius = Number.parseFloat(stats.radius);
 		if (!Number.isNaN(radius)) {
-			this.element.$radius.innerHTML = radius;
+			this.element.$radius.innerHTML = radius.toFixed(radius >= 1 ? 0 : 1);
 		}
 
 		const sinPhi = Math.sin(stats.angle);

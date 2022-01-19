@@ -28,7 +28,7 @@ class PendulumControlPanel {
 		const values = {
 			g: 0,
 			maxFPS: 1,
-			radius: 0.0001
+			radius: 0.1
 		};
 		return { ...values };
 	}
