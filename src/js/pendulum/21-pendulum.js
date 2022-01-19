@@ -177,25 +177,26 @@ class Pendulum {
 		this._context.beginPath();
 		this._context.fillStyle=this._definiion.style.pendulum.color;
 
+		// For better visibility, decrease the nail and the ball size in relation to the rod length,
+		// hence "scaling" the entire pendulum when the rod is very short.
+		// Scale of 1 is when the rod is 280.
+		const rodToBallRatio = Math.max(1, Math.log2(this.rodLength * 0.25)) / Math.log2(280) * 1.33;
+
 		// central nail
 		this._context.arc(
 			centerX,
 			centerY,
-			this._definiion.nailRadius * this._definiion.scale,
+			this._definiion.nailRadius * this._definiion.scale * rodToBallRatio,
 			0,
 			Math.PI * 2,
 			true
 		);
 
 		// ball
-		// It is proportional to the rod length for better visibility. Scale of 1 is when the rod is 280.
-		const rodProportion = Math.log2(this.rodLength * 0.25) / Math.log2(280) * 1.33;
-		const ballSize = rodProportion * this._definiion.ballRadius * this._definiion.scale;
-
 		this._context.arc(
 			ballX,
 			ballY,
-			ballSize,
+			rodToBallRatio * this._definiion.ballRadius * this._definiion.scale,
 			0,
 			Math.PI * 2,
 			true
