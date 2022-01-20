@@ -6,6 +6,7 @@ body {
 	font-family: "Play", sans-serif;
 	font-size: 18px;
 }
+button {cursor: pointer;}
 
 hr {
 	border-bottom-style: dashed;

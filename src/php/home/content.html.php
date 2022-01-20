@@ -26,7 +26,6 @@
 		<h2> About Me </h2>
 		<ul>
 			<li><a href="https://github.com/sspanak">My Github Page</a></li>
-			<li><a>My Linkedin Page</a></li>
 		</ul>
 
 	</article>

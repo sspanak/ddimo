@@ -14,18 +14,18 @@
 			<div class="datepicker">
 				<label>Избор на дата:</label>
 				<div class="date-component">
-						<button type="button" class="button-left" onclick="Grafik.izberiVczera().poplni();">&larr;</button>
-						<input id="data_za_grafik" type="date" onchange="Grafik.poplni();" />
-						<button type="button" class="button-right" onclick="Grafik.izberiUtre().poplni();">&rarr;</button>
+					<button type="button" class="button-left" onclick="Grafik.izberiVczera().poplni();">&larr;</button>
+					<input id="data_za_grafik" type="date" onchange="Grafik.poplni();" />
+					<button type="button" class="button-right" onclick="Grafik.izberiUtre().poplni();">&rarr;</button>
 				</div>
 			</div>
 
-			<button type="button" class="button-main" onclick="Grafik.izberiDnes().poplni();">днес</button>
+			<button type="button" class="button button-main" onclick="Grafik.izberiDnes().poplni();">днес</button>
 		</form>
 
 		<h2>
 			График за
-			<span id="dnes">днес, </span><span id="izbranaData"></span>:
+			<span id="dnes">днес, </span><span id="izbranaData">2.1.2022</span>:
 		</h2>
 
 		<ul>
