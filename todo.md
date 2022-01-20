@@ -1,19 +1,12 @@
-Махало
-[x] Object.values is undefined
-[x] да се оправи мазалото с началните условия на Рунге-Кута
-[x] по-малка топка на махалото при по-къс прът
-[x] да се махне Click to play
-[x] apply -> apply + play и се сменя на пауза, докато върви
-[x] min/max ъгъл и скорост - за статистиката
-[x] да се допише помощта в частта, защото вече не е вярна
-[x] да се обнови и РНР-то
-[ ] да се сложат нови снимки на махалото
-
 Общи
 [ ] да се оправят цветовете на <a>
 [x] да се оправи минифицирането на .css-a
-[ ] кеширане във .vhost-a. За доктора - неповече от 1 седмица.
 [x] readme.md
 [x] contributing.md
 [x] license.md
+[ ] Set an explicit width and height on image elements to reduce layout shifts and improve CLS. https://web.dev/optimize-cls/?utm_source=lighthouse&utm_medium=devtools#images-without-dimensions
 [ ] снимките на crossfire volunteer не изглеждат добре на Opera Mini
+[ ] версии на .css и .js
+[ ] да се измисли какво ще пише на главната страница
+[ ] кеширане във .vhost-a. За доктора - неповече от 1 седмица.
+[ ] да се почисти Makefile и да се направи `make standard-pages`
