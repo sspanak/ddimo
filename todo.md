@@ -13,7 +13,7 @@
 [ ] да се оправят цветовете на <a>
 [x] да се оправи минифицирането на .css-a
 [ ] кеширане във .vhost-a. За доктора - неповече от 1 седмица.
-[ ] да се оправят и общите страници
 [x] readme.md
 [x] contributing.md
-[ ] license.md
+[x] license.md
+[ ] снимките на crossfire volunteer не изглеждат добре на Opera Mini
