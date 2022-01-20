@@ -1,4 +1,4 @@
-.content:not(.content-pendulum) {
+.content:not(.content-pendulum-help) {
 	display: none;
 }
 

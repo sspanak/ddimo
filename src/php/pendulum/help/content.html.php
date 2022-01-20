@@ -29,12 +29,13 @@
 		<aside class="screenshot">
 			<img src="pendulum-help-inital-values.png" alt="Initial Values Screenshot">
 		</aside>
+
 		<p>
 			<i>"Angle"</i> is the initial angle at which the pendulum will start swinging (or falling down, depending on how you set it). It is measured from the "Y" axis of the coordinate system (0 radians is at 6 o'clock). Increasing the angle will turn the rod counter-clockwise, and decreasing it will turn it clockwise.
 		</p>
 
 		<p>
-			Just type a number, then press <i>ENTER</i> or the <i>APPLY</i> button and it will automatically rotate, so you can adjust it visually.
+			Just type a number, then press <i>ENTER</i> or the <i>RESTART</i> button and it will automatically rotate, so you can adjust it visually.
 		</p>
 
 		<p>
@@ -42,26 +43,27 @@
 		</p>
 
 		<p>
-			<i>"Pendulum Length"</i> is the length of the rod in centimeters.
+			<i>"Pendulum Length"</i> is the length of the rod in centimeters. It is automatically constrained within sane limits, to prevent algorithm errors making the simulation too unrealistic.
 		</p>
 
 		<p>
-			<i>"Gravity"</i> allows you to choose the gravitational constant. It allows to simulate a pendulum swinging on different planets.
+			<i>"Gravity"</i> allows you to choose how strong the gravity is, hence simulating a pendulum on different planets.
 		</p>
 
 		<p>
-			<i>"FPS Limit"</i> controls the maximum animation frames per second. 60 FPS should result in real-time motion. Use it to benchmark your browser or to see the simulation in slow motion.
+			<i>"FPS Limit"</i> controls time step for solving the equations. This is the same as setting the maximum animation frames per second. 60 FPS or more should result in real-time motion. Use it to benchmark your browser or experiment with algorithm accuracy.
 		</p>
 
 		<p>
-			Note that this is the <i>maximum</i> allowed animation rate, but depending on your browser and operating system, it may actually run slower. Also, choosing 30 or 10 does not necessarily mean it will run at exactly 1/2 or 1/6 speed.
+			Note that this is the <i>maximum</i> allowed animation rate, but depending on your browser and operating system, it may actually run slower or fluctuate a bit. Also, each browser has a Javascript loop limit that prevents excessive CPU usage. For this reason anything higher than 250 FPS (4 ms step time) is hardly achievable.
 		</p>
 
-		<p> Use the <i>"APPLY"</i> button to set your preferences. The pendulum will immediately reset to reflect the given values. </p>
+		<p> Finally, <i>"PLAY" / "PAUSE"</i> work like in any audio or video player and <i>"RESTART"</i> stops and rewinds the simulation to 0 seconds. </p>
 
 		<h2> Statistics </h2>
 		<p> Right below the pendulum is the statistics panel. First, you can see the differential equation that "powers" the pendulum. And below it you can turn on/off the displaying of the variable values as the pendulum swings.
 		</p>
+
 		<aside class="screenshot">
 			<img src="pendulum-help-statistics.png" alt="Statistics Screenshot">
 		</aside>
