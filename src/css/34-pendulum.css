@@ -143,7 +143,8 @@ screen and (min-aspect-ratio: 1/1) and (min-width: 48em) {
 .content-pendulum .control-panel h4 small {float: right;}
 
 .content-pendulum .control-panel .button-container { margin: auto; }
-.content-pendulum .control-panel .button-main {min-width: 140px;}
+.content-pendulum .control-panel .button-pendulum-play, .content-pendulum .control-panel .button-pendulum-pause {width: 88px;}
+.content-pendulum .control-panel .button-pendulum-stop {margin-left: 5px;}
 
 /* any orientation - medium or larger screen */
 @media screen and (min-width: 48em) {
@@ -151,6 +152,8 @@ screen and (min-aspect-ratio: 1/1) and (min-width: 48em) {
 		max-width: 57.778em;
 		padding: 0.5925em 1em;
 	}
+
+	.content-pendulum .control-panel .button-pendulum-stop {margin-left: 8px;}
 }
 
 @media screen and (min-width: 64em) {

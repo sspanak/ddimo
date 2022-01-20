@@ -109,11 +109,12 @@ header nav .nav-element {
 
 /* any button */
 .content .button {
-	margin: 0.66em 0.33em 0.33em;
-	min-width: 100px;
-	padding: 0.4em 0;
+	margin-top: 0.66em;
+	margin-bottom: 0.33em;
+	padding: 0.4em;
 	text-align: center;
 	text-transform: uppercase;
+	width: auto;
 }
 
 /* main button */
@@ -126,7 +127,7 @@ header nav .nav-element {
 
 
 @media screen and (min-width: 35.5em) {
-	.content .button {
+	.content .button-main {
 		padding: 0.4em;
 		width: min-content;
 	}
@@ -153,7 +154,10 @@ screen and (max-aspect-ratio: 1/1) and (min-width: 48em) /* portrait - medium or
 
 @media screen and (min-width: 48em) {
 	.content .form-input-component {min-width: 260px;}
-	.content .button {margin-top: 1em;}
+	.content .button {
+		margin-top: 1em;
+		padding: 0.4em 0.6em;
+	}
 }
 
 

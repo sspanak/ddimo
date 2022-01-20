@@ -11,8 +11,7 @@ class PendulumControlPanel {
 
 		this.buttonSelector = {
 			pause: '#pendulum-pause',
-			play: '#pendulum-play',
-			stop: '#pendulum-stop'
+			play: '#pendulum-play'
 		};
 	}
 
@@ -64,7 +63,6 @@ class PendulumControlPanel {
 	showPlayButton() {
 		new UiElement().select(this.buttonSelector.play).removeClass('hidden');
 		new UiElement().select(this.buttonSelector.pause).addClass('hidden');
-		new UiElement().select(this.buttonSelector.stop).addClass('hidden');
 		return this;
 	}
 
@@ -78,7 +76,6 @@ class PendulumControlPanel {
 	showStopButton() {
 		new UiElement().select(this.buttonSelector.play).addClass('hidden');
 		new UiElement().select(this.buttonSelector.pause).removeClass('hidden');
-		new UiElement().select(this.buttonSelector.stop).removeClass('hidden');
 		return this;
 	}
 
