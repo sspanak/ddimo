@@ -121,7 +121,7 @@
 			<div class="button-container">
 				<button id="pendulum-play" class="button button-pendulum-play" type="button" onclick="PendulumEngine.play();">&#9658; play</button>
 				<button id="pendulum-pause" class="button button-pendulum-pause hidden" type="button" onclick="PendulumEngine.pause()"><b>||</b> pause</button>
-				<button id="pendulum-stop" class="button button-pendulum-stop" type="button" onclick="PendulumEngine.pause().reset()">&#8635; restart</button>
+				<button id="pendulum-stop" class="button button-pendulum-stop" type="button" onclick="PendulumEngine.pause().reset()">|&lt;&lt; restart</button>
 			</div>
 		</form>
 
