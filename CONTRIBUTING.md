@@ -1,0 +1,1 @@
+This is a personal website, so contributions are not accepted at this time. Anyway, if you feel like, you are free to open a pull request and if it is a bugfix or something useful in another way it may get merged.
