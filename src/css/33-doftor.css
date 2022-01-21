@@ -8,7 +8,7 @@
 .content-doftor form .date-component {
 	display: flex;
 	flex-flow: row;
-	margin: 0.3em 0 0.8em 0;
+	margin: 6px 0 12px 0;
 }
 .content-doftor .date-component button, .content-doftor .date-component input {
 	box-sizing: border-box;
@@ -21,8 +21,7 @@
 	max-width: calc(100% - 4.5em);
 }
 
-.content-doftor .button-main {margin: 0.33em 0;}
-
+.content-doftor .button-main {margin: 6px 0;}
 
 @media screen and (min-width: 35.5em) {
 	.content-doftor form .date-component, .content-doftor .button-main {max-width: 260px;}
