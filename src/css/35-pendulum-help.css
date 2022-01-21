@@ -1,6 +1,6 @@
 .content-pendulum-help .screenshot {
 	display: block;
-	margin: 0.5925em auto;
+	margin: 10px auto;
 	max-width: 450px;
 	padding: 5px;
 	width: 95%;
@@ -10,6 +10,6 @@
 
 @media screen and (min-width: 48em) {
 	.content-pendulum-help .screenshot {
-		margin: 1em 0.5925em;
+		margin: 12px 10px;
 	}
 }

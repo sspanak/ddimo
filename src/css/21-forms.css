@@ -4,10 +4,11 @@
 	flex-flow: column;
 }
 .content form .form-input-component:not(:last-child) {
-	margin-bottom: 0.3em;
+	margin-bottom: 5px;
 }
 
 .content form .form-input-component .form-input-name {
+	font-size: 0.95em;
 	padding-left: 2px;
 }
 
@@ -39,9 +40,9 @@
 
 /* any button */
 .content .button {
-	margin-top: 0.66em;
-	margin-bottom: 0.33em;
-	padding: 0.4em 0.2em;
+	margin-top: 12px;
+	margin-bottom: 6px;
+	padding: 6px 3px;
 	text-align: center;
 	text-transform: uppercase;
 	width: auto;
@@ -56,7 +57,7 @@
 }
 
 @media screen and (min-width: 21em) {
-	.content .button {padding: 0.4em 0.5em;}
+	.content .button {padding: 6px 10px;}
 }
 
 @media screen and (min-width: 35.5em) {
@@ -74,6 +75,7 @@ screen and (max-aspect-ratio: 1/1) and (min-width: 48em) /* portrait - medium or
 
 	.content form .form-input-component .form-input-name {
 		flex: none;
+		font-size: 1em;
 		width: 190px;
 	}
 
@@ -86,6 +88,6 @@ screen and (max-aspect-ratio: 1/1) and (min-width: 48em) /* portrait - medium or
 	.content .form-input-component {min-width: 260px;}
 	.content .button {
 		margin-top: 1em;
-		padding: 0.4em 0.6em;
+		padding: 6px 12px;
 	}
 }
