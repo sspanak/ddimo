@@ -1,9 +1,16 @@
 /* XXS / Default */
-@media screen {
-	header nav {margin: auto;}
-	header, .content {padding: 0.5925em;}
-	.content ul {padding-left: 0.5925em;}
+header nav {margin: auto;}
+header, .content {padding: 10px;}
+
+.content h1, .content h2 {padding-bottom: 6px;}
+.content h4 {
+	margin-top: 0;
+	padding: 4px 5px;
 }
+
+.content ul {padding-left: 10px;}
+.content ul > li {margin: 5px 0;}
+
 
 /***************************************************************************
  * Negative
@@ -16,16 +23,18 @@
 
 /* S negative */
 @media screen and (max-width: 48em) {
-	.content h1, .content h2 {margin: 0.4em 0;}
-	.content h1:first-child, .content h2:first-child {margin-top: 0.2em;}
+	.content h1, .content h2 {margin: 14px 0;}
+	.content h1:first-child, .content h2:first-child {margin-top: 7px;}
 }
 
 /* XXS negative */
 @media screen and (max-width: 18em) and (orientation: portrait),
 screen and (max-width: 20em) and (orientation: landscape) {
-	.content h1, .content h2 {margin: 0.15em 0;}
+	.content h1, .content h2 {margin: 6px 0;}
 	.content h1:first-child, .content h2:first-child {margin-top: 0;}
+	.content p {text-align: left;}
 }
+
 
 /***************************************************************************
  * Positive
@@ -34,20 +43,19 @@ screen and (max-width: 20em) and (orientation: landscape) {
 /* XS */
 @media screen and (min-width: 18.01em) and (orientation: portrait),
 screen and (min-width: 20.01em) and (orientation: landscape) {
-	header {padding: 0.7378em;}
+	header {padding: 13px;}
 
 	.content ul {
-		padding-left: 1.481em;
-		padding-right: 0.2667em;
+		padding-left: 25px;
+		padding-right: 5px;
 	}
 }
 
-
 /* M */
 @media screen and (min-width: 48em) {
-	header nav {
-		max-width: 100%;
-		width: 57.778em;
+	header nav, .content {
+		max-width: 1033px;
+		width: 100%;
 	}
 
 	.content-wrapper {
@@ -56,27 +64,16 @@ screen and (min-width: 20.01em) and (orientation: landscape) {
 	}
 	.content {
 		display: flex;
-		padding: 0.5925em 1.778em;
-		width: 57.778em;
+		padding: 10px 32px;
+
 	}
 
 	.content ul {
-		padding: 0 2.222em;
+		padding: 0 38px;
 	}
 }
 
-
 /* L */
 @media screen and (min-width: 64em) {
-	header {padding: 1.111em;}
-	header nav {width: 60.444em;}
-
-	header, .content {
-		font-size: 0.95em;
-	}
-
-	.content {
-		padding: 0.622em 1.8666em;
-		width: 60.444em;
-	}
+	header {padding: 19px;}
 }

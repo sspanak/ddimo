@@ -1,11 +1,13 @@
 /**************************
  * Reset styles
  **************************/
-img {border: 0 none;}
+
 body {
 	font-family: "Play", sans-serif;
-	font-size: 18px;
+	font-size: 17px;
+	line-height: 1.4em;
 }
+
 button {cursor: pointer;}
 
 hr {
@@ -15,19 +17,15 @@ hr {
 	margin: 0;
 }
 
-/**************************
- * Common
- **************************/
+header nav .nav-element {
+	display: inline-block;
+	font-size: 1.075em;
+}
+
+img {border: 0 none;}
 
 .hidden {display: none !important;}
 
-/**************************
- * Header
- **************************/
-header nav .nav-element {
-	display: inline-block;
-	font-size: 1.05em;
-}
 
 /**************************
  * Content
@@ -37,24 +35,9 @@ header nav .nav-element {
 	font-family: "Orbitron", monospace;
 	line-height: 1em;
 }
-.content h1, .content h2 {
-	border-bottom: 1px solid;
-	padding-bottom: 0.1778em;
-}
+.content h1, .content h2, .content h4 {border-bottom: 1px solid;}
 
-.content h4 {
-	border-bottom: 1px solid;
-	margin-top: 0;
-	padding: 0.3em;
-}
-
-.content p {
-	text-align: justify;
-}
-
-.content ul > li {
-	margin: 5px 0;
-}
+.content p {text-align: justify;}
 
 .content form {
 	display: flex;
@@ -63,102 +46,6 @@ header nav .nav-element {
 
 .content .screenshots img, .content .screenshot img {
 	border-radius: 5px;
-}
-
-/**************************
- * Forms
- **************************/
-
-/* labels above the inputs */
-.content form .form-input-component {
-	display: flex;
-	flex-flow: column;
-}
-.content form .form-input-component:not(:last-child) {
-	margin-bottom: 0.3em;
-}
-
-.content form .form-input-component .form-input-name {
-	padding-left: 2px;
-}
-
-/* any input */
-.content form .form-input-component input, .content form .form-input-component select {
-	box-sizing: border-box;
-	display: inline-block;
-	flex: auto;
-	height: 1.8em;
-	margin-top: 2px;
-	width: 100%;
-}
-
-/* input with unit */
-.content .form-input-with-unit {
-	align-items: center;
-	display: flex;
-	width: 100%;
-}
-
-.content .form-input-with-unit input, .content .form-input-with-unit select {
-	margin-right: 5px;
-}
-
-.content .form-input-component .form-input-with-unit .form-input-unit {
-	display: inline-block;
-	width: 60px;
-}
-
-/* any button */
-.content .button {
-	margin-top: 0.66em;
-	margin-bottom: 0.33em;
-	padding: 0.4em 0.2em;
-	text-align: center;
-	text-transform: uppercase;
-	width: auto;
-}
-
-/* main button */
-.content .button-main {
-	margin-left: auto;
-	margin-right: auto;
-	min-width: 130px;
-	width: 100%;
-}
-
-@media screen and (min-width: 21em) {
-	.content .button {padding: 0.4em 0.5em;}
-}
-
-@media screen and (min-width: 35.5em) {
-	.content .button-main {width: min-content;}
-}
-
-/* labels next to the inputs */
-@media screen and (min-aspect-ratio: 16/10) and (min-width: 21em) and (max-width: 48em), /* landscape - small screen */
-screen and (max-aspect-ratio: 1/1) and (min-width: 48em) /* portrait - medium or larger */
-{
-	.content form .form-input-component {
-		align-items: center;
-		flex-flow: row;
-	}
-
-	.content form .form-input-component .form-input-name {
-		flex: none;
-		width: 190px;
-	}
-
-	.content .form-input-component input, .content .form-input-component select {
-		margin-left: 5px;
-	}
-}
-
-@media screen and (min-width: 48em) {
-	.content .form-input-component {min-width: 260px;}
-	.content .button {
-		margin-top: 1em;
-		padding: 0.4em 0.6em;
-	}
 }
 
 
