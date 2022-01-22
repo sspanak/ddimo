@@ -3,24 +3,23 @@
 }
 
 .content-crossfire-volunteer .screenshots {
-	align-items: center;
-	display: flex;
-	flex-flow: column;
-	justify-content: center;
-	margin: 14px 0;
-	width: 100%;
+	margin: 17px 14px;
+	text-align: center;
+	width: auto;
 }
 
 .content-crossfire-volunteer .screenshots img {
+	aspect-ratio: 128/90;
 	cursor: pointer;
-	flex: 33%;
-	margin: 5px;
-	max-width: 95%;
+	margin: 3px;
+	width: 96%;
 }
 
 @media screen and (min-width: 35.5em) {
-	.content-crossfire-volunteer .screenshots {flex-flow: row;}
-	.content-crossfire-volunteer .screenshots img {max-width: 32%;}
+	.content-crossfire-volunteer .screenshots img {
+		max-width: 31.5%;
+		width: calc(32% - 6px);
+	}
 }
 
 .content-crossfire-volunteer .requirements {
