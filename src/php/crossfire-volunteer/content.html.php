@@ -2,14 +2,14 @@
 	<article>
 		<h1> Crossfire Volunteer </h1>
 		<p>
-			Crossfire Volunteer is a simple game in 64 kb (I managed to squeeze it down to 27 kb, actualy). It is inspired by 1980s Nintendo classics such as Battle City and Galaxian. You can download it an play it for free. It will run on pretty much any machine which can run at least Windows XP.
+			Crossfire Volunteer is a simple game in 64 kb (I managed to squeeze it down to 27 kb, actualy). It is inspired by 1980s Nintendo classics such as Battle City and Galaxian. You can download it an play it for free. It will run on pretty much any machine that can run at least Windows XP.
 		</p>
 		<p>
-			When I was the first year in the university, we were supposed to learn OOP and C++, but the classes and the homeworks seemed too boring. So, I decided to add some fun... and that is how the game came to be.
+			During my first year in the university, we were supposed to learn OOP and C++, but homework and classes seemed too boring. So, I decided to make learning more fun... and this is how the game came to be.
 		</p>
 		<h2> The Story </h2>
 		<p>
-			A hostile extra-terestrial race is trying to conquer the known universe using their colorful ships. Your are the chosen one who will stop them... if you are lucky.
+			A hostile extra-terestrial race is trying to conquer the known universe using their colorful ships. Your are the chosen one to stop them. Good luck, pilot!
 		</p>
 
 		<h2> Screenshots </h2>

@@ -12,7 +12,7 @@
 				<a href="/pendulum/">A Pendulum Simulator</a> – it accuratelly represents the swinging of a pendulum with a given size on the Earth and the other planets.
 			</li>
 			<li>
-				<a href="https://dimmu-saurus.net/">Dimmu Saurus</a> – my project for blues, metal, rock and classical music.
+				<a href="https://dimmu-saurus.net/">Dimmu Saurus</a> – a website for my other personality, Dimmu Saurus, the dark dinosaur who plays the guitar.
 			</li>
 		</ul>
 
