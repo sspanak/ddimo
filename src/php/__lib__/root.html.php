@@ -14,7 +14,7 @@
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;700&family=Orbitron:wght@700&family=Play:wght@400;700&display=swap">
 
-		<link rel="stylesheet" href="<?=$base_url?>/ddimo.css">
+		<link rel="stylesheet" href="<?=$base_url?>/ddimo.css?v=007">
 
 		<script>
 			function yesScript() {
@@ -25,7 +25,7 @@
 
 		<?php foreach ($scripts_remote as $script): ?>
 			<script
-				src="<?=$script->url?>"
+				src="<?=$script->url?>?v=007"
 				<?=$script->async ? 'async' : ''?>
 				<?=$script->defer ? 'defer' : ''?>
 				<?=$script->module === true ? 'type="module"' : ''?>

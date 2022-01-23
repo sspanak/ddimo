@@ -6,7 +6,7 @@ demo:
 	make css-debug
 	cat src/css/debug.css >> dist/ddimo.css
 	make images
-	cp src/demo.html dist/index.html
+	cat src/demo.html | build-tools/append-resources-version.sh > dist/index.html
 
 website:
 	make js
@@ -34,6 +34,7 @@ images:
 
 php:
 	cp -r src/php/* dist/
+	cat src/php/__lib__/root.html.php | build-tools/append-resources-version.sh > dist/__lib__/root.html.php
 
 downloads:
 	mkdir -p dist/crossfire-volunteer/
