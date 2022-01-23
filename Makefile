@@ -40,40 +40,34 @@ downloads:
 	mkdir -p dist/crossfire-volunteer/
 	cp download/igra-alpha.zip dist/crossfire-volunteer/
 
-# all:
-# 	make tar
-# 	tar rv -f ddimo.tar apache-vhost.conf.sample
-# 	bzip2 -9 ddimo.tar
-
 tar:
 	make clean && make website && \
 	tar cv \
-		--exclude='.gitkeep' --exclude='.git' --exclude='Makefile' --exclude='README.md' \
-		--exclude='sftp-config.json' \
+		--exclude='.gitkeep' \
 		-f ddimo.tar \
 		--transform s/dist/ddimo.eu/ \
 		dist/
 
 	bzip2 -9 ddimo.tar
 
+generic:
+	make clean
+
+	bash -c './build-tools/minify-html.sh src/generic-pages/ dist/'
+	tar c \
+		--exclude='.gitkeep' \
+		-f generic.tar \
+		--transform s/dist/default/ \
+		dist
+	bzip2 -9 generic.tar
+
 clean:
-	rm -rf dist/*
+	rm -rf dist/*;
 	rm -f ddimo.tar ddimo.tar.bz2
+	rm -f generic.tar;
+	rm -f generic.tar.bz2
 
 serve:
 	cd dist/ && python3 -m http.server 3000
 
-# generic:
-# 	make clean-generic
 
-# 	mkdir -p __tmp_build
-# 	bash -c './minify.sh standard-pages/ __tmp_build/'
-# 	tar c \
-# 		-f generic.tar \
-# 		--transform s/__tmp_build/default/ \
-# 		__tmp_build
-# 	bzip2 -9 generic.tar
-# 	rm -rf __tmp_build
-
-# clean-generic:
-# 	rm -f generic.tar; rm -f generic.tar.bz2
