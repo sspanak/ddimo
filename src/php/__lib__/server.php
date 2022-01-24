@@ -6,7 +6,7 @@ class Server {
 
 	public function __construct(){
 		$this->site_name = $_SERVER['SERVER_NAME'];
-		$this->base_url = "//$this->site_name/v2" ;
+		$this->base_url = "//$this->site_name" ;
 
 		$this->base_path = preg_replace('@\?.+@', '', $_SERVER['SCRIPT_NAME']);
 		$this->base_path = preg_replace('@/$@', '', dirname($this->base_path));
