@@ -19,7 +19,7 @@
 		<script>
 			function yesScript() {
 				var $noscipt = document.querySelector('.no-script');
-				$noscipt.className = $noscipt.className.replace('no-script', '');
+				if ($noscipt) $noscipt.className = $noscipt.className.replace('no-script', '');
 			}
 		</script>
 
