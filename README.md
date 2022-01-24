@@ -37,4 +37,4 @@ I have always been inspired by the simplicity of Wikipedia. And given my (and ac
 
 It does not use Docker, Angular, React, Laravel or any frameworks, libraries or dependencies, because there is no need to. NPM is used only for generating and compressing the JS and the CSS.
 
-By the power of the [LICENSE.md](LICENSE.md), use this website as a template to create your own small and efficient sites. However, [contributions to it](CONTRIBUTING.md) are unlikely to be accepted.
+By the power of the [LICENSE.md](LICENSE.txt), use this website as a template to create your own small and efficient sites. However, [contributions to it](CONTRIBUTING.md) are unlikely to be accepted.
