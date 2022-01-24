@@ -9,6 +9,7 @@ demo:
 	cat src/demo.html | build-tools/append-resources-version.sh > dist/index.html
 
 website:
+	make docs
 	make js
 	make css
 	make images
@@ -47,6 +48,7 @@ tar:
 		-f ddimo.tar \
 		--transform s/dist/ddimo.eu/ \
 		dist/
+	tar rv -f ddimo.tar LICENSE.txt
 
 	bzip2 -9 ddimo.tar
 
@@ -60,6 +62,9 @@ generic:
 		--transform s/dist/default/ \
 		dist
 	bzip2 -9 generic.tar
+
+docs:
+	bash -c build-tools/update-docs.sh
 
 clean:
 	rm -rf dist/*;
