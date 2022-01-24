@@ -43,7 +43,7 @@
 	<div class="control-panel">
 		<h4>
 			<span>Initial Values</span>
-			<small>[ <a href="/pendulum/help/">Help?</a> ]</small>
+			<small>[ <a href="help/">Help?</a> ]</small>
 		</h4>
 
 		<form method="post" onsubmit="return false;">
