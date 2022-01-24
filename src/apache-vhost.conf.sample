@@ -20,7 +20,9 @@
 
 		# 1 year
 		ExpiresByType application/javascript A31536000
+		ExpiresByType image/gif A31536000
 		ExpiresByType image/png A31536000
+		ExpiresByType image/svg+xml A31536000
 		ExpiresByType text/css A31536000
 
 		# override the default for "/doftor" to 7 days, because it changes often
