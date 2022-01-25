@@ -16,13 +16,6 @@
 
 		<link rel="stylesheet" href="<?=$base_url?>/ddimo.css?v=007">
 
-		<script>
-			function yesScript() {
-				var $noscipt = document.querySelector('.no-script');
-				if ($noscipt) $noscipt.className = $noscipt.className.replace('no-script', '');
-			}
-		</script>
-
 		<?php foreach ($scripts_remote as $script): ?>
 			<script
 				src="<?=$script->url?>?v=007"
@@ -37,7 +30,7 @@
 			<script <?=$script->module === true ? 'type="module"' : ''?> <?=$script->module === false ? 'nomodule' : ''?>><?=$script->script?></script>
 		<?php endforeach;?>
 	</head>
-	<body class="no-script" onload="yesScript();">
+	<body>
 		
 		<header>
 			<nav>

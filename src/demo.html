@@ -16,12 +16,6 @@
 
 		<link rel="stylesheet" href="ddimo.css?v=007">
 
-		<script>
-			function yesScript() {
-				var $noscipt = document.querySelector('.no-script');
-				if ($noscipt) $noscipt.className = $noscipt.className.replace('no-script', '');
-			}
-		</script>
 		<script src="crossfire-volunteer/crossfire-volunteer.js?v=007" async type="module"></script>
 		<script src="crossfire-volunteer/crossfire-volunteer.legacy.js?v=007" async nomodule></script>
 		<script src="doftor/doftor.js?v=007" async type="module"></script>
@@ -29,7 +23,7 @@
 		<script src="pendulum/pendulum.js?v=007" async type="module"></script>
 		<script src="pendulum/pendulum.legacy.js?v=007" async nomodule></script>
 	</head>
-	<body class="no-script" onload="yesScript();">
+	<body>
 
 		<header>
 			<nav>
@@ -47,7 +41,7 @@
 
 		<hr>
 
-		<div class="content-wrapper">
+		<div class="content-wrapper no-script">
 
 			<div class="content content-home">
 				<article>
