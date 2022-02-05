@@ -55,17 +55,13 @@ screen and (min-width: 20.01em) and (orientation: landscape) {
 @media screen and (min-width: 48em) {
 	header nav, .content {
 		max-width: 1033px;
-		width: 100%;
+		width: auto;
 	}
 
-	.content-wrapper {
-		display: flex;
-		justify-content: center;
-	}
 	.content {
 		display: flex;
+		margin: auto;
 		padding: 10px 32px;
-
 	}
 
 	.content ul {

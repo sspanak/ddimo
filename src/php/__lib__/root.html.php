@@ -48,7 +48,7 @@
 
 		<hr>
 
-		<div class="content-wrapper <?=$content_classes?>">
+		<div class="<?=$content_classes?>">
 			<?=$content?>
 		</div>
 	</body>
