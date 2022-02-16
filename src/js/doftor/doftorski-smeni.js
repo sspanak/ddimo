@@ -1,9 +1,9 @@
 const DoftorskaSmyana = new class {
 	_ambareva(den, czetna) {
-		if (den === 2 || den === 4 || (den === 5 && !czetna)) {
+		if (den === 1 || den === 3 || (den === 5 && !czetna)) {
 			return 1;
 		}
-		if (den === 1 || den === 3) {
+		if (den === 2 || den === 4) {
 			return 3;
 		}
 		return undefined;
@@ -11,10 +11,10 @@ const DoftorskaSmyana = new class {
 
 
 	_mileva(den, czetna) {
-		if (den === 1 || den === 3 || (den === 5 && czetna)) {
+		if (den === 2 || den === 4 || (den === 5 && czetna)) {
 			return 1;
 		}
-		if (den === 2 || den === 4) {
+		if (den === 1 || den === 3) {
 			return 3;
 		}
 
