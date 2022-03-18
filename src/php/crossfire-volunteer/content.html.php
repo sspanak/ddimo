@@ -12,12 +12,14 @@
 			A hostile extra-terestrial race is trying to conquer the known universe using their colorful ships. Your are the chosen one to stop them. Good luck, pilot!
 		</p>
 
-		<h2> Screenshots </h2>
-		<aside class="screenshots">
-			<img src="crossfire-volunteer-1.png" alt="Crossfire Volunteer Screenshot 1" onclick="previewCrossfireScreenshot(this)">
-			<img src="crossfire-volunteer-2.png" alt="Crossfire Volunteer Screenshot 2" onclick="previewCrossfireScreenshot(this)">
-			<img src="crossfire-volunteer-3.png" alt="Crossfire Volunteer Screenshot 3" onclick="previewCrossfireScreenshot(this)">
-		</aside>
+		<?php if (!$browser_is_text): ?>
+			<h2> Screenshots </h2>
+			<aside class="screenshots">
+				<img src="crossfire-volunteer-1.png" alt="Crossfire Volunteer Screenshot 1" onclick="previewCrossfireScreenshot(this)">
+				<img src="crossfire-volunteer-2.png" alt="Crossfire Volunteer Screenshot 2" onclick="previewCrossfireScreenshot(this)">
+				<img src="crossfire-volunteer-3.png" alt="Crossfire Volunteer Screenshot 3" onclick="previewCrossfireScreenshot(this)">
+			</aside>
+		<?php endif; ?>
 
 		<h2> Download and Play </h2>
 		<p class="requirements">
@@ -48,7 +50,9 @@
 
 	</article>
 
-	<div class="screenshot picture-preview-container hidden" onclick="closeCrossfireScreenshot()">
-		<img src="" alt="Crossfire Volunteer large screenshot preview" />
-	</div>
+	<?php if (!$browser_is_text): ?>
+		<div class="screenshot picture-preview-container hidden" onclick="closeCrossfireScreenshot()">
+			<img src="" alt="Crossfire Volunteer large screenshot preview" />
+		</div>
+	<?php endif; ?>
 </div>
