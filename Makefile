@@ -17,12 +17,17 @@ website:
 	make php
 
 css-debug:
-	node build-tools/css-convert-legacy.js src/css/11-colors.css > dist/ddimo.css
-	cat src/css/[0-9]*.css >> dist/ddimo.css
+	@printf 'Building CSS... ' && \
+		node build-tools/css-convert-legacy.js src/css/11-colors.css > dist/ddimo.css && \
+		cat src/css/[0-9]*.css >> dist/ddimo.css && \
+	echo 'OK'
 
 css:
-	make css-debug
-	npx csso dist/ddimo.css > dist/mini.css && mv dist/mini.css dist/ddimo.css
+	@make css-debug && \
+	printf 'Minifying CSS... ' && \
+		cat dist/ddimo.css | node build-tools/css-minify.js > dist/mini.css && \
+		mv dist/mini.css dist/ddimo.css && \
+	echo 'OK'
 
 js:
 	bash -c build-tools/build-js.sh
