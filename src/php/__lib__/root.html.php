@@ -38,9 +38,9 @@
 				<?php foreach ($breadcrumbs as $page => $url): ?>
 					<?php if ($page === array_key_first($breadcrumbs) || $page !== array_key_last($breadcrumbs)): ?>
 						<?=$page !== array_key_first($breadcrumbs) ? '/' : ''?>
-						<a class="nav-element" href="//<?=$url?>"> <?=$page?> </a>
+						<a class="nav-element" href="//<?=$url?>"><?=$page?></a>
 					<?php else: ?>
-						/ <span class="nav-element"> <?=$page?> </span>
+						/ <span class="nav-element"><?=$page?></span>
 					<?php endif; ?>
 				<?php endforeach; ?>
 			</nav>
