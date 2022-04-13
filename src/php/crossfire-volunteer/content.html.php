@@ -24,6 +24,7 @@
 		<h2> Download and Play </h2>
 		<p class="requirements">
 			<a href="igra-alpha.zip"><b>igra 713a</b></a>
+			<span>&nbsp;</span>
 			<i class="italic">(.zip, 123 kb; windows version)</i>
 		</p>
 

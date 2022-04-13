@@ -20,15 +20,15 @@
 		<?php foreach ($scripts_remote as $script): ?>
 			<script
 				src="<?=$script->url?>?v=007"
-				<?=$script->async ? 'async' : ''?>
-				<?=$script->defer ? 'defer' : ''?>
-				<?=$script->module === true ? 'type="module"' : ''?>
-				<?=$script->module === false ? 'nomodule' : ''?>
+				<?=$script->async ? ' async' : ''?>
+				<?=$script->defer ? ' defer' : ''?>
+				<?=$script->module === true ? ' type="module"' : ''?>
+				<?=$script->module === false ? ' nomodule' : ''?>
 			></script>
 		<?php endforeach;?>
 
 		<?php foreach ($scripts_inline as $script): ?>
-			<script <?=$script->module === true ? 'type="module"' : ''?> <?=$script->module === false ? 'nomodule' : ''?>><?=$script->script?></script>
+			<script <?=$script->module === true ? ' type="module"' : ''?> <?=$script->module === false ? ' nomodule' : ''?>><?=$script->script?></script>
 		<?php endforeach;?>
 	</head>
 	<body>
@@ -37,7 +37,7 @@
 			<nav>
 				<?php foreach ($breadcrumbs as $page => $url): ?>
 					<?php if ($page === array_key_first($breadcrumbs) || $page !== array_key_last($breadcrumbs)): ?>
-						<?=$page !== array_key_first($breadcrumbs) ? '/' : ''?>
+						<?=$page !== array_key_first($breadcrumbs) ? ' / ' : ''?>
 						<a class="nav-element" href="//<?=$url?>"><?=$page?></a>
 					<?php else: ?>
 						/ <span class="nav-element"><?=$page?></span>
