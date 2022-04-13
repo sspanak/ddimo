@@ -51,6 +51,11 @@ screen and (min-width: 20.01em) and (orientation: landscape) {
 	}
 }
 
+/* S */
+@media screen and (min-width: 35.5em) {
+	.content {padding: 10px 24px;}
+}
+
 /* M */
 @media screen and (min-width: 48em) {
 	header nav, .content {
