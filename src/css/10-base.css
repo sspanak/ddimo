@@ -6,6 +6,8 @@ body {
 	font-family: "Play", sans-serif;
 	font-size: 17px;
 	line-height: 1.35em;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
 }
 
 button {cursor: pointer;}
