@@ -30,11 +30,9 @@ preg_match('@##[^\n]+Compatibility\n([^#]+)@', $readme, $readme_matches);
 $compatibility = count($readme_matches) > 1 ? trim($readme_matches[1]) : '';
 
 // readme -> how to use
-preg_match('@##[^\n]+How to Use[^\n]+\n([^#]+)@', $readme, $readme_matches);
+preg_match('@#[^\n]+How to Use[^\n]+\n([\s\S]+?)##@', $readme, $readme_matches);
 $how_to_use = count($readme_matches) > 1 ? trim($readme_matches[1]) : '';
 $how_to_use = str_replace('docs/user-manual.md', "manual", $how_to_use);
-
-// @todo: [compatibility options] е счупена връзка
 
 // readme -> support
 preg_match('@##[^\n]+Support\n([^#]+)@', $readme, $readme_matches);
