@@ -14,6 +14,9 @@
 			<li>
 				<a href="https://dimmu-saurus.net/">Dimmu Saurus</a> – a website for my other personality, Dimmu Saurus, the dark dinosaur who plays the guitar.
 			</li>
+			<li>
+				<a href="tt9/">Traditional T9</a> – a software keyboard for Android devices, created to bring old-school Nokia experience to the modern world.
+			</li>
 		</ul>
 
 		<h2> Tools </h2>

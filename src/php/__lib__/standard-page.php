@@ -11,6 +11,7 @@ class StandardPage {
 	public bool $browser_is_text = false;
 	public string $content = '';
 	public string $content_classes = '';
+	public array $custom_vars = [];
 	public string $lang = 'en';
 	public string $title = '';
 	public array $scripts_inline = []; // InlineScript[]
@@ -29,6 +30,7 @@ class StandardPage {
 		$breadcrumbs = $this->breadcrumbs;
 		$content = $this->content;
 		$content_classes = $this->content_classes;
+		$custom_vars = $this->custom_vars;
 		$lang = $this->lang;
 		$title = $this->title;
 		$scripts_inline = $this->scripts_inline;
