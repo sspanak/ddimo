@@ -1,3 +1,3 @@
-<div class="content content-tt9-manual">
+<div class="content content-tt9">
 	<article><?=$content?></article>
 </div>

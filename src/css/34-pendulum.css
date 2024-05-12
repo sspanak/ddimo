@@ -20,6 +20,12 @@
 	padding: 0;
 }
 
+.content-pendulum h4 {
+	border-bottom: 1px solid;
+	margin-top: 0;
+	padding: 3px 5px;
+}
+
 @media
 screen and (min-aspect-ratio: 6/5) and (max-width: 48em) and (min-width: 21em),
 screen and (min-aspect-ratio: 1/1) and (min-width: 48em) {

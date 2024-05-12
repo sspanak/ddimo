@@ -1,13 +1,11 @@
 <?php
+require_once '../../__lib__/parsedown/helpers.php';
 require_once '../../__lib__/standard-page.php';
-require_once '../../__lib__/parsedown/Parsedown.php';
 
-$markdown = file_get_contents('https://raw.githubusercontent.com/sspanak/tt9/master/docs/user-manual.md');
-
-// @todo: вътрешните връзки не работят
-// @todo: оправи малко стиловете
+$html = get_markdown_page_as_html('https://raw.githubusercontent.com/sspanak/tt9/master/docs/user-manual.md');
+$html = preg_replace('@href=".+?/docs/installation\.md"@', 'href="../installation/"', $html);
 
 StandardPage::display(
 	'Traditional T9',
-	[ 'content' => Parsedown::instance()->setBreaksEnabled(true)->text($markdown) ]
+	[ 'content' =>  $html ]
 );

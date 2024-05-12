@@ -15,9 +15,9 @@
 		<?php if (!$browser_is_text): ?>
 			<h2> Screenshots </h2>
 			<aside class="screenshots">
-				<img src="crossfire-volunteer-1.png" alt="Crossfire Volunteer Screenshot 1" onclick="previewCrossfireScreenshot(this)">
-				<img src="crossfire-volunteer-2.png" alt="Crossfire Volunteer Screenshot 2" onclick="previewCrossfireScreenshot(this)">
-				<img src="crossfire-volunteer-3.png" alt="Crossfire Volunteer Screenshot 3" onclick="previewCrossfireScreenshot(this)">
+				<img src="crossfire-volunteer-1.png" alt="Crossfire Volunteer Screenshot 1" onclick="previewImage(this)">
+				<img src="crossfire-volunteer-2.png" alt="Crossfire Volunteer Screenshot 2" onclick="previewImage(this)">
+				<img src="crossfire-volunteer-3.png" alt="Crossfire Volunteer Screenshot 3" onclick="previewImage(this)">
 			</aside>
 		<?php endif; ?>
 
@@ -52,7 +52,7 @@
 	</article>
 
 	<?php if (!$browser_is_text): ?>
-		<div class="screenshot picture-preview-container hidden" onclick="closeCrossfireScreenshot()">
+		<div class="screenshot picture-preview-container hidden" onclick="closeImagePreview()">
 			<img src="" alt="Crossfire Volunteer large screenshot preview" />
 		</div>
 	<?php endif; ?>

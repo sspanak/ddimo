@@ -37,7 +37,7 @@ img {border: 0 none;}
 	font-family: "Orbitron", monospace;
 	line-height: 1em;
 }
-.content h1, .content h2, .content h4 {border-bottom: 1px solid;}
+.content h1, .content h2 {border-bottom: 1px solid;}
 
 .content p {text-align: justify;}
 
@@ -46,10 +46,27 @@ img {border: 0 none;}
 	flex-flow: column;
 }
 
-.content .screenshots img, .content .screenshot img {
+.content .screenshots img, .content .screenshot img, .content code {
 	border-radius: 5px;
 }
 
+/**************************
+ * Code Blocks
+ **************************/
+
+.content code {
+	display: inline-block;
+	font-size: 0.85em;
+	margin: 1px 2px;
+	padding: 1px 2px;
+}
+
+.content code[class^=language] {
+	display: flex;
+	margin: 0;
+	overflow: auto;
+	padding: 12px;
+}
 
 /**************************
  * Picture Preview

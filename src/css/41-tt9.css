@@ -1,0 +1,31 @@
+.content-tt9 {
+	--screenshot-max-height: 585px;
+	--screenshot-gap-size: 24px;
+}
+
+.content-tt9 .screenshots {
+	align-items: center;
+	display: flex;
+	flex-wrap: wrap;
+	gap: var(--screenshot-gap-size);
+	justify-content: center;
+	margin: 17px 0;
+}
+
+.content-tt9 .screenshots img, .content-tt9 .screenshots .small-screenshots {
+	cursor: pointer;
+	display: flex;
+	height: var(--screenshot-max-height);
+}
+
+.content-tt9 .screenshots .small-screenshots {
+	align-items: center;
+	flex-flow: column;
+	gap: var(--screenshot-gap-size);
+}
+
+.content-tt9 .screenshots .small-screenshots img {
+	flex: content;
+	height: calc(50% - var(--screenshot-gap-size));
+	max-height: 50%;
+}
