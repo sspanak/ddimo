@@ -23,8 +23,18 @@ $install = count($readme_matches) > 1 ? trim($readme_matches[1]) : '';
 $install = preg_replace('@\[([^]]+)\]\(([^)]+)\)@', '<a href="$2">$1</a>', $install);
 $install = str_replace('src="!RAW', "src=\"$github_base_url/!RAW", $install);
 $install = preg_replace('@\n\n@', '<br/>', $install);
+$install = str_replace('docs/installation.md', "installation", $install);
 $install = is_text_browser() ? str_replace('></a>', '></a><br/>', $install) : $install;
 
+preg_match('@##[^\n]+Compatibility\n([^#]+)@', $readme, $readme_matches);
+$compatibility = count($readme_matches) > 1 ? trim($readme_matches[1]) : '';
+
+// readme -> how to use
+preg_match('@##[^\n]+How to Use[^\n]+\n([^#]+)@', $readme, $readme_matches);
+$how_to_use = count($readme_matches) > 1 ? trim($readme_matches[1]) : '';
+$how_to_use = str_replace('docs/user-manual.md', "manual", $how_to_use);
+
+// @todo: [compatibility options] е счупена връзка
 
 // readme -> support
 preg_match('@##[^\n]+Support\n([^#]+)@', $readme, $readme_matches);
@@ -40,10 +50,12 @@ StandardPage::display(
 	'Traditional T9',
 	[
 		'custom_vars' => [
+			'compatibility' => $Parsedown->text($compatibility),
 			'full_description' => $Parsedown->text(file_get_contents("$github_base_url/fastlane/metadata/android/en-US/full_description.txt")),
+			'how_to_use' => $Parsedown->text($how_to_use),
+			'install' => $install,
 			'support' => $Parsedown->text($support),
 			'system_requirements' => $Parsedown->text($system_requirements),
-			'install' => $install,
 		]
 	]
 );
