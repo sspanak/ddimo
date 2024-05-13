@@ -11,6 +11,7 @@ Buliding is done via the `Makefile`. All production code is generated in the `di
 
 ##### On the server:
 - `tar xf /upload/dir/ddimo.tar.bz2 -C /var/www/virtual-host-of-your-choice.com`
+- `chmod 0666 /var/www/virtual-host-of-your-choice.com/tt9/*.png`
 - Use the provided virtual host sample file to set up Apache.
 
 ### Requirements

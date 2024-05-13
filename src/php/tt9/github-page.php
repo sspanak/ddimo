@@ -2,6 +2,7 @@
 require_once '../__lib__/parsedown/Parsedown.php';
 
 class GithubPage {
+	private const SCREENSHOT_MAX_AGE = 2592000; // 1 month
 	private const GITHUB_BASE_URL = 'https://raw.githubusercontent.com/sspanak/tt9/master';
 
 	private Parsedown $Parsedown;
@@ -27,7 +28,7 @@ class GithubPage {
 	}
 
 	private function get_section_as_html(string $section_regex) {
-		return $this->get_section($section_regex);
+		return $this->Parsedown->text($this->get_section($section_regex));
 	}
 
 	public function get_compatibility_section() {
@@ -57,6 +58,19 @@ class GithubPage {
 		return $this->Parsedown->text($section);
 	}
 
+	public function get_screenshots() {
+		$now = time();
+
+		for ($i = 1; $i <= 5; $i++) {
+			$file_name = "$i.png";
+			$local_path = __DIR__ . DIRECTORY_SEPARATOR . $file_name;
+
+			if (!file_exists($local_path) || !filesize($local_path) || filemtime($local_path) + self::SCREENSHOT_MAX_AGE < $now) {
+				$remote_path = self::GITHUB_BASE_URL . "/screenshots/$file_name";
+				file_put_contents($local_path, file_get_contents($remote_path));
+			}
+		}
+	}
 
 	public function get_support_section() {
 		return $this->get_section_as_html('@##[^\n]+Support\n([^#]+)@');

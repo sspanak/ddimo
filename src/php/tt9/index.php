@@ -7,6 +7,7 @@ require_once '../__lib__/standard-page.php';
 require_once 'github-page.php';
 
 $github_page = new GithubPage();
+$github_page->get_screenshots();
 
 StandardPage::display(
 	'Traditional T9',

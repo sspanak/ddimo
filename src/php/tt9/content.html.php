@@ -5,13 +5,13 @@
 		<?php if (!$browser_is_text): ?>
 			<h2>Screenshots</h2>
 			<aside class="screenshots">
-				<img src="https://github.com/sspanak/tt9/raw/master/screenshots/3.png" alt="Traditional T9 screenshot 3" onclick="previewImage(this)">
+				<img src="3.png" alt="Traditional T9 screenshot 3" onclick="previewImage(this)">
 				<div class="small-screenshots">
-					<img src="https://github.com/sspanak/tt9/raw/master/screenshots/1.png" alt="Traditional T9 screenshot 1" onclick="previewImage(this)">
-					<img src="https://github.com/sspanak/tt9/raw/master/screenshots/2.png" alt="Traditional T9 screenshot 2" onclick="previewImage(this)">
+					<img src="1.png" alt="Traditional T9 screenshot 1" onclick="previewImage(this)">
+					<img src="2.png" alt="Traditional T9 screenshot 2" onclick="previewImage(this)">
 				</div>
-				<img src="https://github.com/sspanak/tt9/raw/master/screenshots/5.png" alt="Traditional T9 screenshot 5" onclick="previewImage(this)">
-				<img src="https://github.com/sspanak/tt9/raw/master/screenshots/4.png" alt="Traditional T9 screenshot 4" onclick="previewImage(this)">
+				<img src="5.png" alt="Traditional T9 screenshot 5" onclick="previewImage(this)">
+				<img src="4.png" alt="Traditional T9 screenshot 4" onclick="previewImage(this)">
 			</aside>
 		<?php endif; ?>
 
