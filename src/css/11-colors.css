@@ -56,7 +56,7 @@ a:hover {color: var(--link-hovered-color);}
 a:visited {color: var(--link-visited-color);}
 a:visited:hover {color: var(--link-visited-hovered-color);}
 
-.content h1, .content h2, .content h4, hr {
+.content h1, .content h2, .content-pendulum h4, hr {
 	border-color: var(--separator-color);
 }
 
@@ -69,9 +69,16 @@ header nav {
 	color: var(--header-text-color);
 }
 
-.screenshots img, .screenshot img {
+.content code {
+	border: 1px dashed var(--input-border-color);
 	box-shadow: var(--screenshot-shadow);
+	color: var(--input-text-color);
+	background-color: var(--input-background-color);
+}
+
+.screenshots img, .screenshot img {
 	border: 1px dashed var(--separator-color);
+	box-shadow: var(--screenshot-shadow);
 }
 
 .content .picture-preview-container {
