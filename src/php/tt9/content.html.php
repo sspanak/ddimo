@@ -10,14 +10,17 @@
 					<img src="1.png" alt="Traditional T9 screenshot 1" onclick="previewImage(this)">
 					<img src="2.png" alt="Traditional T9 screenshot 2" onclick="previewImage(this)">
 				</div>
-				<img src="5.png" alt="Traditional T9 screenshot 5" onclick="previewImage(this)">
+				<div class="small-screenshots">
+					<img src="5.png" alt="Traditional T9 screenshot 5 A" onclick="previewImage(this)">
+					<img src="6.png" alt="Traditional T9 screenshot 5 B" onclick="previewImage(this)">
+				</div>
 				<img src="4.png" alt="Traditional T9 screenshot 4" onclick="previewImage(this)">
 			</aside>
 		<?php endif; ?>
 
 		<h2>Install</h2> <?=$custom_vars['install']?>
-		<h3>Compatibility</h3> <?=$custom_vars['compatibility']?>
 		<h2>System Requirements</h2> <?=$custom_vars['system_requirements']?>
+		<h3>Compatibility</h3> <?=$custom_vars['compatibility']?>
 		<h2>How to Use Traditional T9?</h2> <?=$custom_vars['how_to_use']?>
 		<h2>Support</h2> <?=$custom_vars['support']?>
 
