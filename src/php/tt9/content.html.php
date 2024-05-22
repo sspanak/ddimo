@@ -16,8 +16,8 @@
 		<?php endif; ?>
 
 		<h2>Install</h2> <?=$custom_vars['install']?>
-		<h3>Compatibility</h3> <?=$custom_vars['compatibility']?>
 		<h2>System Requirements</h2> <?=$custom_vars['system_requirements']?>
+		<h3>Compatibility</h3> <?=$custom_vars['compatibility']?>
 		<h2>How to Use Traditional T9?</h2> <?=$custom_vars['how_to_use']?>
 		<h2>Support</h2> <?=$custom_vars['support']?>
 
