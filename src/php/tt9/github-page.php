@@ -61,7 +61,7 @@ class GithubPage {
 	public function get_screenshots() {
 		$now = time();
 
-		for ($i = 1; $i <= 5; $i++) {
+		for ($i = 1; $i <= 6; $i++) {
 			$file_name = "$i.png";
 			$local_path = __DIR__ . DIRECTORY_SEPARATOR . $file_name;
 

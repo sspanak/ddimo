@@ -10,7 +10,10 @@
 					<img src="1.png" alt="Traditional T9 screenshot 1" onclick="previewImage(this)">
 					<img src="2.png" alt="Traditional T9 screenshot 2" onclick="previewImage(this)">
 				</div>
-				<img src="5.png" alt="Traditional T9 screenshot 5" onclick="previewImage(this)">
+				<div class="small-screenshots">
+					<img src="5.png" alt="Traditional T9 screenshot 5 A" onclick="previewImage(this)">
+					<img src="6.png" alt="Traditional T9 screenshot 5 B" onclick="previewImage(this)">
+				</div>
 				<img src="4.png" alt="Traditional T9 screenshot 4" onclick="previewImage(this)">
 			</aside>
 		<?php endif; ?>
