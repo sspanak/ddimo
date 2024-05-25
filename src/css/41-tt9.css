@@ -3,6 +3,16 @@
 	--screenshot-gap-size: 24px;
 }
 
+.content-tt9 .download-links {
+	align-items: center;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.content-tt9 .download-links a:nth-child(2) {
+	padding: 12px;
+}
+
 .content-tt9 .screenshots {
 	align-items: center;
 	display: flex;
@@ -28,4 +38,11 @@
 	flex: content;
 	height: calc(50% - var(--screenshot-gap-size));
 	max-height: 50%;
+}
+
+
+@media screen and (max-width: 35.5em) {
+	.content-tt9 .download-links {
+		justify-content: center;
+	}
 }
