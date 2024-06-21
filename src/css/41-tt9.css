@@ -9,8 +9,8 @@
 	flex-wrap: wrap;
 }
 
-.content-tt9 .download-links a:nth-child(2) {
-	padding: 12px;
+.content-tt9 .download-links a {
+	margin: 8px 10px;
 }
 
 .content-tt9 .screenshots {

@@ -42,15 +42,24 @@ class GithubPage {
 	public function get_install_section() {
 		$section = $this->get_section('@##[^\n]+Install\n([^#]+)@');
 
-		$section = preg_replace('@\s*(?:</?tr>|</?td>| {2,})@', '', $section);
-		$section = str_replace('<table>', '<div class="download-links">', $section);
-		$section = str_replace('</table>', '</div>', $section);
-		$section = preg_replace('@\[([^]]+)\]\(([^)]+)\)@', '<a href="$2">$1</a>', $section);
-		$section = str_replace('src="!RAW', 'src="'.self::GITHUB_BASE_URL.'/!RAW', $section);
-		$section = preg_replace('@\n\n([^\n]+?)\n@', '<p>$1</p>', $section);
-		$section = preg_replace('@_([^_]+?)_@', '<i>$1</i>', $section);
+		$section = str_replace('&nbsp;', '', $section);
+		$section = str_replace("\n", '', $section);
+		$section = str_replace('![](docs/badges/80-height.png)', '', $section);
+
+		$section = $this->Parsedown->text($section);
+
+		$section = str_replace('<p>', '', $section);
+		$section = str_replace('</p>', '', $section);
+		$section = str_replace('docs/badges/', self::GITHUB_BASE_URL . '/docs/badges/', $section);
 		$section = str_replace('docs/installation.md', "installation", $section);
 		$section = is_text_browser() ? str_replace('></a>', '></a><br/>', $section) : $section;
+
+		$note_pattern = '@<em>.+?</em>@';
+		$note_matches = [];
+		preg_match($note_pattern, $section, $note_matches);
+		$notes = $note_matches !== null ? "<p>$note_matches[0]</p>" : '';
+		$section = preg_replace($note_pattern, '', $section);
+		$section = "<div class=\"download-links\">$section</div>$notes";
 
 		return $section;
 	}
