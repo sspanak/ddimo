@@ -32,7 +32,7 @@ class GithubPage {
 	}
 
 	public function get_compatibility_section() {
-		return $this->get_section_as_html('@##[^\n]+Compatibility\n([^#]+)@');
+		return $this->get_section_as_html('@##[^\n]+Compatibility\n([\s\S]+?)##@');
 	}
 
 	public function get_full_description() {
@@ -40,7 +40,7 @@ class GithubPage {
 	}
 
 	public function get_install_section() {
-		$section = $this->get_section('@##[^\n]+Install\n([^#]+)@');
+		$section = $this->get_section('@##[^\n]+Install\n([\s\S]+?)##@');
 
 		$section = str_replace('&nbsp;', '', $section);
 		$section = str_replace("\n", '', $section);
@@ -86,11 +86,11 @@ class GithubPage {
 	}
 
 	public function get_support_section() {
-		return $this->get_section_as_html('@##[^\n]+Support\n([^#]+)@');
+		return $this->get_section_as_html('@##[^\n]+Support\n([\s\S]+?)##@');
 	}
 
 
 	public function get_system_requirements_section() {
-		return $this->get_section_as_html('@##[^\n]+System Requirements\n([^#]+)@');
+		return $this->get_section_as_html('@##[^\n]+System Requirements\n([\s\S]+?)##@');
 	}
 }
