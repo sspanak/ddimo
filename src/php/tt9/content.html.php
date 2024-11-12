@@ -5,16 +5,13 @@
 		<?php if (!$browser_is_text): ?>
 			<h2>Screenshots</h2>
 			<aside class="screenshots">
-				<img src="3.png" alt="Traditional T9 screenshot 3" onclick="previewImage(this)">
 				<div class="small-screenshots">
 					<img src="1.png" alt="Traditional T9 screenshot 1" onclick="previewImage(this)">
 					<img src="2.png" alt="Traditional T9 screenshot 2" onclick="previewImage(this)">
 				</div>
-				<div class="small-screenshots">
-					<img src="5.png" alt="Traditional T9 screenshot 5 A" onclick="previewImage(this)">
-					<img src="6.png" alt="Traditional T9 screenshot 5 B" onclick="previewImage(this)">
-				</div>
+				<img src="3.png" alt="Traditional T9 screenshot 3" onclick="previewImage(this)">
 				<img src="4.png" alt="Traditional T9 screenshot 4" onclick="previewImage(this)">
+				<img src="5.png" alt="Traditional T9 screenshot 5 A" onclick="previewImage(this)">
 			</aside>
 		<?php endif; ?>
 
