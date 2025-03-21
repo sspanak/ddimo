@@ -1,3 +1,1 @@
-<div class="content content-tt9">
-	<article><?=$content?></article>
-</div>
+../content-plain-text.html.php

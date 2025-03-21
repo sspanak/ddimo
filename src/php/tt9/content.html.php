@@ -11,7 +11,7 @@
 				</div>
 				<img src="3.png" alt="Traditional T9 screenshot 3" onclick="previewImage(this)">
 				<img src="4.png" alt="Traditional T9 screenshot 4" onclick="previewImage(this)">
-				<img src="5.png" alt="Traditional T9 screenshot 5 A" onclick="previewImage(this)">
+				<img src="5.png" alt="Traditional T9 screenshot 5" onclick="previewImage(this)">
 			</aside>
 		<?php endif; ?>
 

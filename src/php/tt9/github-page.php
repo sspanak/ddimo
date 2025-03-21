@@ -1,5 +1,5 @@
 <?php
-require_once '../__lib__/parsedown/Parsedown.php';
+require_once dirname(__FILE__).'/../__lib__/parsedown/Parsedown.php';
 
 class GithubPage {
 	private const SCREENSHOT_MAX_AGE = 2592000; // 1 month
@@ -66,7 +66,7 @@ class GithubPage {
 
 	public function get_how_to_use_section() {
 		$section = $this->get_section('@#[^\n]+How to Use[^\n]+\n([\s\S]+?)##@');
-		$section = str_replace('docs/help/help.en.md', "manual", $section);
+		$section = preg_replace('@docs/help/help\.([a-z]{2})\.md@', "manual?l=$1", $section);
 
 		return $this->Parsedown->text($section);
 	}
