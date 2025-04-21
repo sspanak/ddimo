@@ -66,7 +66,7 @@ class GithubPage {
 
 	public function get_how_to_use_section() {
 		$section = $this->get_section('@#[^\n]+How to Use[^\n]+\n([\s\S]+?)##@');
-		$section = preg_replace('@docs/help/help\.([a-z]{2})\.md@', "manual?l=$1", $section);
+		$section = preg_replace('@docs/help/help\.([a-z]{2})\.md@', "manual/$1", $section);
 
 		return $this->Parsedown->text($section);
 	}
