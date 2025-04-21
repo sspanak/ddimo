@@ -37,6 +37,14 @@
 		</Directory>
 	</ifModule>
 
+
+	<IfModule mod_cache.c>
+		<IfModule mod_cache_disk.c>
+			CacheEnable disk /
+		</IfModule>
+	</IfModule>
+
+
 	ErrorLog ${APACHE_LOG_DIR}/ddimo.error.log
 	CustomLog ${APACHE_LOG_DIR}/ddimo.access.log combined
 </VirtualHost>

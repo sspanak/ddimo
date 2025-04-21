@@ -14,10 +14,20 @@ Buliding is done via the `Makefile`. All production code is generated in the `di
 - `chmod 0666 /var/www/virtual-host-of-your-choice.com/tt9/*.png`
 - Use the provided virtual host sample file to set up Apache.
 
+##### Enable caching:
+- `sudo a2enmod cache cache_disk`
+- `systemctl restart apache2`
+- `systemctl start apache-htcacheclean`
+
+_To verify it is working, you can add the `CacheHeader on` directive. Then, you should see a "X-Cache" response header saying "MISS" the first time and "HIT" afterwards._
+
+_To purge the cache, just delete all files in `/var/cache/apache2/mod_cache_disk/`, then restart Apache._
+
 ### Requirements
 - PHP 7.4
 - Apache 2.4
 - mod-php7.4
+- mod_cache and mode_cache_disk (to enable server-side cache of generated PHP content)
 
 ### Generic server error pages
 Use `$ make generic` to create a tarball of the standard site agnostic server pages. Then add `ErrorDocument xxx /xxx.html` to the `000-default.conf` standard virtual host to enable them.
