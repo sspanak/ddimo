@@ -23,7 +23,7 @@ header, .content {padding: 10px;}
 	.content h1:first-child, .content h2:first-child {margin-top: 7px;}
 }
 
-/* XXS negative */
+/* XXS negative, fallback styles for Opera Mini */
 @media screen and (max-width: 18em) and (orientation: portrait),
 screen and (max-width: 20em) and (orientation: landscape) {
 	.content h1, .content h2 {margin: 6px 0;}

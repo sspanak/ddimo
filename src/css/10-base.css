@@ -39,7 +39,11 @@ img {border: 0 none;}
 }
 .content h1, .content h2 {border-bottom: 1px solid;}
 
-.content p {text-align: justify;}
+.content p {
+  hyphens: auto;
+	text-align: justify;
+	overflow-wrap: break-word;
+}
 
 .content form {
 	display: flex;
